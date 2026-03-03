@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'Samarkan';
-  src: url('/Samarkan.woff') format('woff');
+  src: url('../../public/Samarkan.woff') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
