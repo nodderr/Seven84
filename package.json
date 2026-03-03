@@ -5,11 +5,13 @@
   "description": "Seven.84 — Hindustani-Bollywood-Fusion Band Portfolio",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --port 3000 --open",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "vite": "^6.2.0"
   }
 }
