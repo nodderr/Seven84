@@ -1,0 +1,15 @@
+{
+  "name": "seven84",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Seven.84 — Hindustani-Bollywood-Fusion Band Portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.2.0"
+  }
+}

@@ -1,0 +1,80 @@
+import './styles/index.css';
+
+// Components
+import { renderNavbar, updateActiveLink } from './components/navbar.js';
+import { renderFooter } from './components/footer.js';
+import { openLightbox } from './components/lightbox.js';
+import { openVideoModal } from './components/videoModal.js';
+import { initScrollAnimations } from './components/scrollAnimations.js';
+
+// Pages
+import { renderHome } from './pages/home.js';
+import { renderGallery } from './pages/gallery.js';
+import { renderAbout } from './pages/about.js';
+import { renderJourney } from './pages/journey.js';
+import { renderPerformances } from './pages/performances.js';
+
+// Data exports for global API
+import { galleryItems } from './data/gallery.js';
+
+// Global API for inline HTML handlers (onClick)
+window.appAPI = {
+  openLightbox: (index) => openLightbox(galleryItems, index),
+  openVideo: (youtubeId) => openVideoModal(youtubeId)
+};
+
+const routes = {
+  '': renderHome,
+  'gallery': renderGallery,
+  'about': renderAbout,
+  'journey': renderJourney,
+  'performances': renderPerformances,
+};
+
+function router() {
+  const contentDiv = document.getElementById('page-content');
+  
+  // Get current path from hash
+  let path = window.location.hash.slice(1);
+  
+  // Handle invalid routes
+  if (path && !routes[path]) {
+    window.location.hash = '';
+    return;
+  }
+
+  // Pre-transition state
+  contentDiv.style.opacity = '0';
+  
+  setTimeout(() => {
+    // Render new page
+    const renderFn = routes[path] || routes[''];
+    contentDiv.innerHTML = renderFn();
+    
+    // Setup animations for new page
+    initScrollAnimations();
+    
+    // Post-transition state
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    contentDiv.style.opacity = '1';
+    
+    // Update navbar active state
+    updateActiveLink();
+  }, 150);
+}
+
+// App Initialization
+function initApp() {
+  // Render static shell components
+  renderNavbar();
+  renderFooter();
+  
+  // Setup router listeners
+  window.addEventListener('hashchange', router);
+  
+  // Initial route
+  router();
+}
+
+// Boot application
+document.addEventListener('DOMContentLoaded', initApp);
