@@ -1,7 +1,10 @@
 import { performances } from '../data/performances.js';
 
 export function renderHome() {
-  const latestPerformance = performances.find(p => p.featured) || performances[0];
+  const latestPerformance = performances.find(p => p.featured) || performances[0] || {
+    title: 'New Performance Coming Soon',
+    youtubeId: ''
+  };
 
   return `
     <div class="page-enter">
