@@ -27,15 +27,30 @@ export function renderResults() {
               </tr>
             </thead>
             <tbody>
-              ${results.length > 0 ? results.map(result => `
-                <tr class="result-row">
-                  <td class="font-accent text-saffron text-nowrap">${result.date}</td>
+              ${results.length > 0 ? results.map((result, index) => `
+                <tr class="result-row" onclick="const details = document.getElementById('details-${index}'); details.style.display = details.style.display === 'table-row' ? 'none' : 'table-row'; this.classList.toggle('active-row');">
+                  <td class="font-accent text-saffron text-nowrap">
+                    <span class="dropdown-icon">▶</span> ${result.date}
+                  </td>
                   <td class="font-display size-md text-cream">${result.name}</td>
                   <td class="opacity-80">${result.venue}</td>
                   <td>
                     ${result.rank 
                       ? `<span class="result-badge ${getRankClass(result.rank)}">${result.rank}</span>` 
                       : '<span class="opacity-50">—</span>'}
+                  </td>
+                </tr>
+                <tr id="details-${index}" class="result-details-row" style="display: none;">
+                  <td colspan="4" class="result-details-cell">
+                    <div class="result-details-content">
+                      <div class="result-members">
+                        <strong class="text-saffron">Lineup:</strong> 
+                        <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? result.bandMembers.join(', ') : 'Lineup not specified'}</span>
+                      </div>
+                      <a href="#events?id=${result.id}" class="result-event-link">
+                        View Event Media <span>&rarr;</span>
+                      </a>
+                    </div>
                   </td>
                 </tr>
               `).join('') : `

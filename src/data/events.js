@@ -41,7 +41,8 @@ export const eventsData = [
     photos: [
       { src: 'https://images.unsplash.com/photo-1598387181032-a310322db565?w=800', caption: 'Trophy Celebration' },
       { src: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800', caption: 'Performance' },
-    ]
+    ],
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Vansh Srivastava', 'Aryan Raj', 'Anjishnu Satpathy', 'Milind Konwar']
   },
   {
     id: 'technomeet-2023',
@@ -53,7 +54,8 @@ export const eventsData = [
     description: 'A high-energy performance securing 2nd place. The crowd energy was unmatched during our closing track.',
     youtubeId: 'dQw4w9WgXcQ',
     thumbnail: 'https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop',
-    photos: []
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Vansh Srivastava']
   },
   {
     id: 'first-gig',
