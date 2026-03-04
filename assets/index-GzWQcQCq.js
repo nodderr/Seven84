@@ -1,10 +1,10 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const l of i.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&o(l)}).observe(document,{childList:!0,subtree:!0});function s(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=s(a);fetch(a.href,i)}})();const g=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"about",label:"About Us"},{path:"journey",label:"Our Journey"},{path:"events",label:"Events"},{path:"performances",label:"Performances"}];function w(){const e=document.getElementById("navbar"),t=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerPolicy&&(o.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?o.credentials="include":a.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(a){if(a.ep)return;a.ep=!0;const o=s(a);fetch(a.href,o)}})();const v=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"about",label:"About Us"},{path:"journey",label:"Our Journey"},{path:"events",label:"Events"},{path:"performances",label:"Performances"}];function w(){const e=document.getElementById("navbar"),t=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
     <div class="navbar-inner">
       <a class="navbar-logo" data-nav="">
         <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: var(--text-2xl); color: var(--cream);">Seven.84</span>
       </a>
       <div class="navbar-links">
-        ${g.map(a=>`
+        ${v.map(a=>`
           <a class="navbar-link ${t===a.path?"active":""}" data-nav="${a.path}">
             ${a.label}
           </a>
@@ -15,13 +15,13 @@
       </button>
     </div>
     <div class="navbar-mobile-overlay" id="mobile-overlay">
-      ${g.map(a=>`
+      ${v.map(a=>`
         <a class="navbar-link ${t===a.path?"active":""}" data-nav="${a.path}">
           ${a.label}
         </a>
       `).join("")}
     </div>
-  `,e.querySelectorAll("[data-nav]").forEach(a=>{a.addEventListener("click",i=>{i.preventDefault();const l=a.getAttribute("data-nav");window.location.hash=l,k()})});const s=document.getElementById("nav-toggle"),o=document.getElementById("mobile-overlay");s.addEventListener("click",()=>{s.classList.toggle("open"),o.classList.toggle("open"),document.body.style.overflow=o.classList.contains("open")?"hidden":""}),$(e)}function k(){const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-overlay");e&&t&&(e.classList.remove("open"),t.classList.remove("open"),document.body.style.overflow="")}function $(e){let t=!1;window.addEventListener("scroll",()=>{t||(window.requestAnimationFrame(()=>{window.scrollY>50?e.classList.add("scrolled"):e.classList.remove("scrolled"),t=!1}),t=!0)})}function x(){const e=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(t=>{t.getAttribute("data-nav")===e?t.classList.add("active"):t.classList.remove("active")})}function I(){const e=document.getElementById("site-footer");e.className="footer",e.innerHTML=`
+  `,e.querySelectorAll("[data-nav]").forEach(a=>{a.addEventListener("click",o=>{o.preventDefault();const r=a.getAttribute("data-nav");window.location.hash=r,k()})});const s=document.getElementById("nav-toggle"),i=document.getElementById("mobile-overlay");s.addEventListener("click",()=>{s.classList.toggle("open"),i.classList.toggle("open"),document.body.style.overflow=i.classList.contains("open")?"hidden":""}),$(e)}function k(){const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-overlay");e&&t&&(e.classList.remove("open"),t.classList.remove("open"),document.body.style.overflow="")}function $(e){let t=!1;window.addEventListener("scroll",()=>{t||(window.requestAnimationFrame(()=>{window.scrollY>50?e.classList.add("scrolled"):e.classList.remove("scrolled"),t=!1}),t=!0)})}function x(){const e=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(t=>{t.getAttribute("data-nav")===e?t.classList.add("active"):t.classList.remove("active")})}function I(){const e=document.getElementById("site-footer");e.className="footer",e.innerHTML=`
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
@@ -60,13 +60,13 @@
         <span>Based out of MIT, Manipal 🎶</span>
       </div>
     </div>
-  `,e.querySelectorAll("[data-nav]").forEach(t=>{t.addEventListener("click",s=>{s.preventDefault();const o=t.getAttribute("data-nav");window.location.hash=o,window.scrollTo({top:0,behavior:"smooth"})})})}let n=[],r=0;function L(e,t=0){n=e,r=t;const s=document.getElementById("lightbox-overlay");s.classList.remove("hidden"),s.innerHTML=`
+  `,e.querySelectorAll("[data-nav]").forEach(t=>{t.addEventListener("click",s=>{s.preventDefault();const i=t.getAttribute("data-nav");window.location.hash=i,window.scrollTo({top:0,behavior:"smooth"})})})}let n=[],l=0;function E(e,t=0){n=e,l=t;const s=document.getElementById("lightbox-overlay");s.classList.remove("hidden"),s.innerHTML=`
     <span class="lightbox-close" id="lightbox-close">✕</span>
     <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
-    <img class="lightbox-image" src="${n[r].src}" alt="${n[r].title||""}" />
+    <img class="lightbox-image" src="${n[l].src}" alt="${n[l].title||""}" />
     <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
-    <div class="lightbox-counter">${r+1} / ${n.length}</div>
-  `,requestAnimationFrame(()=>s.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",u),s.addEventListener("click",o=>{o.target===s&&u()}),document.getElementById("lightbox-prev").addEventListener("click",o=>{o.stopPropagation(),p(-1)}),document.getElementById("lightbox-next").addEventListener("click",o=>{o.stopPropagation(),p(1)}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function p(e){r=(r+e+n.length)%n.length;const t=document.querySelector(".lightbox-image"),s=document.querySelector(".lightbox-counter");t.style.opacity="0",setTimeout(()=>{t.src=n[r].src,t.alt=n[r].title||"",s.textContent=`${r+1} / ${n.length}`,t.style.opacity="1"},150)}function f(e){e.key==="Escape"&&u(),e.key==="ArrowLeft"&&p(-1),e.key==="ArrowRight"&&p(1)}function u(){const e=document.getElementById("lightbox-overlay");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}function E(e){const t=document.getElementById("video-modal");t.classList.remove("hidden"),t.innerHTML=`
+    <div class="lightbox-counter">${l+1} / ${n.length}</div>
+  `,requestAnimationFrame(()=>s.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",h),s.addEventListener("click",i=>{i.target===s&&h()}),document.getElementById("lightbox-prev").addEventListener("click",i=>{i.stopPropagation(),p(-1)}),document.getElementById("lightbox-next").addEventListener("click",i=>{i.stopPropagation(),p(1)}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function p(e){l=(l+e+n.length)%n.length;const t=document.querySelector(".lightbox-image"),s=document.querySelector(".lightbox-counter");t.style.opacity="0",setTimeout(()=>{t.src=n[l].src,t.alt=n[l].title||"",s.textContent=`${l+1} / ${n.length}`,t.style.opacity="1"},150)}function f(e){e.key==="Escape"&&h(),e.key==="ArrowLeft"&&p(-1),e.key==="ArrowRight"&&p(1)}function h(){const e=document.getElementById("lightbox-overlay");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}function L(e){const t=document.getElementById("video-modal");t.classList.remove("hidden"),t.innerHTML=`
     <div class="video-modal-inner">
       <span class="video-modal-close" id="video-close">✕</span>
       <iframe 
@@ -191,12 +191,12 @@
         </div>
       </section>
     </div>
-  `}const M=["All","Events","Behind the Scenes","Band Photos","Rehearsals"],y=[{src:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800",thumb:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400",title:"Revels 2023",category:"Events",date:"March 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",thumb:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",title:"Soundcheck Session",category:"Behind the Scenes",date:"May 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",thumb:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400",title:"Lead Guitar Solo",category:"Events",date:"August 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",thumb:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=400",title:"Crowd at Annual Fest",category:"Events",date:"October 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800",thumb:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400",title:"Studio Recording",category:"Behind the Scenes",date:"November 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",thumb:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400",title:"Band Photo — Outdoors",category:"Band Photos",date:"January 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",thumb:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",title:"Acoustic Rehearsal",category:"Rehearsals",date:"February 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",thumb:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",title:"Fusion Night",category:"Events",date:"March 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=800",thumb:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=400",title:"Backstage Moments",category:"Behind the Scenes",date:"April 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",thumb:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",title:"Full Band Setup",category:"Band Photos",date:"May 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=800",thumb:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=400",title:"Tabla Close-Up",category:"Rehearsals",date:"June 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",thumb:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",title:"Pre-show Huddle",category:"Behind the Scenes",date:"July 2024",aspectRatio:"landscape"}];function T(){const e=M.map((s,o)=>`
-    <button class="filter-tab ${o===0?"active":""}" data-filter="${s==="All"?"all":s}">
+  `}const M=["All","Events","Behind the Scenes","Band Photos","Rehearsals"],y=[{src:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800",thumb:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400",title:"Revels 2023",category:"Events",date:"March 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",thumb:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",title:"Soundcheck Session",category:"Behind the Scenes",date:"May 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",thumb:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400",title:"Lead Guitar Solo",category:"Events",date:"August 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",thumb:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=400",title:"Crowd at Annual Fest",category:"Events",date:"October 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800",thumb:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400",title:"Studio Recording",category:"Behind the Scenes",date:"November 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",thumb:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400",title:"Band Photo — Outdoors",category:"Band Photos",date:"January 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",thumb:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",title:"Acoustic Rehearsal",category:"Rehearsals",date:"February 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",thumb:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",title:"Fusion Night",category:"Events",date:"March 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=800",thumb:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=400",title:"Backstage Moments",category:"Behind the Scenes",date:"April 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",thumb:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",title:"Full Band Setup",category:"Band Photos",date:"May 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=800",thumb:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=400",title:"Tabla Close-Up",category:"Rehearsals",date:"June 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",thumb:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",title:"Pre-show Huddle",category:"Behind the Scenes",date:"July 2024",aspectRatio:"landscape"}];function T(){const e=M.map((s,i)=>`
+    <button class="filter-tab ${i===0?"active":""}" data-filter="${s==="All"?"all":s}">
       ${s}
     </button>
-  `).join(""),t=y.map((s,o)=>`
-    <div class="gallery-item reveal" data-category="${s.category}" onclick="window.appAPI.openLightbox(${o})">
+  `).join(""),t=y.map((s,i)=>`
+    <div class="gallery-item reveal" data-category="${s.category}" onclick="window.appAPI.openLightbox(${i})">
       <img src="${s.thumb}" alt="${s.title}" loading="lazy" />
       <div class="gallery-item-overlay">
         <div class="gallery-item-info">
@@ -205,7 +205,7 @@
         </div>
       </div>
     </div>
-  `).join("");return setTimeout(R,100),`
+  `).join("");return setTimeout(B,100),`
     <div class="page-enter">
       <section class="gallery-hero grain-overlay">
         <div class="container reveal">
@@ -226,7 +226,7 @@
         </div>
       </section>
     </div>
-  `}function R(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="scale(1)"},50)):(a.style.opacity="0",a.style.transform="scale(0.8)",setTimeout(()=>{a.style.display="none"},300))})})})}const B=[{name:"Arjun Mehta",role:"Lead Vocals & Harmonium",photo:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face",quote:"Music is the bridge between the soul and the universe.",instagram:"#"},{name:"Priya Sharma",role:"Tabla & Percussion",photo:"https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face",quote:"Every beat tells a story waiting to be heard.",instagram:"#"},{name:"Rohan Kulkarni",role:"Lead Guitar & Backing Vocals",photo:"https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face",quote:"Fusion is not mixing genres — it's finding where they already overlap.",instagram:"#"},{name:"Kavya Nair",role:"Bass Guitar",photo:"https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face",quote:"The bass is the heartbeat of every arrangement.",instagram:"#"},{name:"Siddharth Rao",role:"Keys & Synth",photo:"https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face",quote:"When ragas meet synthesizers, magic happens.",instagram:"#"},{name:"Ananya Desai",role:"Flute & Vocals",photo:"https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face",quote:"The flute carries the whisper of ancient melodies into modern soundscapes.",instagram:"#"},{name:"Vikram Das",role:"Drums",photo:"https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face",quote:"Rhythm is the language that needs no translation.",instagram:"#"}];function P(){return`
+  `}function B(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");t.forEach(a=>{i==="all"||a.getAttribute("data-category")===i?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="scale(1)"},50)):(a.style.opacity="0",a.style.transform="scale(0.8)",setTimeout(()=>{a.style.display="none"},300))})})})}const P=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Where raga meets rhythm, where tradition meets today.",instagram:"#"}];function R(){return`
     <div class="page-enter">
       <section class="about-hero grain-overlay">
         <div class="container reveal">
@@ -250,7 +250,7 @@
           </div>
           
           <div class="members-grid stagger-children">
-            ${B.map(t=>`
+            ${P.map(t=>`
     <div class="member-card reveal-scale">
       <div class="member-photo-wrapper">
         <img src="${t.photo}" alt="${t.name}" class="member-photo" loading="lazy" />
@@ -280,15 +280,15 @@
         </div>
       </section>
     </div>
-  `}const q=[{date:"August 2021",title:"The Beginning",description:"Seven.84 was born in the corridors of MIT Manipal, when a group of music enthusiasts decided to fuse Hindustani classical with contemporary sounds.",image:null},{date:"November 2021",title:"First Jam Session",description:"Our first official jam session at the college music room. Six hours of pure experimentation with ragas, grooves, and zero sleep.",image:null},{date:"February 2022",title:"Debut Performance — Revels",description:"Our first stage performance at MIT's annual cultural fest Revels. The crowd's response was beyond anything we had imagined.",image:null},{date:"July 2022",title:"Original Compositions Begin",description:"Started working on our first original compositions, blending Hindustani ragas with progressive rock arrangements.",image:null},{date:"October 2022",title:"Inter-College Circuit",description:"Performed at multiple inter-college competitions across Karnataka, winning hearts and a few trophies along the way.",image:null},{date:"March 2023",title:"Workshop with Agam",description:"A dream come true — attended a masterclass workshop conducted by members of Agam. Learned invaluable lessons about arrangement and stage presence.",image:null},{date:"August 2023",title:"First YouTube Release",description:'Released our first performance video on YouTube. The fusion of "Vande Mataram" with progressive rock elements received overwhelming response.',image:null},{date:"January 2024",title:"Growing Stronger",description:"Expanded the band's lineup, refined our sound, and began performing regularly at venues across Manipal and Udupi.",image:null},{date:"2024 — Present",title:"The Journey Continues",description:"Continuing to push boundaries, create original music, and spread the fusion wave from MIT Manipal to the world.",image:null}],F=[{number:50,suffix:"+",label:"Live Performances"},{number:7,suffix:"",label:"Band Members"},{number:3,suffix:"+",label:"Years of Music"},{number:1e4,suffix:"+",label:"Hearts Touched"}];function C(){const e=F.map(s=>`
+  `}const F=[{date:"August 2021",title:"The Beginning",description:"Seven.84 was born in the corridors of MIT Manipal, when a group of music enthusiasts decided to fuse Hindustani classical with contemporary sounds.",image:null},{date:"November 2021",title:"First Jam Session",description:"Our first official jam session at the college music room. Six hours of pure experimentation with ragas, grooves, and zero sleep.",image:null},{date:"February 2022",title:"Debut Performance — Revels",description:"Our first stage performance at MIT's annual cultural fest Revels. The crowd's response was beyond anything we had imagined.",image:null},{date:"July 2022",title:"Original Compositions Begin",description:"Started working on our first original compositions, blending Hindustani ragas with progressive rock arrangements.",image:null},{date:"October 2022",title:"Inter-College Circuit",description:"Performed at multiple inter-college competitions across Karnataka, winning hearts and a few trophies along the way.",image:null},{date:"March 2023",title:"Workshop with Agam",description:"A dream come true — attended a masterclass workshop conducted by members of Agam. Learned invaluable lessons about arrangement and stage presence.",image:null},{date:"August 2023",title:"First YouTube Release",description:'Released our first performance video on YouTube. The fusion of "Vande Mataram" with progressive rock elements received overwhelming response.',image:null},{date:"January 2024",title:"Growing Stronger",description:"Expanded the band's lineup, refined our sound, and began performing regularly at venues across Manipal and Udupi.",image:null},{date:"2024 — Present",title:"The Journey Continues",description:"Continuing to push boundaries, create original music, and spread the fusion wave from MIT Manipal to the world.",image:null}],q=[{number:50,suffix:"+",label:"Live Performances"},{number:7,suffix:"",label:"Band Members"},{number:3,suffix:"+",label:"Years of Music"},{number:1e4,suffix:"+",label:"Hearts Touched"}];function C(){const e=q.map(s=>`
     <div class="stat-item reveal-scale">
       <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">0</div>
       <div class="stat-label">${s.label}</div>
     </div>
-  `).join(""),t=q.map((s,o)=>`
+  `).join(""),t=F.map((s,i)=>`
       <div class="timeline-item">
         <div class="timeline-dot"></div>
-        <div class="timeline-content ${o%2!==0?"reveal-left":"reveal-right"}">
+        <div class="timeline-content ${i%2!==0?"reveal-left":"reveal-right"}">
           <div class="timeline-date">${s.date}</div>
           <h3 class="timeline-title">${s.title}</h3>
           <p class="timeline-description">${s.description}</p>
@@ -322,11 +322,11 @@
         </div>
       </section>
     </div>
-  `}function O(){const e=c.find(a=>a.featured)||c[0],t=c.filter(a=>a.id!==e.id),s=A.map((a,i)=>`
-    <button class="filter-tab ${i===0?"active":""}" data-filter="${a.id}">
+  `}function O(){const e=c.find(a=>a.featured)||c[0],t=c.filter(a=>a.id!==e.id),s=A.map((a,o)=>`
+    <button class="filter-tab ${o===0?"active":""}" data-filter="${a.id}">
       ${a.label}
     </button>
-  `).join(""),o=t.map(a=>`
+  `).join(""),i=t.map(a=>`
     <div class="performance-card reveal" data-category="${a.category}" onclick="window.appAPI.openVideo('${a.youtubeId}')">
       <div class="performance-thumb-wrapper">
         <img src="https://img.youtube.com/vi/${a.youtubeId}/maxresdefault.jpg" alt="${a.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
@@ -378,12 +378,12 @@
           </div>
           
           <div class="performances-grid stagger-children" id="video-grid">
-            ${o}
+            ${i}
           </div>
         </div>
       </section>
     </div>
-  `}function Q(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="translateY(0)"},50)):(a.style.opacity="0",a.style.transform="translateY(10px)",setTimeout(()=>{a.style.display="none"},300))})})})}const d=[{id:"revels-2024",name:"Revels 2024 (Proshow Opening)",type:"exhibition",date:"April 2024",venue:"MIT Manipal (Quadrangle)",rank:null,description:"Opening the main Proshow night at Revels 2024 in front of 5000+ people. We played a 45-minute set featuring our best Hindustani-Rock fusions.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1470&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",caption:"On Stage"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",caption:"Crowd view"},{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Lead singer"},{src:"https://images.unsplash.com/photo-1493225457124-a1a2a5f51608?w=800",caption:"Guitar Solo"}]},{id:"indian-ocean-opener",name:"Opening for Indian Ocean",type:"exhibition",date:"February 2024",venue:"KMC Greens",rank:null,description:"An absolute dream come true. We had the honor of opening the stage for the legendary Indian Ocean. A night of pure musical magic.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"battle-of-bands-2023",name:"Battle of the Bands",type:"competition",date:"November 2023",venue:"NITK Surathkal",rank:"1st Place",description:"Competed against 15 amazing bands from across South India and secured the 1st position with our original composition.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1598387181032-a310322db565?q=80&w=1526&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1598387181032-a310322db565?w=800",caption:"Trophy Celebration"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",caption:"Performance"}]},{id:"technomeet-2023",name:"TechnoMeet Cultural Night",type:"competition",date:"September 2023",venue:"VIT Vellore",rank:"Runners Up",description:"A high-energy performance securing 2nd place. The crowd energy was unmatched during our closing track.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"first-gig",name:"First Public Gig",type:"exhibition",date:"March 2023",venue:"Edge Cafe, Manipal",rank:null,description:"Where it all started. An intimate gig introducing the Seven.84 sound to our local supporters.",youtubeId:null,thumbnail:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1374&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Small crowd"}]}];function H(e){const t=e?e.get("id"):null;return t?V(t):j()}function j(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
+  `}function Q(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");t.forEach(a=>{i==="all"||a.getAttribute("data-category")===i?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="translateY(0)"},50)):(a.style.opacity="0",a.style.transform="translateY(10px)",setTimeout(()=>{a.style.display="none"},300))})})})}const d=[{id:"revels-2024",name:"Revels 2024 (Proshow Opening)",type:"exhibition",date:"April 2024",venue:"MIT Manipal (Quadrangle)",rank:null,description:"Opening the main Proshow night at Revels 2024 in front of 5000+ people. We played a 45-minute set featuring our best Hindustani-Rock fusions.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1470&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",caption:"On Stage"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",caption:"Crowd view"},{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Lead singer"},{src:"https://images.unsplash.com/photo-1493225457124-a1a2a5f51608?w=800",caption:"Guitar Solo"}]},{id:"indian-ocean-opener",name:"Opening for Indian Ocean",type:"exhibition",date:"February 2024",venue:"KMC Greens",rank:null,description:"An absolute dream come true. We had the honor of opening the stage for the legendary Indian Ocean. A night of pure musical magic.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"battle-of-bands-2023",name:"Battle of the Bands",type:"competition",date:"November 2023",venue:"NITK Surathkal",rank:"1st Place",description:"Competed against 15 amazing bands from across South India and secured the 1st position with our original composition.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1598387181032-a310322db565?q=80&w=1526&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1598387181032-a310322db565?w=800",caption:"Trophy Celebration"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",caption:"Performance"}]},{id:"technomeet-2023",name:"TechnoMeet Cultural Night",type:"competition",date:"September 2023",venue:"VIT Vellore",rank:"Runners Up",description:"A high-energy performance securing 2nd place. The crowd energy was unmatched during our closing track.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"first-gig",name:"First Public Gig",type:"exhibition",date:"March 2023",venue:"Edge Cafe, Manipal",rank:null,description:"Where it all started. An intimate gig introducing the Seven.84 sound to our local supporters.",youtubeId:null,thumbnail:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1374&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Small crowd"}]}];function H(e){const t=e?e.get("id"):null;return t?z(t):j()}function j(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
     <div class="page-container page-events fade-in">
       <header class="section-hero">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Events</span></h1>
@@ -417,12 +417,12 @@
         </div>
       </section>
     </div>
-  `}function V(e){const t=d.find(o=>o.id===e);if(!t)return`
+  `}function z(e){const t=d.find(i=>i.id===e);if(!t)return`
       <div class="page-container page-events fade-in text-center" style="padding: 150px 20px;">
         <h1 class="font-display size-xl">Event Not Found</h1>
         <a href="#events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
       </div>
-    `;const s=t.photos&&t.photos.length>0;return window.appAPI.openEventLightbox=o=>{window.appAPI.openEventSpecificLightbox(t.photos,o)},`
+    `;const s=t.photos&&t.photos.length>0;return window.appAPI.openEventLightbox=i=>{window.appAPI.openEventSpecificLightbox(t.photos,i)},`
     <div class="page-container page-event-detail fade-in">
       <button class="back-button btn btn-outline slide-up" onclick="window.location.hash = '#events'">
         ← Back to Events
@@ -455,11 +455,11 @@
         <section class="event-gallery slide-up" style="animation-delay: 0.3s">
           <h2 class="font-display size-xl mb-xl">Event <span class="text-saffron">Gallery</span></h2>
           <div class="gallery-masonry" style="--columns: 3;">
-            ${t.photos.map((o,a)=>`
+            ${t.photos.map((i,a)=>`
               <div class="gallery-item" onclick="appAPI.openEventLightbox(${a})">
-                <img src="${o.src}" alt="${o.caption}" loading="lazy" />
+                <img src="${i.src}" alt="${i.caption}" loading="lazy" />
                 <div class="gallery-overlay">
-                  <span class="font-display">${o.caption}</span>
+                  <span class="font-display">${i.caption}</span>
                 </div>
               </div>
             `).join("")}
@@ -467,4 +467,4 @@
         </section>
       `:""}
     </div>
-  `}window.appAPI={openLightbox:e=>L(y,e),openVideo:e=>E(e)};const h={"":S,gallery:T,about:P,journey:C,performances:O,events:H};function v(){const e=document.getElementById("page-content"),t=window.location.hash.slice(1),[s,o]=t.split("?");if(s&&!h[s]){window.location.hash="";return}const a=new URLSearchParams(o||"");e.style.opacity="0",setTimeout(()=>{const i=h[s]||h[""];e.innerHTML=i(a),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function z(){w(),I(),window.addEventListener("hashchange",v),v()}document.addEventListener("DOMContentLoaded",z);
+  `}window.appAPI={openLightbox:e=>E(y,e),openVideo:e=>L(e)};const u={"":S,gallery:T,about:R,journey:C,performances:O,events:H};function g(){const e=document.getElementById("page-content"),t=window.location.hash.slice(1),[s,i]=t.split("?");if(s&&!u[s]){window.location.hash="";return}const a=new URLSearchParams(i||"");e.style.opacity="0",setTimeout(()=>{const o=u[s]||u[""];e.innerHTML=o(a),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function N(){w(),I(),window.addEventListener("hashchange",g),g()}document.addEventListener("DOMContentLoaded",N);
