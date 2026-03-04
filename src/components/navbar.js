@@ -1,11 +1,11 @@
 const pages = [
   { path: '', label: 'Home' },
   { path: 'gallery', label: 'Gallery' },
-  { path: 'about', label: 'About Us' },
-  { path: 'journey', label: 'Our Journey' },
   { path: 'events', label: 'Events' },
-  { path: 'results', label: 'Results' },
   { path: 'performances', label: 'Performances' },
+  { path: 'results', label: 'Results' },
+  { path: 'journey', label: 'Our Journey' },
+  { path: 'about', label: 'About Us' },
 ];
 
 export function renderNavbar() {
