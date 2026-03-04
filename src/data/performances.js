@@ -88,6 +88,5 @@ export const performances = [
 export const performanceCategories = [
   { id: 'all', label: 'All' },
   { id: 'live', label: 'Live Performances' },
-  { id: 'original', label: 'Originals' },
   { id: 'cover', label: 'Covers & Mashups' },
 ];

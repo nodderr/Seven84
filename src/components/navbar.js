@@ -3,6 +3,7 @@ const pages = [
   { path: 'gallery', label: 'Gallery' },
   { path: 'about', label: 'About Us' },
   { path: 'journey', label: 'Our Journey' },
+  { path: 'events', label: 'Events' },
   { path: 'performances', label: 'Performances' },
 ];
 
