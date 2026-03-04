@@ -10,7 +10,9 @@
 /* ── Timeline ── */
 .timeline {
   position: relative;
-  padding: var(--space-xl) 0;
+  padding: var(--space-xl) var(--space-xl);
+  max-width: var(--container-width, 1000px);
+  margin: 0 auto;
 }
 
 .timeline::before {

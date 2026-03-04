@@ -1,6 +1,10 @@
 .page-events {
   padding-top: var(--space-4xl);
   padding-bottom: var(--space-4xl);
+  max-width: var(--container-width, 1200px);
+  margin: 0 auto;
+  padding-left: var(--space-xl);
+  padding-right: var(--space-xl);
 }
 
 .events-grid {

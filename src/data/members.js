@@ -1,51 +1,9 @@
 export const members = [
   {
-    name: 'Arjun Mehta',
-    role: 'Lead Vocals & Harmonium',
-    photo: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-    quote: 'Music is the bridge between the soul and the universe.',
+    name: 'Nishant Verma',
+    role: 'Keys, Bass, Guitars, Vocals',
+    photo: 'https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop', // Placeholder silhouette/musician
+    quote: 'Where raga meets rhythm, where tradition meets today.',
     instagram: '#',
-  },
-  {
-    name: 'Priya Sharma',
-    role: 'Tabla & Percussion',
-    photo: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
-    quote: 'Every beat tells a story waiting to be heard.',
-    instagram: '#',
-  },
-  {
-    name: 'Rohan Kulkarni',
-    role: 'Lead Guitar & Backing Vocals',
-    photo: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&crop=face',
-    quote: 'Fusion is not mixing genres — it\'s finding where they already overlap.',
-    instagram: '#',
-  },
-  {
-    name: 'Kavya Nair',
-    role: 'Bass Guitar',
-    photo: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-    quote: 'The bass is the heartbeat of every arrangement.',
-    instagram: '#',
-  },
-  {
-    name: 'Siddharth Rao',
-    role: 'Keys & Synth',
-    photo: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-    quote: 'When ragas meet synthesizers, magic happens.',
-    instagram: '#',
-  },
-  {
-    name: 'Ananya Desai',
-    role: 'Flute & Vocals',
-    photo: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&crop=face',
-    quote: 'The flute carries the whisper of ancient melodies into modern soundscapes.',
-    instagram: '#',
-  },
-  {
-    name: 'Vikram Das',
-    role: 'Drums',
-    photo: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=400&fit=crop&crop=face',
-    quote: 'Rhythm is the language that needs no translation.',
-    instagram: '#',
-  },
+  }
 ];
