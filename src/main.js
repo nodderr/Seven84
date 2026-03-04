@@ -14,6 +14,7 @@ import { renderAbout } from './pages/about.js';
 import { renderJourney } from './pages/journey.js';
 import { renderPerformances } from './pages/performances.js';
 import { renderEvents } from './pages/events.js';
+import { renderResults } from './pages/results.js';
 
 // Data exports for global API
 import { galleryItems } from './data/gallery.js';
@@ -31,6 +32,7 @@ const routes = {
   'journey': renderJourney,
   'performances': renderPerformances,
   'events': renderEvents,
+  'results': renderResults,
 };
 
 function router() {

@@ -21,6 +21,7 @@ export function renderFooter() {
             <h4>Navigate</h4>
             <a href="#" data-nav="">Home</a>
             <a href="#events" data-nav="events">Events</a>
+            <a href="#results" data-nav="results">Results</a>
             <a href="#gallery" data-nav="gallery">Gallery</a>
             <a href="#about" data-nav="about">About Us</a>
             <a href="#journey" data-nav="journey">Our Journey</a>
