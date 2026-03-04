@@ -1,4 +1,4 @@
-(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=s(a);fetch(a.href,i)}})();const g=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"about",label:"About Us"},{path:"journey",label:"Our Journey"},{path:"events",label:"Events"},{path:"performances",label:"Performances"}];function w(){const e=document.getElementById("navbar"),t=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))o(a);new MutationObserver(a=>{for(const i of a)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&o(r)}).observe(document,{childList:!0,subtree:!0});function s(a){const i={};return a.integrity&&(i.integrity=a.integrity),a.referrerPolicy&&(i.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?i.credentials="include":a.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function o(a){if(a.ep)return;a.ep=!0;const i=s(a);fetch(a.href,i)}})();const g=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"about",label:"About Us"},{path:"journey",label:"Our Journey"},{path:"events",label:"Events"},{path:"results",label:"Results"},{path:"performances",label:"Performances"}];function w(){const e=document.getElementById("navbar"),t=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
     <div class="navbar-inner">
       <a class="navbar-logo" data-nav="">
         <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: var(--text-2xl); color: var(--cream);">Seven.84</span>
@@ -41,6 +41,7 @@
             <h4>Navigate</h4>
             <a href="#" data-nav="">Home</a>
             <a href="#events" data-nav="events">Events</a>
+            <a href="#results" data-nav="results">Results</a>
             <a href="#gallery" data-nav="gallery">Gallery</a>
             <a href="#about" data-nav="about">About Us</a>
             <a href="#journey" data-nav="journey">Our Journey</a>
@@ -205,7 +206,7 @@
         </div>
       </div>
     </div>
-  `).join("");return setTimeout(q,100),`
+  `).join("");return setTimeout(R,100),`
     <div class="page-enter">
       <section class="gallery-hero grain-overlay">
         <div class="container reveal">
@@ -226,7 +227,7 @@
         </div>
       </section>
     </div>
-  `}function q(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="scale(1)"},50)):(a.style.opacity="0",a.style.transform="scale(0.8)",setTimeout(()=>{a.style.display="none"},300))})})})}const B=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"}];function P(){return`
+  `}function R(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="scale(1)"},50)):(a.style.opacity="0",a.style.transform="scale(0.8)",setTimeout(()=>{a.style.display="none"},300))})})})}const q=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"}];function B(){return`
     <div class="page-enter">
       <section class="about-hero grain-overlay">
         <div class="container reveal">
@@ -250,7 +251,7 @@
           </div>
           
           <div class="members-grid stagger-children">
-            ${B.map(t=>`
+            ${q.map(t=>`
     <div class="member-card reveal-scale">
       <div class="member-photo-wrapper">
         <img src="${t.photo}" alt="${t.name}" class="member-photo" loading="lazy" />
@@ -280,12 +281,12 @@
         </div>
       </section>
     </div>
-  `}const R=[{date:"August 2021",title:"The Beginning",description:"Seven.84 was born in the corridors of MIT Manipal, when a group of music enthusiasts decided to fuse Hindustani classical with contemporary sounds.",image:null},{date:"November 2021",title:"First Jam Session",description:"Our first official jam session at the college music room. Six hours of pure experimentation with ragas, grooves, and zero sleep.",image:null},{date:"February 2022",title:"Debut Performance — Revels",description:"Our first stage performance at MIT's annual cultural fest Revels. The crowd's response was beyond anything we had imagined.",image:null},{date:"July 2022",title:"Original Compositions Begin",description:"Started working on our first original compositions, blending Hindustani ragas with progressive rock arrangements.",image:null},{date:"October 2022",title:"Inter-College Circuit",description:"Performed at multiple inter-college competitions across Karnataka, winning hearts and a few trophies along the way.",image:null},{date:"March 2023",title:"Workshop with Agam",description:"A dream come true — attended a masterclass workshop conducted by members of Agam. Learned invaluable lessons about arrangement and stage presence.",image:null},{date:"August 2023",title:"First YouTube Release",description:'Released our first performance video on YouTube. The fusion of "Vande Mataram" with progressive rock elements received overwhelming response.',image:null},{date:"January 2024",title:"Growing Stronger",description:"Expanded the band's lineup, refined our sound, and began performing regularly at venues across Manipal and Udupi.",image:null},{date:"2024 — Present",title:"The Journey Continues",description:"Continuing to push boundaries, create original music, and spread the fusion wave from MIT Manipal to the world.",image:null}],F=[{number:50,suffix:"+",label:"Live Performances"},{number:7,suffix:"",label:"Band Members"},{number:3,suffix:"+",label:"Years of Music"},{number:1e4,suffix:"+",label:"Hearts Touched"}];function C(){const e=F.map(s=>`
+  `}const P=[{date:"August 2021",title:"The Beginning",description:"Seven.84 was born in the corridors of MIT Manipal, when a group of music enthusiasts decided to fuse Hindustani classical with contemporary sounds.",image:null},{date:"November 2021",title:"First Jam Session",description:"Our first official jam session at the college music room. Six hours of pure experimentation with ragas, grooves, and zero sleep.",image:null},{date:"February 2022",title:"Debut Performance — Revels",description:"Our first stage performance at MIT's annual cultural fest Revels. The crowd's response was beyond anything we had imagined.",image:null},{date:"July 2022",title:"Original Compositions Begin",description:"Started working on our first original compositions, blending Hindustani ragas with progressive rock arrangements.",image:null},{date:"October 2022",title:"Inter-College Circuit",description:"Performed at multiple inter-college competitions across Karnataka, winning hearts and a few trophies along the way.",image:null},{date:"March 2023",title:"Workshop with Agam",description:"A dream come true — attended a masterclass workshop conducted by members of Agam. Learned invaluable lessons about arrangement and stage presence.",image:null},{date:"August 2023",title:"First YouTube Release",description:'Released our first performance video on YouTube. The fusion of "Vande Mataram" with progressive rock elements received overwhelming response.',image:null},{date:"January 2024",title:"Growing Stronger",description:"Expanded the band's lineup, refined our sound, and began performing regularly at venues across Manipal and Udupi.",image:null},{date:"2024 — Present",title:"The Journey Continues",description:"Continuing to push boundaries, create original music, and spread the fusion wave from MIT Manipal to the world.",image:null}],F=[{number:50,suffix:"+",label:"Live Performances"},{number:7,suffix:"",label:"Band Members"},{number:3,suffix:"+",label:"Years of Music"},{number:1e4,suffix:"+",label:"Hearts Touched"}];function C(){const e=F.map(s=>`
     <div class="stat-item reveal-scale">
       <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">0</div>
       <div class="stat-label">${s.label}</div>
     </div>
-  `).join(""),t=R.map((s,o)=>`
+  `).join(""),t=P.map((s,o)=>`
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content ${o%2!==0?"reveal-left":"reveal-right"}">
@@ -340,7 +341,7 @@
         <span class="performance-meta">${a.event} • ${a.date}</span>
       </div>
     </div>
-  `).join("");return setTimeout(Q,100),`
+  `).join("");return setTimeout(j,100),`
     <div class="page-enter">
       <section class="performances-hero grain-overlay">
         <div class="container reveal">
@@ -383,7 +384,7 @@
         </div>
       </section>
     </div>
-  `}function Q(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="translateY(0)"},50)):(a.style.opacity="0",a.style.transform="translateY(10px)",setTimeout(()=>{a.style.display="none"},300))})})})}const d=[{id:"revels-2024",name:"Revels 2024 (Proshow Opening)",type:"exhibition",date:"April 2024",venue:"MIT Manipal (Quadrangle)",rank:null,description:"Opening the main Proshow night at Revels 2024 in front of 5000+ people. We played a 45-minute set featuring our best Hindustani-Rock fusions.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1470&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",caption:"On Stage"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",caption:"Crowd view"},{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Lead singer"},{src:"https://images.unsplash.com/photo-1493225457124-a1a2a5f51608?w=800",caption:"Guitar Solo"}]},{id:"indian-ocean-opener",name:"Opening for Indian Ocean",type:"exhibition",date:"February 2024",venue:"KMC Greens",rank:null,description:"An absolute dream come true. We had the honor of opening the stage for the legendary Indian Ocean. A night of pure musical magic.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"battle-of-bands-2023",name:"Battle of the Bands",type:"competition",date:"November 2023",venue:"NITK Surathkal",rank:"1st Place",description:"Competed against 15 amazing bands from across South India and secured the 1st position with our original composition.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1598387181032-a310322db565?q=80&w=1526&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1598387181032-a310322db565?w=800",caption:"Trophy Celebration"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",caption:"Performance"}]},{id:"technomeet-2023",name:"TechnoMeet Cultural Night",type:"competition",date:"September 2023",venue:"VIT Vellore",rank:"Runners Up",description:"A high-energy performance securing 2nd place. The crowd energy was unmatched during our closing track.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"first-gig",name:"First Public Gig",type:"exhibition",date:"March 2023",venue:"Edge Cafe, Manipal",rank:null,description:"Where it all started. An intimate gig introducing the Seven.84 sound to our local supporters.",youtubeId:null,thumbnail:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1374&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Small crowd"}]}];function j(e){const t=e?e.get("id"):null;return t?V(t):H()}function H(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
+  `}function j(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const o=s.getAttribute("data-filter");t.forEach(a=>{o==="all"||a.getAttribute("data-category")===o?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="translateY(0)"},50)):(a.style.opacity="0",a.style.transform="translateY(10px)",setTimeout(()=>{a.style.display="none"},300))})})})}const d=[{id:"revels-2024",name:"Revels 2024 (Proshow Opening)",type:"exhibition",date:"April 2024",venue:"MIT Manipal (Quadrangle)",rank:null,description:"Opening the main Proshow night at Revels 2024 in front of 5000+ people. We played a 45-minute set featuring our best Hindustani-Rock fusions.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1470&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",caption:"On Stage"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",caption:"Crowd view"},{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Lead singer"},{src:"https://images.unsplash.com/photo-1493225457124-a1a2a5f51608?w=800",caption:"Guitar Solo"}]},{id:"indian-ocean-opener",name:"Opening for Indian Ocean",type:"exhibition",date:"February 2024",venue:"KMC Greens",rank:null,description:"An absolute dream come true. We had the honor of opening the stage for the legendary Indian Ocean. A night of pure musical magic.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"battle-of-bands-2023",name:"Battle of the Bands",type:"competition",date:"November 2023",venue:"NITK Surathkal",rank:"1st Place",description:"Competed against 15 amazing bands from across South India and secured the 1st position with our original composition.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1598387181032-a310322db565?q=80&w=1526&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1598387181032-a310322db565?w=800",caption:"Trophy Celebration"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",caption:"Performance"}]},{id:"technomeet-2023",name:"TechnoMeet Cultural Night",type:"competition",date:"September 2023",venue:"VIT Vellore",rank:"Runners Up",description:"A high-energy performance securing 2nd place. The crowd energy was unmatched during our closing track.",youtubeId:"dQw4w9WgXcQ",thumbnail:"https://images.unsplash.com/photo-1501612780327-45045538702b?q=80&w=1470&auto=format&fit=crop",photos:[]},{id:"first-gig",name:"First Public Gig",type:"exhibition",date:"March 2023",venue:"Edge Cafe, Manipal",rank:null,description:"Where it all started. An intimate gig introducing the Seven.84 sound to our local supporters.",youtubeId:null,thumbnail:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?q=80&w=1374&auto=format&fit=crop",photos:[{src:"https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800",caption:"Small crowd"}]}];function Q(e){const t=e?e.get("id"):null;return t?H(t):V()}function V(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
     <div class="page-container page-events fade-in">
       <header class="section-hero">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Events</span></h1>
@@ -417,7 +418,7 @@
         </div>
       </section>
     </div>
-  `}function V(e){const t=d.find(o=>o.id===e);if(!t)return`
+  `}function H(e){const t=d.find(o=>o.id===e);if(!t)return`
       <div class="page-container page-events fade-in text-center" style="padding: 150px 20px;">
         <h1 class="font-display size-xl">Event Not Found</h1>
         <a href="#events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
@@ -467,4 +468,44 @@
         </section>
       `:""}
     </div>
-  `}window.appAPI={openLightbox:e=>L(y,e),openVideo:e=>E(e)};const u={"":S,gallery:M,about:P,journey:C,performances:O,events:j};function v(){const e=document.getElementById("page-content"),t=window.location.hash.slice(1),[s,o]=t.split("?");if(s&&!u[s]){window.location.hash="";return}const a=new URLSearchParams(o||"");e.style.opacity="0",setTimeout(()=>{const i=u[s]||u[""];e.innerHTML=i(a),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function z(){w(),I(),window.addEventListener("hashchange",v),v()}document.addEventListener("DOMContentLoaded",z);
+  `}function z(){const e=d.filter(t=>t.type==="competition");return`
+    <div class="page-container page-results fade-in">
+      <header class="section-hero text-center">
+        <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Results</span></h1>
+        <p class="font-body opacity-80 slide-up" style="animation-delay: 0.1s; max-width: 600px; margin: 0 auto;">
+          An ongoing tally of our competitive journey across various college fests and battle of the bands.
+        </p>
+      </header>
+      
+      <section class="results-table-container slide-up" style="animation-delay: 0.2s">
+        <div class="results-table-wrapper">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Competition</th>
+                <th>Venue</th>
+                <th>Result / Rank</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${e.length>0?e.map(t=>`
+                <tr class="result-row">
+                  <td class="font-accent text-saffron text-nowrap">${t.date}</td>
+                  <td class="font-display size-md text-cream">${t.name}</td>
+                  <td class="opacity-80">${t.venue}</td>
+                  <td>
+                    ${t.rank?`<span class="result-badge ${N(t.rank)}">${t.rank}</span>`:'<span class="opacity-50">—</span>'}
+                  </td>
+                </tr>
+              `).join(""):`
+                <tr>
+                  <td colspan="4" class="text-center opacity-50 py-xl">No competition results available yet.</td>
+                </tr>
+              `}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  `}function N(e){const t=String(e).toLowerCase();return t.includes("1st")||t.includes("winner")||t==="first"?"badge-gold":t.includes("2nd")||t.includes("runner")?"badge-silver":t.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openLightbox:e=>L(y,e),openVideo:e=>E(e)};const u={"":S,gallery:M,about:B,journey:C,performances:O,events:Q,results:z};function v(){const e=document.getElementById("page-content"),t=window.location.hash.slice(1),[s,o]=t.split("?");if(s&&!u[s]){window.location.hash="";return}const a=new URLSearchParams(o||"");e.style.opacity="0",setTimeout(()=>{const i=u[s]||u[""];e.innerHTML=i(a),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function G(){w(),I(),window.addEventListener("hashchange",v),v()}document.addEventListener("DOMContentLoaded",G);
