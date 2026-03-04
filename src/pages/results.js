@@ -21,6 +21,7 @@ export function renderResults() {
             <thead>
               <tr>
                 <th>Date</th>
+                <th>Time</th>
                 <th>Competition</th>
                 <th>Venue</th>
                 <th>Result / Rank</th>
@@ -32,6 +33,7 @@ export function renderResults() {
                   <td class="font-accent text-saffron text-nowrap">
                     <span class="dropdown-icon">▶</span> ${result.date}
                   </td>
+                  <td class="font-accent text-saffron text-nowrap">${result.time || ''}</td>
                   <td class="font-display size-md text-cream">${result.name}</td>
                   <td class="opacity-80">${result.venue}</td>
                   <td>
@@ -41,7 +43,7 @@ export function renderResults() {
                   </td>
                 </tr>
                 <tr id="details-${index}" class="result-details-row" style="display: none;">
-                  <td colspan="4" class="result-details-cell">
+                  <td colspan="5" class="result-details-cell">
                     <div class="result-details-content">
                       <div class="result-members">
                         <strong class="text-saffron">Lineup:</strong> 
@@ -55,7 +57,7 @@ export function renderResults() {
                 </tr>
               `).join('') : `
                 <tr>
-                  <td colspan="4" class="text-center opacity-50 py-xl">No competition results available yet.</td>
+                  <td colspan="5" class="text-center opacity-50 py-xl">No competition results available yet.</td>
                 </tr>
               `}
             </tbody>

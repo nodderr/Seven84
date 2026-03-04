@@ -40,5 +40,12 @@ export const members = [
     photo: 'https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop',
     quote: 'Test',
     instagram: '#',
+  },
+  {
+    name: 'Chaitanya Pandey',
+    role: 'Guitar, Vocals',
+    photo: 'https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop',
+    quote: 'Test',
+    instagram: '#',
   }
 ];
