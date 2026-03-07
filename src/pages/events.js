@@ -13,8 +13,7 @@ export function renderEvents(params) {
 }
 
 function renderEventCatalog() {
-  const competitions = eventsData.filter(e => e.type === 'competition');
-  const exhibitions = eventsData.filter(e => e.type === 'exhibition');
+  const displayEvents = eventsData.filter(e => e.youtubeId || e.thumbnail || (e.photos && e.photos.length > 0));
   
   return `
     <div class="page-container page-events fade-in">
@@ -29,7 +28,7 @@ function renderEventCatalog() {
         <!-- Optional Tabs for Filtering if needed later, keeping it unified for now -->
         
         <div class="events-grid">
-          ${eventsData.map(event => `
+          ${displayEvents.map(event => `
             <div class="event-card" onclick="window.location.hash = '#events?id=${event.id}'">
               <div class="event-thumbnail">
                 <img src="${event.thumbnail}" alt="${event.name}" loading="lazy" />
