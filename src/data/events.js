@@ -9,7 +9,7 @@ export const eventsData = [
     rank: '5th',
     description: 'Participated in the Indian Rock competition at Bits Goa Waves.',
     youtubeId: null,
-    thumbnail: './gallery/events/waves-24-indian-rock/thumbnail/DSC_0006_1.webp',
+    thumbnail: './gallery/events/waves-24-indian-rock/thumbnail/DSC_0004.webp',
     photos: [
       { src: './gallery/events/waves-24-indian-rock/DSC_0002_1.webp' },
       { src: './gallery/events/waves-24-indian-rock/DSC_0003.webp' },
@@ -99,7 +99,7 @@ export const eventsData = [
     rank: '2nd Place',
     description: 'Secured 2nd position in Silence of the Amps at Bits Goa Waves.',
     youtubeId: null,
-    thumbnail: './gallery/events/waves-24-silence-amps/thumbnail/7M4A7414.webp',
+    thumbnail: './gallery/events/waves-24-silence-amps/thumbnail/IMG-20231029-WA0101.webp',
     photos: [
       { src: './gallery/events/waves-24-silence-amps/7M4A7415.webp' },
       { src: './gallery/events/waves-24-silence-amps/7M4A7416.webp' },
