@@ -121,7 +121,7 @@ export const eventsData = [
     rank: '3rd Place',
     description: 'Secured 3rd position in Eastern Solo Vocals at Bits Goa Waves.',
     youtubeId: null,
-    thumbnail: './gallery/events/Eastern Solo Vocals - Waves 23/thumbnail/',
+    thumbnail: null,
     photos: [],
     bandMembers: ['Vansh Srivastava']
   },
@@ -135,7 +135,7 @@ export const eventsData = [
     rank: '3rd Place',
     description: "Participated and secured 3rd place in the Battle of Bands at TAPMI's flagship fest Atharva'37.",
     youtubeId: 'a_520VVl9Ro',
-    thumbnail: './gallery/events/TAPMI Atharva 37/thumbnail/',
+    thumbnail: './gallery/events/TAPMI Atharva 37/thumbnail/Screenshot 2026-03-07 195459.png',
     photos: [],
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
   },

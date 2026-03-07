@@ -58,9 +58,11 @@ export function renderResults() {
                         <strong class="text-saffron">Lineup:</strong> 
                         <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
                       </div>
-                      <a href="#events?id=${result.id}" class="result-event-link">
-                        View Event Media <span>&rarr;</span>
-                      </a>
+                      ${(result.youtubeId || result.thumbnail || (result.photos && result.photos.length > 0)) ? `
+                        <a href="#events?id=${result.id}" class="result-event-link">
+                          View Event Media <span>&rarr;</span>
+                        </a>
+                      ` : ''}
                     </div>
                   </td>
                 </tr>
