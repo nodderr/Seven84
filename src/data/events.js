@@ -96,7 +96,7 @@ export const eventsData = [
     venue: 'Bits Goa Waves 24',
     rank: '2nd Place',
     description: 'Secured 2nd position in Silence of the Amps at Bits Goa Waves.',
-    youtubeId: null,
+    youtubeId: 'S8snpxnyAo8',
     thumbnail: './gallery/events/waves-24-silence-amps/thumbnail/IMG-20231029-WA0101.webp',
     photos: [
       { src: './gallery/events/waves-24-silence-amps/7M4A7415.webp' },
