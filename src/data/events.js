@@ -299,6 +299,34 @@ export const eventsData = [
       { src: './gallery/events/Battle of Bands - NITTE Incridea 24/MVB02282.webp' }
     ],
     bandMembers: ['Nishant Verma', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Milind Konwar', 'Tushar Vikash K']
+  },
+  {
+    id: 'incident-24-pulse',
+    name: "Battle of Bands (Pulse) - Incident'24",
+    type: 'competition',
+    date: '2024',
+    time: 'March 2024',
+    venue: 'NITK Surathkal',
+    rank: 'NA',
+    description: "Participated in the Pulse - Battle of Bands competition at NITK Surathkal's annual fest Incident'24.",
+    youtubeId: 'yhkU7u_LxE8',
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K']
+  },
+  {
+    id: 'incident-24-bandish',
+    name: "Battle of Bands (Bandish) - Incident'24",
+    type: 'competition',
+    date: '2024',
+    time: 'March 2024',
+    venue: 'NITK Surathkal',
+    rank: '3rd Place',
+    description: "Secured 3rd place in the Bandish - Battle of Bands competition at NITK Surathkal's annual fest Incident'24.",
+    youtubeId: 'BM_npwZ8tx0',
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K', 'Vansh Srivastava']
   }
 ];
 

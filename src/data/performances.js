@@ -69,6 +69,26 @@ export const performances = [
     featured: false,
     eventId: 'feb-24-nitte-band-battle',
     bandMembers: ['Nishant Verma', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Milind Konwar', 'Tushar Vikash K']
+  },
+  {
+    id: 8,
+    title: "Battle of Bands (Pulse) - Incident'24",
+    youtubeId: 'yhkU7u_LxE8',
+    category: 'live',
+    date: 'March 2024',
+    featured: false,
+    eventId: 'incident-24-pulse',
+    bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K']
+  },
+  {
+    id: 9,
+    title: "Battle of Bands (Bandish) - Incident'24",
+    youtubeId: 'BM_npwZ8tx0',
+    category: 'live',
+    date: 'March 2024',
+    featured: false,
+    eventId: 'incident-24-bandish',
+    bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K', 'Vansh Srivastava']
   }
 ];
 
