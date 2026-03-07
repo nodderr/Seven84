@@ -166,6 +166,20 @@ export const eventsData = [
       { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.59.09.jpeg' }
     ],
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
+  },
+  {
+    id: 'feb-24-nitte-band-battle',
+    name: "Battle of Bands - NITTE Incridea'24",
+    type: 'competition',
+    date: '2024',
+    time: 'February 2024',
+    venue: 'NITTE Meenakshi',
+    rank: '2nd Place',
+    description: "Secured 2nd place in the high-stakes Battle of Bands at NITTE's annual fest Incridea'24.",
+    youtubeId: '5v_M2xM4pPM',
+    thumbnail: './gallery/events/Battle of Bands - NITTE Incridea 24/thumbnail/',
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Milind Konwar', 'Tushar Vikash K']
   }
 ];
 

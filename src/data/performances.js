@@ -59,6 +59,16 @@ export const performances = [
     featured: false,
     eventId: 'jan-24-chords-band-battle',
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
+  },
+  {
+    id: 7,
+    title: "Battle of Bands - NITTE Incridea'24",
+    youtubeId: '5v_M2xM4pPM',
+    category: 'live',
+    date: 'February 2024',
+    featured: false,
+    eventId: 'feb-24-nitte-band-battle',
+    bandMembers: ['Nishant Verma', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Milind Konwar', 'Tushar Vikash K']
   }
 ];
 

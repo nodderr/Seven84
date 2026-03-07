@@ -61,5 +61,12 @@ export const members = [
     photo: '',
     quote: 'Test',
     instagram: '#',
+  },
+  {
+    name: 'Adithi Angeerasa',
+    role: 'Vocals',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
   }
 ];
