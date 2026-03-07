@@ -1,4 +1,14 @@
 import { performances } from '../data/performances.js';
+import { eventsData } from '../data/events.js';
+
+const getThumbnail = (p) => {
+  if (p.eventId) {
+    const event = eventsData.find(e => e.id === p.eventId);
+    if (event && event.thumbnail) return event.thumbnail;
+  }
+  // Use hqdefault as it's more reliable than maxresdefault for newer/smaller videos
+  return `https://img.youtube.com/vi/${p.youtubeId}/hqdefault.jpg`;
+};
 
 export function renderHome() {
   const latestPerformance = performances.find(p => p.featured) || performances[0] || {
@@ -44,7 +54,7 @@ export function renderHome() {
                 <div class="highlight-card ${idx < 3 || idx >= displayItems.length - 3 ? 'is-clone' : ''}" 
                      data-index="${idx}"
                      onclick="window.appAPI.openVideo('${p.youtubeId}')">
-                  <img src="https://img.youtube.com/vi/${p.youtubeId}/maxresdefault.jpg" alt="${p.title}" loading="lazy" />
+                   <img src="${getThumbnail(p)}" alt="${p.title}" loading="lazy" />
                   <div class="highlight-card-overlay">
                     <h4>${p.title}</h4>
                     <p>${p.date}</p>
@@ -67,7 +77,7 @@ export function renderHome() {
               Experience our latest performance where the soulful melodies of Hindustani classical meet the high-octane energy of modern fusion. 
             </p>
             <div class="featured-video-wrapper" style="margin: 0 auto var(--space-xl);" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">
-              <img src="https://img.youtube.com/vi/${latestPerformance.youtubeId}/maxresdefault.jpg" alt="${latestPerformance.title}" class="featured-video-thumb" />
+               <img src="${getThumbnail(latestPerformance)}" alt="${latestPerformance.title}" class="featured-video-thumb" />
               <div class="featured-play-btn"></div>
             </div>
             <div style="display: flex; gap: 1rem; justify-content: center;">

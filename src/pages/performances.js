@@ -1,5 +1,14 @@
 import { performances, performanceCategories } from '../data/performances.js';
 import { members } from '../data/members.js';
+import { eventsData } from '../data/events.js';
+
+const getThumbnail = (p) => {
+  if (p.eventId) {
+    const event = eventsData.find(e => e.id === p.eventId);
+    if (event && event.thumbnail) return event.thumbnail;
+  }
+  return `https://img.youtube.com/vi/${p.youtubeId}/hqdefault.jpg`;
+};
 
 const getFirstName = (name) => name.split(' ')[0];
 
@@ -24,7 +33,7 @@ export function renderPerformances() {
   const videoItems = gridVideos.map(video => `
     <div class="performance-card reveal" data-category="${video.category}" onclick="window.appAPI.openVideo('${video.youtubeId}')">
       <div class="performance-thumb-wrapper">
-        <img src="https://img.youtube.com/vi/${video.youtubeId}/maxresdefault.jpg" alt="${video.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
+        <img src="${getThumbnail(video)}" alt="${video.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
         <div class="performance-play-overlay">
           <div class="performance-play-icon"></div>
         </div>
@@ -66,7 +75,7 @@ export function renderPerformances() {
             
             <div class="featured-video-wrapper" onclick="window.appAPI.openVideo('${featured.youtubeId}')">
               <!-- Fallback to unspash if youtube ID is invalid placeholder -->
-              <img src="https://img.youtube.com/vi/${featured.youtubeId}/maxresdefault.jpg" alt="${featured.title}" class="featured-video-thumb" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'" />
+              <img src="${getThumbnail(featured)}" alt="${featured.title}" class="featured-video-thumb" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'" />
               <div class="featured-play-btn"></div>
             </div>
             

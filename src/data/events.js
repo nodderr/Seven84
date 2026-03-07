@@ -310,7 +310,7 @@ export const eventsData = [
     rank: 'NA',
     description: "Participated in the Pulse - Battle of Bands competition at NITK Surathkal's annual fest Incident'24.",
     youtubeId: 'yhkU7u_LxE8',
-    thumbnail: './gallery/events/Battle of Bands (Pulse) - Incident 24/thumbnail/Screenshot 2026-03-08 021444.png',
+    thumbnail: './gallery/events/Battle of Bands (Pulse) - Incident 24/thumbnail/Screenshot 2026-03-08 021444.webp',
     photos: [],
     bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K']
   },
