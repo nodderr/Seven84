@@ -20,7 +20,6 @@ import { galleryItems } from './data/gallery.js';
 
 // Global API for inline HTML handlers (onClick)
 window.appAPI = {
-  openLightbox: (index) => openLightbox(galleryItems, index),
   openEventSpecificLightbox: (images, index) => openLightbox(images, index),
   openVideo: (youtubeId) => openVideoModal(youtubeId)
 };
