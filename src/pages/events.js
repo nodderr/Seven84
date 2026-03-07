@@ -115,6 +115,11 @@ function renderEventDetail(eventId) {
               </div>
             `).join('')}
           </div>
+          
+          <div class="event-footer-cta mt-4xl text-center">
+            <p class="opacity-60 mb-md">Want to see more of our music?</p>
+            <a href="#performances" class="btn btn-primary">Explore All Performances</a>
+          </div>
         </section>
       ` : ''}
     </div>

@@ -27,6 +27,11 @@ export function renderPerformances() {
         <div class="performer-tags">
           ${(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
         </div>
+        ${video.eventId ? `
+          <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.location.hash = '#events?id=${video.eventId}'">
+            View Event Details
+          </button>
+        ` : ''}
       </div>
     </div>
   `).join('');
@@ -62,6 +67,11 @@ export function renderPerformances() {
               <div class="performer-tags">
                 ${(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
               </div>
+              ${featured.eventId ? `
+                <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.location.hash = '#events?id=${featured.eventId}'">
+                  View Event Details & Photos
+                </button>
+              ` : ''}
             </div>
           </div>
         </div>

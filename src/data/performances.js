@@ -9,6 +9,7 @@ export const performances = [
     category: 'live',
     date: 'November 2024',
     featured: true,
+    eventId: 'waves-24-indian-rock',
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava', 'Anjishnu Satpathy', 'Milind Konwar']
   },
   {
@@ -18,6 +19,7 @@ export const performances = [
     category: 'live',
     date: 'November 2024',
     featured: false,
+    eventId: 'waves-24-silence-amps',
     bandMembers: ['Nishant Verma', 'Chaitanya Pandey', 'Aryan Raj', 'Vansh Srivastava', 'Tushar Vikash K', 'Milind Konwar']
   },
   {
