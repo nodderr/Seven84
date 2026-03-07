@@ -9,6 +9,7 @@ export const performances = [
     category: 'live',
     date: 'November 2024',
     featured: true,
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava', 'Anjishnu Satpathy', 'Milind Konwar']
   },
   {
     id: 2,
@@ -17,6 +18,7 @@ export const performances = [
     category: 'live',
     date: 'November 2024',
     featured: false,
+    bandMembers: ['Nishant Verma', 'Chaitanya Pandey', 'Aryan Raj', 'Vansh Srivastava', 'Tushar Vikash K', 'Milind Konwar']
   }
 ];
 

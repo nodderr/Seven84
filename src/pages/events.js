@@ -1,5 +1,7 @@
 import { eventsData } from '../data/events.js';
 
+const getFirstName = (name) => name.split(' ')[0];
+
 export function renderEvents(params) {
   // If ?id= is present, render identical details view
   const eventId = params ? params.get('id') : null;
@@ -96,6 +98,9 @@ function renderEventDetail(eventId) {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
               allowfullscreen>
             </iframe>
+          </div>
+          <div class="performer-tags">
+            ${(event.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
           </div>
         </section>
       ` : ''}

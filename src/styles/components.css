@@ -524,6 +524,26 @@
   transform: rotate(90deg);
 }
 
+/* ── Performer Tags ── */
+.performer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.performer-tag {
+  background: rgba(208, 94, 26, 0.1); /* Saffron with low opacity */
+  border: 1px solid rgba(208, 94, 26, 0.2);
+  color: var(--saffron);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-family: var(--font-accent);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
 /* ══════════════════════════════════════════
    FILTER TABS
    ══════════════════════════════════════════ */

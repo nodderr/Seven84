@@ -1,5 +1,7 @@
 import { performances, performanceCategories } from '../data/performances.js';
 
+const getFirstName = (name) => name.split(' ')[0];
+
 export function renderPerformances() {
   const featured = performances.find(p => p.featured) || performances[0];
   const gridVideos = performances.filter(p => p.id !== featured.id);
@@ -21,7 +23,10 @@ export function renderPerformances() {
       <div class="performance-info">
         <div class="performance-category">${video.category.toUpperCase()}</div>
         <h3 class="performance-title">${video.title}</h3>
-        <span class="performance-meta">${video.event} • ${video.date}</span>
+        <span class="performance-meta">${video.event || ''} ${video.event ? '•' : ''} ${video.date}</span>
+        <div class="performer-tags">
+          ${(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+        </div>
       </div>
     </div>
   `).join('');
@@ -53,7 +58,10 @@ export function renderPerformances() {
             
             <div class="featured-video-info">
               <h3>${featured.title}</h3>
-              <p>${featured.event} • ${featured.date}</p>
+              <p>${featured.event || ''} ${featured.event ? '•' : ''} ${featured.date}</p>
+              <div class="performer-tags">
+                ${(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+              </div>
             </div>
           </div>
         </div>
