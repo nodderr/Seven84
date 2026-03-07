@@ -4,22 +4,22 @@
 export const performances = [
   {
     id: 1,
-    title: 'Indian Rock — Waves 24',
+    title: 'Indian Rock — Waves 23',
     youtubeId: '1ZSdr3wMT70',
     category: 'live',
-    date: 'November 2024',
+    date: 'November 2023',
     featured: true,
-    eventId: 'waves-24-indian-rock',
+    eventId: 'waves-23-indian-rock',
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava', 'Anjishnu Satpathy', 'Milind Konwar']
   },
   {
     id: 2,
-    title: 'Silence of the Amps — Waves 24',
+    title: 'Silence of the Amps — Waves 23',
     youtubeId: 'S8snpxnyAo8',
     category: 'live',
-    date: 'November 2024',
+    date: 'November 2023',
     featured: false,
-    eventId: 'waves-24-silence-amps',
+    eventId: 'waves-23-silence-amps',
     bandMembers: ['Nishant Verma', 'Chaitanya Pandey', 'Aryan Raj', 'Vansh Srivastava', 'Tushar Vikash K', 'Milind Konwar']
   },
   {
@@ -31,6 +31,13 @@ export const performances = [
     featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
   },
+  {
+    id: 4,
+    title: 'Saiyaan - World Health Day',
+    youtubeId: 'rCRwFbHOalw',
+    category: 'cover',
+    date: 'April 2024',
+    featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
   },
   {
