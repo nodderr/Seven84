@@ -60,13 +60,13 @@
         <span>Based out of MIT, Manipal 🎶</span>
       </div>
     </div>
-  `,a.querySelectorAll("[data-nav]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const n=e.getAttribute("data-nav");window.location.hash=n,window.scrollTo({top:0,behavior:"smooth"})})})}let o=[],r=0;function _(a,e=0){o=a,r=e;const t=document.getElementById("lightbox-overlay");t.classList.remove("hidden"),t.innerHTML=`
+  `,a.querySelectorAll("[data-nav]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const n=e.getAttribute("data-nav");window.location.hash=n,window.scrollTo({top:0,behavior:"smooth"})})})}let o=[],r=0;function x(a,e=0){o=a,r=e;const t=document.getElementById("lightbox-overlay");t.classList.remove("hidden"),t.innerHTML=`
     <span class="lightbox-close" id="lightbox-close">✕</span>
     <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
     <img class="lightbox-image" src="${o[r].src}" alt="${o[r].title||""}" />
     <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
     <div class="lightbox-counter">${r+1} / ${o.length}</div>
-  `,requestAnimationFrame(()=>t.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",p),t.addEventListener("click",n=>{n.target===t&&p()}),document.getElementById("lightbox-prev").addEventListener("click",n=>{n.stopPropagation(),d(-1)}),document.getElementById("lightbox-next").addEventListener("click",n=>{n.stopPropagation(),d(1)}),document.addEventListener("keydown",b),document.body.style.overflow="hidden"}function d(a){r=(r+a+o.length)%o.length;const e=document.querySelector(".lightbox-image"),t=document.querySelector(".lightbox-counter");e.style.opacity="0",setTimeout(()=>{e.src=o[r].src,e.alt=o[r].title||"",t.textContent=`${r+1} / ${o.length}`,e.style.opacity="1"},150)}function b(a){a.key==="Escape"&&p(),a.key==="ArrowLeft"&&d(-1),a.key==="ArrowRight"&&d(1)}function p(){const a=document.getElementById("lightbox-overlay");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",b),document.body.style.overflow=""}function x(a){const e=document.getElementById("video-modal");e.classList.remove("hidden"),e.innerHTML=`
+  `,requestAnimationFrame(()=>t.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",p),t.addEventListener("click",n=>{n.target===t&&p()}),document.getElementById("lightbox-prev").addEventListener("click",n=>{n.stopPropagation(),d(-1)}),document.getElementById("lightbox-next").addEventListener("click",n=>{n.stopPropagation(),d(1)}),document.addEventListener("keydown",y),document.body.style.overflow="hidden"}function d(a){r=(r+a+o.length)%o.length;const e=document.querySelector(".lightbox-image"),t=document.querySelector(".lightbox-counter");e.style.opacity="0",setTimeout(()=>{e.src=o[r].src,e.alt=o[r].title||"",t.textContent=`${r+1} / ${o.length}`,e.style.opacity="1"},150)}function y(a){a.key==="Escape"&&p(),a.key==="ArrowLeft"&&d(-1),a.key==="ArrowRight"&&d(1)}function p(){const a=document.getElementById("lightbox-overlay");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",y),document.body.style.overflow=""}function _(a){const e=document.getElementById("video-modal");e.classList.remove("hidden"),e.innerHTML=`
     <div class="video-modal-inner">
       <span class="video-modal-close" id="video-close">✕</span>
       <iframe 
@@ -75,7 +75,7 @@
         allowfullscreen
       ></iframe>
     </div>
-  `,requestAnimationFrame(()=>e.classList.add("active")),document.getElementById("video-close").addEventListener("click",m),e.addEventListener("click",t=>{t.target===e&&m()}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function f(a){a.key==="Escape"&&m()}function m(){const a=document.getElementById("video-modal");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}const c=[{id:1,title:"Indian Rock — Waves 24",youtubeId:"1ZSdr3wMT70",category:"live",date:"November 2024",featured:!0,bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:2,title:"Silence of the Amps — Waves 24",youtubeId:"S8snpxnyAo8",category:"live",date:"November 2024",featured:!1,bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:3,title:"Mitwa - World Health Day",youtubeId:"HFSOPSBH6_o",category:"cover",date:"April 2024",featured:!1,bandMembers:["Nishant Verma","Tushar Vikash K","Anjishnu Satpathy"]},{id:4,title:"Saiyaan - World Health Day",youtubeId:"rCRwFbHOalw",category:"cover",date:"April 2024",featured:!1,bandMembers:["Nishant Verma","Tushar Vikash K","Anjishnu Satpathy"]}],D=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function E(){const a=c.find(e=>e.featured)||c[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
+  `,requestAnimationFrame(()=>e.classList.add("active")),document.getElementById("video-close").addEventListener("click",m),e.addEventListener("click",t=>{t.target===e&&m()}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function f(a){a.key==="Escape"&&m()}function m(){const a=document.getElementById("video-modal");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}const c=[{id:1,title:"Indian Rock — Waves 24",youtubeId:"1ZSdr3wMT70",category:"live",date:"November 2024",featured:!0,eventId:"waves-24-indian-rock",bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:2,title:"Silence of the Amps — Waves 24",youtubeId:"S8snpxnyAo8",category:"live",date:"November 2024",featured:!1,eventId:"waves-24-silence-amps",bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:3,title:"Mitwa - World Health Day",youtubeId:"HFSOPSBH6_o",category:"cover",date:"April 2024",featured:!1,bandMembers:["Nishant Verma","Tushar Vikash K","Anjishnu Satpathy"]},{id:4,title:"Saiyaan - World Health Day",youtubeId:"rCRwFbHOalw",category:"cover",date:"April 2024",featured:!1,bandMembers:["Nishant Verma","Tushar Vikash K","Anjishnu Satpathy"]}],D=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function I(){const a=c.find(e=>e.featured)||c[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
     <div class="page-enter">
       <!-- HERO -->
       <section class="hero">
@@ -191,7 +191,7 @@
         </div>
       </section>
     </div>
-  `}const I=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"",quote:"Test",instagram:"#"}];function L(){return`
+  `}const E=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"",quote:"Test",instagram:"#"}];function L(){return`
     <div class="page-enter">
       <section class="about-hero grain-overlay">
         <div class="container reveal">
@@ -215,7 +215,7 @@
           </div>
           
           <div class="members-grid stagger-children">
-            ${I.map(e=>`
+            ${E.map(e=>`
     <div class="member-card reveal-scale">
       <div class="member-photo-wrapper">
         <img src="${e.photo}" alt="${e.name}" class="member-photo" loading="lazy" />
@@ -306,6 +306,11 @@
         <div class="performer-tags">
           ${(s.bandMembers||[]).map(i=>`<span class="performer-tag">${g(i)}</span>`).join("")}
         </div>
+        ${s.eventId?`
+          <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.location.hash = '#events?id=${s.eventId}'">
+            View Event Details
+          </button>
+        `:""}
       </div>
     </div>
   `).join("");return setTimeout(P,100),`
@@ -337,6 +342,11 @@
               <div class="performer-tags">
                 ${(a.bandMembers||[]).map(s=>`<span class="performer-tag">${g(s)}</span>`).join("")}
               </div>
+              ${a.eventId?`
+                <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.location.hash = '#events?id=${a.eventId}'">
+                  View Event Details & Photos
+                </button>
+              `:""}
             </div>
           </div>
         </div>
@@ -435,6 +445,11 @@
               </div>
             `).join("")}
           </div>
+          
+          <div class="event-footer-cta mt-4xl text-center">
+            <p class="opacity-60 mb-md">Want to see more of our music?</p>
+            <a href="#performances" class="btn btn-primary">Explore All Performances</a>
+          </div>
         </section>
       `:""}
     </div>
@@ -495,4 +510,4 @@
         </div>
       </section>
     </div>
-  `}function G(a){const e=String(a).toLowerCase();return e.includes("1st")||e.includes("winner")||e==="first"?"badge-gold":e.includes("2nd")||e.includes("runner")?"badge-silver":e.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openEventSpecificLightbox:(a,e)=>_(a,e),openVideo:a=>x(a)};const v={"":E,about:L,journey:T,performances:V,events:q,results:F};function y(){const a=document.getElementById("page-content"),e=window.location.hash.slice(1),[t,n]=e.split("?");if(t&&!v[t]){window.location.hash="";return}const s=new URLSearchParams(n||"");a.style.opacity="0",setTimeout(()=>{const i=v[t]||v[""];a.innerHTML=i(s),window.scrollTo({top:0,behavior:"instant"}),a.style.opacity="1",$()},150)}function N(){w(),C(),window.addEventListener("hashchange",y),y()}document.addEventListener("DOMContentLoaded",N);
+  `}function G(a){const e=String(a).toLowerCase();return e.includes("1st")||e.includes("winner")||e==="first"?"badge-gold":e.includes("2nd")||e.includes("runner")?"badge-silver":e.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openEventSpecificLightbox:(a,e)=>x(a,e),openVideo:a=>_(a)};const v={"":I,about:L,journey:T,performances:V,events:q,results:F};function b(){const a=document.getElementById("page-content"),e=window.location.hash.slice(1),[t,n]=e.split("?");if(t&&!v[t]){window.location.hash="";return}const s=new URLSearchParams(n||"");a.style.opacity="0",setTimeout(()=>{const i=v[t]||v[""];a.innerHTML=i(s),window.scrollTo({top:0,behavior:"instant"}),a.style.opacity="1",$()},150)}function N(){w(),C(),window.addEventListener("hashchange",b),b()}document.addEventListener("DOMContentLoaded",N);
