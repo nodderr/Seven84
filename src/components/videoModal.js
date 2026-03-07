@@ -5,7 +5,7 @@ export function openVideoModal(youtubeId) {
     <div class="video-modal-inner">
       <span class="video-modal-close" id="video-close">✕</span>
       <iframe 
-        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" 
+        src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&vq=hd1080&modestbranding=1" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen
       ></iframe>

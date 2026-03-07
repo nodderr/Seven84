@@ -90,7 +90,7 @@ function renderEventDetail(eventId) {
         <section class="event-main-media slide-up" style="animation-delay: 0.2s">
           <div class="video-embed-container">
             <iframe 
-              src="https://www.youtube.com/embed/${event.youtubeId}" 
+              src="https://www.youtube.com/embed/${event.youtubeId}?rel=0&vq=hd1080&modestbranding=1" 
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 

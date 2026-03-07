@@ -498,7 +498,7 @@
 
 .video-modal-inner {
   width: 90vw;
-  max-width: 960px;
+  max-width: 1200px;
   aspect-ratio: 16/9;
   position: relative;
 }
