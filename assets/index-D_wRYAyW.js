@@ -1,10 +1,10 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&l(r)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function l(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();const m=[{path:"",label:"Home"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function w(){const a=document.getElementById("navbar"),e=window.location.hash.slice(1)||"";a.className="navbar",a.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))l(t);new MutationObserver(t=>{for(const n of t)if(n.type==="childList")for(const r of n.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&l(r)}).observe(document,{childList:!0,subtree:!0});function s(t){const n={};return t.integrity&&(n.integrity=t.integrity),t.referrerPolicy&&(n.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?n.credentials="include":t.crossOrigin==="anonymous"?n.credentials="omit":n.credentials="same-origin",n}function l(t){if(t.ep)return;t.ep=!0;const n=s(t);fetch(t.href,n)}})();const y=[{path:"",label:"Home"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function w(){const a=document.getElementById("navbar"),e=window.location.hash.slice(1)||"";a.className="navbar",a.innerHTML=`
     <div class="navbar-inner">
       <a class="navbar-logo" data-nav="">
         <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: var(--text-2xl); color: var(--cream);">Seven.84</span>
       </a>
       <div class="navbar-links">
-        ${m.map(t=>`
+        ${y.map(t=>`
           <a class="navbar-link ${e===t.path?"active":""}" data-nav="${t.path}">
             ${t.label}
           </a>
@@ -15,7 +15,7 @@
       </button>
     </div>
     <div class="navbar-mobile-overlay" id="mobile-overlay">
-      ${m.map(t=>`
+      ${y.map(t=>`
         <a class="navbar-link ${e===t.path?"active":""}" data-nav="${t.path}">
           ${t.label}
         </a>
@@ -269,7 +269,7 @@
         </div>
       </section>
     </div>
-  `}const y=a=>a.split(" ")[0],u=a=>[...a].sort((e,s)=>{const l=c.findIndex(n=>n.name===e||n.name.startsWith(e)),t=c.findIndex(n=>n.name===s||n.name.startsWith(s));return l-t});function R(){const a=d.find(t=>t.featured)||d[0],e=d.filter(t=>t.id!==a.id),s=N.map((t,n)=>`
+  `}const m=a=>a.split(" ")[0],u=a=>[...a].sort((e,s)=>{const l=c.findIndex(n=>n.name===e||n.name.startsWith(e)),t=c.findIndex(n=>n.name===s||n.name.startsWith(s));return l-t});function R(){const a=d.find(t=>t.featured)||d[0],e=d.filter(t=>t.id!==a.id),s=N.map((t,n)=>`
     <button class="filter-tab ${n===0?"active":""}" data-filter="${t.id}">
       ${t.label}
     </button>
@@ -286,7 +286,7 @@
         <h3 class="performance-title">${t.title}</h3>
         <span class="performance-meta">${t.event||""} ${t.event?"•":""} ${t.date}</span>
         <div class="performer-tags">
-          ${u(t.bandMembers||[]).map(n=>`<span class="performer-tag">${y(n)}</span>`).join("")}
+          ${u(t.bandMembers||[]).map(n=>`<span class="performer-tag">${m(n)}</span>`).join("")}
         </div>
         ${t.eventId?`
           <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.location.hash = '#events?id=${t.eventId}'">
@@ -298,7 +298,7 @@
   `).join("");return setTimeout(_,100),`
     <div class="page-enter">
       <section class="performances-hero grain-overlay">
-        <div class="container reveal">
+        <div class="container reveal" style="text-align: center;">
           <h1 class="section-title">Live & Unplugged</h1>
           <p class="section-description">Experience the energy of Seven.84 on stage and in the studio.</p>
         </div>
@@ -322,7 +322,7 @@
               <h3>${a.title}</h3>
               <p>${a.event||""} ${a.event?"•":""} ${a.date}</p>
               <div class="performer-tags">
-                ${u(a.bandMembers||[]).map(t=>`<span class="performer-tag">${y(t)}</span>`).join("")}
+                ${u(a.bandMembers||[]).map(t=>`<span class="performer-tag">${m(t)}</span>`).join("")}
               </div>
               ${a.eventId?`
                 <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.location.hash = '#events?id=${a.eventId}'">
