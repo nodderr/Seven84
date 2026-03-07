@@ -89,6 +89,15 @@ export const performances = [
     featured: false,
     eventId: 'incident-24-bandish',
     bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K', 'Vansh Srivastava']
+  },
+  {
+    id: 10,
+    title: 'Maa - Taare Zameen Par',
+    youtubeId: 'YanXSPv8rns',
+    category: 'cover',
+    date: 'March 2024',
+    featured: false,
+    bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Vansh Srivastava', 'Aryan Raj', 'Tushar Vikash K']
   }
 ];
 
