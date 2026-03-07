@@ -1,6 +1,15 @@
 import { eventsData } from '../data/events.js';
+import { members } from '../data/members.js';
 
 const getFirstName = (name) => name.split(' ')[0];
+
+const sortMembers = (names) => {
+  return [...names].sort((a, b) => {
+    const idxA = members.findIndex(m => m.name === a || m.name.startsWith(a));
+    const idxB = members.findIndex(m => m.name === b || m.name.startsWith(b));
+    return idxA - idxB;
+  });
+};
 
 export function renderEvents(params) {
   // If ?id= is present, render identical details view
@@ -100,7 +109,7 @@ function renderEventDetail(eventId) {
             </iframe>
           </div>
           <div class="performer-tags">
-            ${(event.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+            ${sortMembers(event.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
           </div>
         </section>
       ` : ''}

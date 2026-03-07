@@ -1,6 +1,15 @@
 import { performances, performanceCategories } from '../data/performances.js';
+import { members } from '../data/members.js';
 
 const getFirstName = (name) => name.split(' ')[0];
+
+const sortMembers = (names) => {
+  return [...names].sort((a, b) => {
+    const idxA = members.findIndex(m => m.name === a || m.name.startsWith(a));
+    const idxB = members.findIndex(m => m.name === b || m.name.startsWith(b));
+    return idxA - idxB;
+  });
+};
 
 export function renderPerformances() {
   const featured = performances.find(p => p.featured) || performances[0];
@@ -25,7 +34,7 @@ export function renderPerformances() {
         <h3 class="performance-title">${video.title}</h3>
         <span class="performance-meta">${video.event || ''} ${video.event ? '•' : ''} ${video.date}</span>
         <div class="performer-tags">
-          ${(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+          ${sortMembers(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
         </div>
         ${video.eventId ? `
           <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.location.hash = '#events?id=${video.eventId}'">
@@ -65,7 +74,7 @@ export function renderPerformances() {
               <h3>${featured.title}</h3>
               <p>${featured.event || ''} ${featured.event ? '•' : ''} ${featured.date}</p>
               <div class="performer-tags">
-                ${(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+                ${sortMembers(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
               </div>
               ${featured.eventId ? `
                 <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.location.hash = '#events?id=${featured.eventId}'">
