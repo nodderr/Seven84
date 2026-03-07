@@ -177,7 +177,7 @@ export const eventsData = [
     rank: '2nd Place',
     description: "Secured 2nd place in the high-stakes Battle of Bands at NITTE's annual fest Incridea'24.",
     youtubeId: '5v_M2xM4pPM',
-    thumbnail: './gallery/events/Battle of Bands - NITTE Incridea 24/thumbnail/Screenshot 2026-03-07 195459.png',
+    thumbnail: './gallery/events/Battle of Bands - NITTE Incridea 24/thumbnail/MVB02226.webp',
     photos: [
       { src: './gallery/events/Battle of Bands - NITTE Incridea 24/MVB02117.webp' },
       { src: './gallery/events/Battle of Bands - NITTE Incridea 24/MVB02118.webp' },
