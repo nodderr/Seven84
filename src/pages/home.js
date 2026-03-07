@@ -59,23 +59,20 @@ export function renderHome() {
 
       <!-- LATEST PERFORMANCE -->
       <section class="section section-dark">
-        <div class="container grid-2 align-center gap-xl">
-          <div class="reveal-left">
+        <div class="container" style="text-align: center; max-width: 800px;">
+          <div class="reveal-up">
             <span class="section-subtitle">Newest Upload</span>
             <h2 class="section-title">${latestPerformance.title}</h2>
-            <p class="section-description" style="margin-left: 0; margin-bottom: var(--space-xl);">
+            <p class="section-description" style="margin-bottom: var(--space-xl);">
               Experience our latest performance where the soulful melodies of Hindustani classical meet the high-octane energy of modern fusion. 
             </p>
-            <div style="display: flex; gap: 1rem;">
-              <button class="btn btn-primary" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">Watch Now</button>
-              <a href="#performances" class="btn btn-ghost">View All</a>
-            </div>
-          </div>
-          
-          <div class="reveal-right">
-            <div class="featured-video-wrapper" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">
+            <div class="featured-video-wrapper" style="margin: 0 auto var(--space-xl);" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">
               <img src="https://img.youtube.com/vi/${latestPerformance.youtubeId}/maxresdefault.jpg" alt="${latestPerformance.title}" class="featured-video-thumb" />
               <div class="featured-play-btn"></div>
+            </div>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+              <button class="btn btn-primary" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">Watch Now</button>
+              <a href="#performances" class="btn btn-ghost">View All</a>
             </div>
           </div>
         </div>
@@ -84,7 +81,7 @@ export function renderHome() {
       <!-- CONTACT STRIP -->
       <section class="section section-gradient">
         <div class="container" style="text-align: center;">
-          <h2 class="section-title" style="margin-bottom: var(--space-md);">Bring the Sound to Your Event</h2>
+          <h2 class="section-title" style="margin-bottom: var(--space-md);">Contact us for Bookings/ Collabs</h2>
           <p class="section-description" style="margin-bottom: var(--space-xl);">For bookings, collaborations, or just to say hi.</p>
           <a href="mailto:nishant.verma04@yahoo.com" class="btn btn-primary" style="background: white; color: var(--saffron);">Book Us via Email</a>
         </div>
