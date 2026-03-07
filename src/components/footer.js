@@ -11,9 +11,7 @@ export function renderFooter() {
             Where raga meets rhythm, where tradition meets today.
           </p>
           <div class="footer-socials" style="margin-top: var(--space-lg);">
-            <a href="#" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
-            <a href="#" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener">▶️</a>
-            <a href="#" class="footer-social-link" aria-label="Spotify" target="_blank" rel="noopener">🎵</a>
+            <a href="https://www.instagram.com/seven.84_" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
           </div>
         </div>
         <div class="footer-nav">
@@ -28,10 +26,8 @@ export function renderFooter() {
           </div>
           <div class="footer-nav-group">
             <h4>Connect</h4>
-            <a href="#">Instagram</a>
-            <a href="#">YouTube</a>
-            <a href="#">Spotify</a>
-            <a href="mailto:seven84band@gmail.com">Email Us</a>
+            <a href="https://www.instagram.com/seven.84_" target="_blank" rel="noopener">Instagram</a>
+            <a href="mailto:nishant.verma04@yahoo.com">Email Us</a>
           </div>
         </div>
       </div>
