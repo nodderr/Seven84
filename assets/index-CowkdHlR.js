@@ -1,10 +1,10 @@
-(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function t(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(s){if(s.ep)return;s.ep=!0;const i=t(s);fetch(s.href,i)}})();const u=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function k(){const a=document.getElementById("navbar"),e=window.location.hash.slice(1)||"";a.className="navbar",a.innerHTML=`
+(function(){const e=document.createElement("link").relList;if(e&&e.supports&&e.supports("modulepreload"))return;for(const s of document.querySelectorAll('link[rel="modulepreload"]'))n(s);new MutationObserver(s=>{for(const i of s)if(i.type==="childList")for(const l of i.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function t(s){const i={};return s.integrity&&(i.integrity=s.integrity),s.referrerPolicy&&(i.referrerPolicy=s.referrerPolicy),s.crossOrigin==="use-credentials"?i.credentials="include":s.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(s){if(s.ep)return;s.ep=!0;const i=t(s);fetch(s.href,i)}})();const h=[{path:"",label:"Home"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function f(){const a=document.getElementById("navbar"),e=window.location.hash.slice(1)||"";a.className="navbar",a.innerHTML=`
     <div class="navbar-inner">
       <a class="navbar-logo" data-nav="">
         <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: var(--text-2xl); color: var(--cream);">Seven.84</span>
       </a>
       <div class="navbar-links">
-        ${u.map(s=>`
+        ${h.map(s=>`
           <a class="navbar-link ${e===s.path?"active":""}" data-nav="${s.path}">
             ${s.label}
           </a>
@@ -15,13 +15,13 @@
       </button>
     </div>
     <div class="navbar-mobile-overlay" id="mobile-overlay">
-      ${u.map(s=>`
+      ${h.map(s=>`
         <a class="navbar-link ${e===s.path?"active":""}" data-nav="${s.path}">
           ${s.label}
         </a>
       `).join("")}
     </div>
-  `,a.querySelectorAll("[data-nav]").forEach(s=>{s.addEventListener("click",i=>{i.preventDefault();const r=s.getAttribute("data-nav");window.location.hash=r,S()})});const t=document.getElementById("nav-toggle"),n=document.getElementById("mobile-overlay");t.addEventListener("click",()=>{t.classList.toggle("open"),n.classList.toggle("open"),document.body.style.overflow=n.classList.contains("open")?"hidden":""}),$(a)}function S(){const a=document.getElementById("nav-toggle"),e=document.getElementById("mobile-overlay");a&&e&&(a.classList.remove("open"),e.classList.remove("open"),document.body.style.overflow="")}function $(a){let e=!1;window.addEventListener("scroll",()=>{e||(window.requestAnimationFrame(()=>{window.scrollY>50?a.classList.add("scrolled"):a.classList.remove("scrolled"),e=!1}),e=!0)})}function C(){const a=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(e=>{e.getAttribute("data-nav")===a?e.classList.add("active"):e.classList.remove("active")})}function _(){const a=document.getElementById("site-footer");a.className="footer",a.innerHTML=`
+  `,a.querySelectorAll("[data-nav]").forEach(s=>{s.addEventListener("click",i=>{i.preventDefault();const l=s.getAttribute("data-nav");window.location.hash=l,w()})});const t=document.getElementById("nav-toggle"),n=document.getElementById("mobile-overlay");t.addEventListener("click",()=>{t.classList.toggle("open"),n.classList.toggle("open"),document.body.style.overflow=n.classList.contains("open")?"hidden":""}),k(a)}function w(){const a=document.getElementById("nav-toggle"),e=document.getElementById("mobile-overlay");a&&e&&(a.classList.remove("open"),e.classList.remove("open"),document.body.style.overflow="")}function k(a){let e=!1;window.addEventListener("scroll",()=>{e||(window.requestAnimationFrame(()=>{window.scrollY>50?a.classList.add("scrolled"):a.classList.remove("scrolled"),e=!1}),e=!0)})}function S(){const a=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(e=>{e.getAttribute("data-nav")===a?e.classList.add("active"):e.classList.remove("active")})}function $(){const a=document.getElementById("site-footer");a.className="footer",a.innerHTML=`
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
@@ -42,7 +42,6 @@
             <a href="#" data-nav="">Home</a>
             <a href="#events" data-nav="events">Events</a>
             <a href="#results" data-nav="results">Results</a>
-            <a href="#gallery" data-nav="gallery">Gallery</a>
             <a href="#about" data-nav="about">About Us</a>
             <a href="#journey" data-nav="journey">Our Journey</a>
             <a href="#performances" data-nav="performances">Performances</a>
@@ -61,22 +60,22 @@
         <span>Based out of MIT, Manipal 🎶</span>
       </div>
     </div>
-  `,a.querySelectorAll("[data-nav]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const n=e.getAttribute("data-nav");window.location.hash=n,window.scrollTo({top:0,behavior:"smooth"})})})}let o=[],l=0;function h(a,e=0){o=a,l=e;const t=document.getElementById("lightbox-overlay");t.classList.remove("hidden"),t.innerHTML=`
+  `,a.querySelectorAll("[data-nav]").forEach(e=>{e.addEventListener("click",t=>{t.preventDefault();const n=e.getAttribute("data-nav");window.location.hash=n,window.scrollTo({top:0,behavior:"smooth"})})})}let o=[],r=0;function C(a,e=0){o=a,r=e;const t=document.getElementById("lightbox-overlay");t.classList.remove("hidden"),t.innerHTML=`
     <span class="lightbox-close" id="lightbox-close">✕</span>
     <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
-    <img class="lightbox-image" src="${o[l].src}" alt="${o[l].title||""}" />
+    <img class="lightbox-image" src="${o[r].src}" alt="${o[r].title||""}" />
     <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
-    <div class="lightbox-counter">${l+1} / ${o.length}</div>
-  `,requestAnimationFrame(()=>t.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",p),t.addEventListener("click",n=>{n.target===t&&p()}),document.getElementById("lightbox-prev").addEventListener("click",n=>{n.stopPropagation(),d(-1)}),document.getElementById("lightbox-next").addEventListener("click",n=>{n.stopPropagation(),d(1)}),document.addEventListener("keydown",b),document.body.style.overflow="hidden"}function d(a){l=(l+a+o.length)%o.length;const e=document.querySelector(".lightbox-image"),t=document.querySelector(".lightbox-counter");e.style.opacity="0",setTimeout(()=>{e.src=o[l].src,e.alt=o[l].title||"",t.textContent=`${l+1} / ${o.length}`,e.style.opacity="1"},150)}function b(a){a.key==="Escape"&&p(),a.key==="ArrowLeft"&&d(-1),a.key==="ArrowRight"&&d(1)}function p(){const a=document.getElementById("lightbox-overlay");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",b),document.body.style.overflow=""}function x(a){const e=document.getElementById("video-modal");e.classList.remove("hidden"),e.innerHTML=`
+    <div class="lightbox-counter">${r+1} / ${o.length}</div>
+  `,requestAnimationFrame(()=>t.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",p),t.addEventListener("click",n=>{n.target===t&&p()}),document.getElementById("lightbox-prev").addEventListener("click",n=>{n.stopPropagation(),d(-1)}),document.getElementById("lightbox-next").addEventListener("click",n=>{n.stopPropagation(),d(1)}),document.addEventListener("keydown",y),document.body.style.overflow="hidden"}function d(a){r=(r+a+o.length)%o.length;const e=document.querySelector(".lightbox-image"),t=document.querySelector(".lightbox-counter");e.style.opacity="0",setTimeout(()=>{e.src=o[r].src,e.alt=o[r].title||"",t.textContent=`${r+1} / ${o.length}`,e.style.opacity="1"},150)}function y(a){a.key==="Escape"&&p(),a.key==="ArrowLeft"&&d(-1),a.key==="ArrowRight"&&d(1)}function p(){const a=document.getElementById("lightbox-overlay");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",y),document.body.style.overflow=""}function _(a){const e=document.getElementById("video-modal");e.classList.remove("hidden"),e.innerHTML=`
     <div class="video-modal-inner">
       <span class="video-modal-close" id="video-close">✕</span>
       <iframe 
-        src="https://www.youtube.com/embed/${a}?autoplay=1&rel=0" 
+        src="https://www.youtube.com/embed/${a}?autoplay=1&rel=0&vq=hd1080&modestbranding=1" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
         allowfullscreen
       ></iframe>
     </div>
-  `,requestAnimationFrame(()=>e.classList.add("active")),document.getElementById("video-close").addEventListener("click",m),e.addEventListener("click",t=>{t.target===e&&m()}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function f(a){a.key==="Escape"&&m()}function m(){const a=document.getElementById("video-modal");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}const c=[],D=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function E(){const a=c.find(e=>e.featured)||c[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
+  `,requestAnimationFrame(()=>e.classList.add("active")),document.getElementById("video-close").addEventListener("click",m),e.addEventListener("click",t=>{t.target===e&&m()}),document.addEventListener("keydown",b),document.body.style.overflow="hidden"}function b(a){a.key==="Escape"&&m()}function m(){const a=document.getElementById("video-modal");a.classList.remove("active"),setTimeout(()=>{a.classList.add("hidden"),a.innerHTML=""},300),document.removeEventListener("keydown",b),document.body.style.overflow=""}const c=[{id:1,title:"Indian Rock — Waves 24",youtubeId:"1ZSdr3wMT70",category:"live",date:"November 2024",featured:!0},{id:2,title:"Silence of the Amps — Waves 24",youtubeId:"S8snpxnyAo8",category:"live",date:"November 2024",featured:!1}],x=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function D(){const a=c.find(e=>e.featured)||c[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
     <div class="page-enter">
       <!-- HERO -->
       <section class="hero">
@@ -192,42 +191,7 @@
         </div>
       </section>
     </div>
-  `}const L=[],w=[];function I(){const a=L.map((t,n)=>`
-    <button class="filter-tab ${n===0?"active":""}" data-filter="${t==="All"?"all":t}">
-      ${t}
-    </button>
-  `).join(""),e=w.map((t,n)=>`
-    <div class="gallery-item reveal" data-category="${t.category}" onclick="window.appAPI.openLightbox(${n})">
-      <img src="${t.thumb}" alt="${t.title}" loading="lazy" />
-      <div class="gallery-item-overlay">
-        <div class="gallery-item-info">
-          <h4>${t.title}</h4>
-          <p>${t.date}</p>
-        </div>
-      </div>
-    </div>
-  `).join("");return setTimeout(A,100),`
-    <div class="page-enter">
-      <section class="gallery-hero grain-overlay">
-        <div class="container reveal">
-          <h1 class="section-title">Visual Archive</h1>
-          <p class="section-description">Moments frozen in time across stages, studios, and practice rooms.</p>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <div class="filter-tabs reveal">
-            ${a}
-          </div>
-          
-          <div class="gallery-masonry stagger-children" id="gallery-grid">
-            ${e}
-          </div>
-        </div>
-      </section>
-    </div>
-  `}function A(){const a=document.querySelectorAll(".filter-tab"),e=document.querySelectorAll(".gallery-item");a.forEach(t=>{t.addEventListener("click",()=>{a.forEach(s=>s.classList.remove("active")),t.classList.add("active");const n=t.getAttribute("data-filter");e.forEach(s=>{n==="all"||s.getAttribute("data-category")===n?(s.style.display="block",setTimeout(()=>{s.style.opacity="1",s.style.transform="scale(1)"},50)):(s.style.opacity="0",s.style.transform="scale(0.8)",setTimeout(()=>{s.style.display="none"},300))})})})}const M=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"",quote:"Test",instagram:"#"}];function T(){return`
+  `}const E=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"",quote:"Test",instagram:"#"}];function L(){return`
     <div class="page-enter">
       <section class="about-hero grain-overlay">
         <div class="container reveal">
@@ -251,7 +215,7 @@
           </div>
           
           <div class="members-grid stagger-children">
-            ${M.map(e=>`
+            ${E.map(e=>`
     <div class="member-card reveal-scale">
       <div class="member-photo-wrapper">
         <img src="${e.photo}" alt="${e.name}" class="member-photo" loading="lazy" />
@@ -281,12 +245,12 @@
         </div>
       </section>
     </div>
-  `}const P=[],q=[];function B(){const a=q.map(t=>`
+  `}const I=[],A=[];function M(){const a=A.map(t=>`
     <div class="stat-item reveal-scale">
       <div class="stat-number" data-count="${t.number}" data-suffix="${t.suffix}">0</div>
       <div class="stat-label">${t.label}</div>
     </div>
-  `).join(""),e=P.map((t,n)=>`
+  `).join(""),e=I.map((t,n)=>`
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content ${n%2!==0?"reveal-left":"reveal-right"}">
@@ -323,7 +287,7 @@
         </div>
       </section>
     </div>
-  `}function V(){const a=c.find(s=>s.featured)||c[0],e=c.filter(s=>s.id!==a.id),t=D.map((s,i)=>`
+  `}function T(){const a=c.find(s=>s.featured)||c[0],e=c.filter(s=>s.id!==a.id),t=x.map((s,i)=>`
     <button class="filter-tab ${i===0?"active":""}" data-filter="${s.id}">
       ${s.label}
     </button>
@@ -341,7 +305,7 @@
         <span class="performance-meta">${s.event} • ${s.date}</span>
       </div>
     </div>
-  `).join("");return setTimeout(j,100),`
+  `).join("");return setTimeout(P,100),`
     <div class="page-enter">
       <section class="performances-hero grain-overlay">
         <div class="container reveal">
@@ -384,7 +348,7 @@
         </div>
       </section>
     </div>
-  `}function j(){const a=document.querySelectorAll(".filter-tab"),e=document.querySelectorAll(".performance-card");a.forEach(t=>{t.addEventListener("click",()=>{a.forEach(s=>s.classList.remove("active")),t.classList.add("active");const n=t.getAttribute("data-filter");e.forEach(s=>{n==="all"||s.getAttribute("data-category")===n?(s.style.display="block",setTimeout(()=>{s.style.opacity="1",s.style.transform="translateY(0)"},50)):(s.style.opacity="0",s.style.transform="translateY(10px)",setTimeout(()=>{s.style.display="none"},300))})})})}const g=[{id:"waves-24-indian-rock",name:"Indian Rock",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"5th",description:"Participated in the Indian Rock competition at Bits Goa Waves.",youtubeId:"1ZSdr3wMT70",thumbnail:"./gallery/events/waves-24-indian-rock/thumbnail/DSC_0004.webp",photos:[{src:"./gallery/events/waves-24-indian-rock/DSC_0002_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0003.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0004.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0005.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0007_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0008_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0010.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0011_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0012.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0013_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0014.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0015.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0017.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0018.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0019.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0020.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0022_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0023_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0029.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0030_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0031.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0032_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0033_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0034.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0036.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0037.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0038.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0039.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0042.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0043.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0044.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0045.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0046_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0047.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0048.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0049.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0052.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0053.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0057.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0058.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0059.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0060.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0061.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0063.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0074.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0076.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0080.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0081.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0082.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0084.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0085.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0087.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0088.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0089.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0091.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0092.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0093.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0094.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0095.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0096.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0097.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0098.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0099.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0100.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0101.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0102.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0103.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0104.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0105.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0106.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0107.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0108.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231105_095417.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231105_095837.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231107_132201.webp"}],bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:"waves-24-silence-amps",name:"Silence of the Amps",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"2nd Place",description:"Secured 2nd position in Silence of the Amps at Bits Goa Waves.",youtubeId:null,thumbnail:"./gallery/events/waves-24-silence-amps/thumbnail/IMG-20231029-WA0101.webp",photos:[{src:"./gallery/events/waves-24-silence-amps/7M4A7415.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7416.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7417.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7418.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7420.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0101.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0102.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0103.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0110.webp"}],bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:"waves-24-eastern-vocals",name:"Eastern Solo Vocals",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"3rd Place",description:"Secured 3rd position in Eastern Solo Vocals at Bits Goa Waves.",youtubeId:null,thumbnail:"",photos:[],bandMembers:["Vansh Srivastava"]}];function G(a){const e=a?a.get("id"):null;return e?F(e):R()}function R(){return`
+  `}function P(){const a=document.querySelectorAll(".filter-tab"),e=document.querySelectorAll(".performance-card");a.forEach(t=>{t.addEventListener("click",()=>{a.forEach(s=>s.classList.remove("active")),t.classList.add("active");const n=t.getAttribute("data-filter");e.forEach(s=>{n==="all"||s.getAttribute("data-category")===n?(s.style.display="block",setTimeout(()=>{s.style.opacity="1",s.style.transform="translateY(0)"},50)):(s.style.opacity="0",s.style.transform="translateY(10px)",setTimeout(()=>{s.style.display="none"},300))})})})}const u=[{id:"waves-24-indian-rock",name:"Indian Rock",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"5th",description:"Participated in the Indian Rock competition at Bits Goa Waves.",youtubeId:"1ZSdr3wMT70",thumbnail:"./gallery/events/waves-24-indian-rock/thumbnail/DSC_0004.webp",photos:[{src:"./gallery/events/waves-24-indian-rock/DSC_0003.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0005.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0007_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0008_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0010.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0011_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0012.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0013_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0014.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0015.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0017.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0018.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0019.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0020.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0022_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0023_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0029.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0030_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0031.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0032_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0033_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0034.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0036.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0037.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0038.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0039.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0042.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0043.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0044.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0045.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0046_1.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0047.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0048.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0049.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0052.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0053.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0057.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0058.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0059.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0060.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0061.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0063.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0074.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0076.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0080.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0081.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0082.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0084.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0085.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0087.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0088.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0089.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0091.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0092.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0093.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0094.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0095.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0096.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0097.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0098.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0099.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0100.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0101.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0102.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0103.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0104.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0105.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0106.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0107.webp"},{src:"./gallery/events/waves-24-indian-rock/DSC_0108.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231105_095417.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231105_095837.webp"},{src:"./gallery/events/waves-24-indian-rock/IMG_20231107_132201.webp"}],bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:"waves-24-silence-amps",name:"Silence of the Amps",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"2nd Place",description:"Secured 2nd position in Silence of the Amps at Bits Goa Waves.",youtubeId:null,thumbnail:"./gallery/events/waves-24-silence-amps/thumbnail/IMG-20231029-WA0101.webp",photos:[{src:"./gallery/events/waves-24-silence-amps/7M4A7415.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7416.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7417.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7418.webp"},{src:"./gallery/events/waves-24-silence-amps/7M4A7420.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0101.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0102.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0103.webp"},{src:"./gallery/events/waves-24-silence-amps/IMG-20231029-WA0110.webp"}],bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:"waves-24-eastern-vocals",name:"Eastern Solo Vocals",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"3rd Place",description:"Secured 3rd position in Eastern Solo Vocals at Bits Goa Waves.",youtubeId:null,thumbnail:"",photos:[],bandMembers:["Vansh Srivastava"]}];function q(a){const e=a?a.get("id"):null;return e?V(e):B()}function B(){return`
     <div class="page-container page-events fade-in">
       <header class="section-hero">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Events</span></h1>
@@ -397,7 +361,7 @@
         <!-- Optional Tabs for Filtering if needed later, keeping it unified for now -->
         
         <div class="events-grid">
-          ${g.filter(e=>e.youtubeId||e.thumbnail||e.photos&&e.photos.length>0).map(e=>`
+          ${u.filter(e=>e.youtubeId||e.thumbnail||e.photos&&e.photos.length>0).map(e=>`
             <div class="event-card" onclick="window.location.hash = '#events?id=${e.id}'">
               <div class="event-thumbnail">
                 <img src="${e.thumbnail}" alt="${e.name}" loading="lazy" />
@@ -418,7 +382,7 @@
         </div>
       </section>
     </div>
-  `}function F(a){const e=g.find(n=>n.id===a);if(!e)return`
+  `}function V(a){const e=u.find(n=>n.id===a);if(!e)return`
       <div class="page-container page-events fade-in text-center" style="padding: 150px 20px;">
         <h1 class="font-display size-xl">Event Not Found</h1>
         <a href="#events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
@@ -442,7 +406,7 @@
         <section class="event-main-media slide-up" style="animation-delay: 0.2s">
           <div class="video-embed-container">
             <iframe 
-              src="https://www.youtube.com/embed/${e.youtubeId}" 
+              src="https://www.youtube.com/embed/${e.youtubeId}?rel=0&vq=hd1080&modestbranding=1" 
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -465,7 +429,7 @@
         </section>
       `:""}
     </div>
-  `}function z(){const a=g.filter(e=>e.type==="competition");return`
+  `}function j(){const a=u.filter(e=>e.type==="competition");return`
     <div class="page-container page-results fade-in">
       <header class="section-hero text-center">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Results</span></h1>
@@ -496,7 +460,7 @@
                   <td class="font-display size-md text-cream">${e.name}</td>
                   <td class="opacity-80">${e.venue}</td>
                   <td>
-                    ${e.rank?`<span class="result-badge ${H(e.rank)}">${e.rank}</span>`:'<span class="opacity-50">—</span>'}
+                    ${e.rank?`<span class="result-badge ${G(e.rank)}">${e.rank}</span>`:'<span class="opacity-50">—</span>'}
                   </td>
                 </tr>
                 <tr id="details-${t}" class="result-details-row" style="display: none;">
@@ -522,4 +486,4 @@
         </div>
       </section>
     </div>
-  `}function H(a){const e=String(a).toLowerCase();return e.includes("1st")||e.includes("winner")||e==="first"?"badge-gold":e.includes("2nd")||e.includes("runner")?"badge-silver":e.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openLightbox:a=>h(w,a),openEventSpecificLightbox:(a,e)=>h(a,e),openVideo:a=>x(a)};const v={"":E,gallery:I,about:T,journey:B,performances:V,events:G,results:z};function y(){const a=document.getElementById("page-content"),e=window.location.hash.slice(1),[t,n]=e.split("?");if(t&&!v[t]){window.location.hash="";return}const s=new URLSearchParams(n||"");a.style.opacity="0",setTimeout(()=>{const i=v[t]||v[""];a.innerHTML=i(s),window.scrollTo({top:0,behavior:"instant"}),a.style.opacity="1",C()},150)}function O(){k(),_(),window.addEventListener("hashchange",y),y()}document.addEventListener("DOMContentLoaded",O);
+  `}function G(a){const e=String(a).toLowerCase();return e.includes("1st")||e.includes("winner")||e==="first"?"badge-gold":e.includes("2nd")||e.includes("runner")?"badge-silver":e.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openEventSpecificLightbox:(a,e)=>C(a,e),openVideo:a=>_(a)};const v={"":D,about:L,journey:M,performances:T,events:q,results:j};function g(){const a=document.getElementById("page-content"),e=window.location.hash.slice(1),[t,n]=e.split("?");if(t&&!v[t]){window.location.hash="";return}const s=new URLSearchParams(n||"");a.style.opacity="0",setTimeout(()=>{const i=v[t]||v[""];a.innerHTML=i(s),window.scrollTo({top:0,behavior:"instant"}),a.style.opacity="1",S()},150)}function R(){f(),$(),window.addEventListener("hashchange",g),g()}document.addEventListener("DOMContentLoaded",R);
