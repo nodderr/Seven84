@@ -1,12 +1,12 @@
-(function(){const a=document.createElement("link").relList;if(a&&a.supports&&a.supports("modulepreload"))return;for(const t of document.querySelectorAll('link[rel="modulepreload"]'))i(t);new MutationObserver(t=>{for(const o of t)if(o.type==="childList")for(const r of o.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&i(r)}).observe(document,{childList:!0,subtree:!0});function s(t){const o={};return t.integrity&&(o.integrity=t.integrity),t.referrerPolicy&&(o.referrerPolicy=t.referrerPolicy),t.crossOrigin==="use-credentials"?o.credentials="include":t.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(t){if(t.ep)return;t.ep=!0;const o=s(t);fetch(t.href,o)}})();const v=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function w(){const e=document.getElementById("navbar"),a=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
+(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const a of document.querySelectorAll('link[rel="modulepreload"]'))i(a);new MutationObserver(a=>{for(const o of a)if(o.type==="childList")for(const c of o.addedNodes)c.tagName==="LINK"&&c.rel==="modulepreload"&&i(c)}).observe(document,{childList:!0,subtree:!0});function s(a){const o={};return a.integrity&&(o.integrity=a.integrity),a.referrerPolicy&&(o.referrerPolicy=a.referrerPolicy),a.crossOrigin==="use-credentials"?o.credentials="include":a.crossOrigin==="anonymous"?o.credentials="omit":o.credentials="same-origin",o}function i(a){if(a.ep)return;a.ep=!0;const o=s(a);fetch(a.href,o)}})();const u=[{path:"",label:"Home"},{path:"gallery",label:"Gallery"},{path:"events",label:"Events"},{path:"performances",label:"Performances"},{path:"results",label:"Results"},{path:"journey",label:"Our Journey"},{path:"about",label:"About Us"}];function w(){const e=document.getElementById("navbar"),t=window.location.hash.slice(1)||"";e.className="navbar",e.innerHTML=`
     <div class="navbar-inner">
       <a class="navbar-logo" data-nav="">
         <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: var(--text-2xl); color: var(--cream);">Seven.84</span>
       </a>
       <div class="navbar-links">
-        ${v.map(t=>`
-          <a class="navbar-link ${a===t.path?"active":""}" data-nav="${t.path}">
-            ${t.label}
+        ${u.map(a=>`
+          <a class="navbar-link ${t===a.path?"active":""}" data-nav="${a.path}">
+            ${a.label}
           </a>
         `).join("")}
       </div>
@@ -15,13 +15,13 @@
       </button>
     </div>
     <div class="navbar-mobile-overlay" id="mobile-overlay">
-      ${v.map(t=>`
-        <a class="navbar-link ${a===t.path?"active":""}" data-nav="${t.path}">
-          ${t.label}
+      ${u.map(a=>`
+        <a class="navbar-link ${t===a.path?"active":""}" data-nav="${a.path}">
+          ${a.label}
         </a>
       `).join("")}
     </div>
-  `,e.querySelectorAll("[data-nav]").forEach(t=>{t.addEventListener("click",o=>{o.preventDefault();const r=t.getAttribute("data-nav");window.location.hash=r,k()})});const s=document.getElementById("nav-toggle"),i=document.getElementById("mobile-overlay");s.addEventListener("click",()=>{s.classList.toggle("open"),i.classList.toggle("open"),document.body.style.overflow=i.classList.contains("open")?"hidden":""}),$(e)}function k(){const e=document.getElementById("nav-toggle"),a=document.getElementById("mobile-overlay");e&&a&&(e.classList.remove("open"),a.classList.remove("open"),document.body.style.overflow="")}function $(e){let a=!1;window.addEventListener("scroll",()=>{a||(window.requestAnimationFrame(()=>{window.scrollY>50?e.classList.add("scrolled"):e.classList.remove("scrolled"),a=!1}),a=!0)})}function x(){const e=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(a=>{a.getAttribute("data-nav")===e?a.classList.add("active"):a.classList.remove("active")})}function L(){const e=document.getElementById("site-footer");e.className="footer",e.innerHTML=`
+  `,e.querySelectorAll("[data-nav]").forEach(a=>{a.addEventListener("click",o=>{o.preventDefault();const c=a.getAttribute("data-nav");window.location.hash=c,$()})});const s=document.getElementById("nav-toggle"),i=document.getElementById("mobile-overlay");s.addEventListener("click",()=>{s.classList.toggle("open"),i.classList.toggle("open"),document.body.style.overflow=i.classList.contains("open")?"hidden":""}),k(e)}function $(){const e=document.getElementById("nav-toggle"),t=document.getElementById("mobile-overlay");e&&t&&(e.classList.remove("open"),t.classList.remove("open"),document.body.style.overflow="")}function k(e){let t=!1;window.addEventListener("scroll",()=>{t||(window.requestAnimationFrame(()=>{window.scrollY>50?e.classList.add("scrolled"):e.classList.remove("scrolled"),t=!1}),t=!0)})}function x(){const e=window.location.hash.slice(1)||"";document.querySelectorAll(".navbar-link").forEach(t=>{t.getAttribute("data-nav")===e?t.classList.add("active"):t.classList.remove("active")})}function E(){const e=document.getElementById("site-footer");e.className="footer",e.innerHTML=`
     <div class="footer-inner">
       <div class="footer-top">
         <div class="footer-brand">
@@ -61,13 +61,13 @@
         <span>Based out of MIT, Manipal 🎶</span>
       </div>
     </div>
-  `,e.querySelectorAll("[data-nav]").forEach(a=>{a.addEventListener("click",s=>{s.preventDefault();const i=a.getAttribute("data-nav");window.location.hash=i,window.scrollTo({top:0,behavior:"smooth"})})})}let n=[],l=0;function E(e,a=0){n=e,l=a;const s=document.getElementById("lightbox-overlay");s.classList.remove("hidden"),s.innerHTML=`
+  `,e.querySelectorAll("[data-nav]").forEach(t=>{t.addEventListener("click",s=>{s.preventDefault();const i=t.getAttribute("data-nav");window.location.hash=i,window.scrollTo({top:0,behavior:"smooth"})})})}let n=[],l=0;function L(e,t=0){n=e,l=t;const s=document.getElementById("lightbox-overlay");s.classList.remove("hidden"),s.innerHTML=`
     <span class="lightbox-close" id="lightbox-close">✕</span>
     <span class="lightbox-nav lightbox-prev" id="lightbox-prev">‹</span>
     <img class="lightbox-image" src="${n[l].src}" alt="${n[l].title||""}" />
     <span class="lightbox-nav lightbox-next" id="lightbox-next">›</span>
     <div class="lightbox-counter">${l+1} / ${n.length}</div>
-  `,requestAnimationFrame(()=>s.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",h),s.addEventListener("click",i=>{i.target===s&&h()}),document.getElementById("lightbox-prev").addEventListener("click",i=>{i.stopPropagation(),p(-1)}),document.getElementById("lightbox-next").addEventListener("click",i=>{i.stopPropagation(),p(1)}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function p(e){l=(l+e+n.length)%n.length;const a=document.querySelector(".lightbox-image"),s=document.querySelector(".lightbox-counter");a.style.opacity="0",setTimeout(()=>{a.src=n[l].src,a.alt=n[l].title||"",s.textContent=`${l+1} / ${n.length}`,a.style.opacity="1"},150)}function f(e){e.key==="Escape"&&h(),e.key==="ArrowLeft"&&p(-1),e.key==="ArrowRight"&&p(1)}function h(){const e=document.getElementById("lightbox-overlay");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}function S(e){const a=document.getElementById("video-modal");a.classList.remove("hidden"),a.innerHTML=`
+  `,requestAnimationFrame(()=>s.classList.add("active")),document.getElementById("lightbox-close").addEventListener("click",v),s.addEventListener("click",i=>{i.target===s&&v()}),document.getElementById("lightbox-prev").addEventListener("click",i=>{i.stopPropagation(),p(-1)}),document.getElementById("lightbox-next").addEventListener("click",i=>{i.stopPropagation(),p(1)}),document.addEventListener("keydown",y),document.body.style.overflow="hidden"}function p(e){l=(l+e+n.length)%n.length;const t=document.querySelector(".lightbox-image"),s=document.querySelector(".lightbox-counter");t.style.opacity="0",setTimeout(()=>{t.src=n[l].src,t.alt=n[l].title||"",s.textContent=`${l+1} / ${n.length}`,t.style.opacity="1"},150)}function y(e){e.key==="Escape"&&v(),e.key==="ArrowLeft"&&p(-1),e.key==="ArrowRight"&&p(1)}function v(){const e=document.getElementById("lightbox-overlay");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",y),document.body.style.overflow=""}function S(e){const t=document.getElementById("video-modal");t.classList.remove("hidden"),t.innerHTML=`
     <div class="video-modal-inner">
       <span class="video-modal-close" id="video-close">✕</span>
       <iframe 
@@ -76,7 +76,7 @@
         allowfullscreen
       ></iframe>
     </div>
-  `,requestAnimationFrame(()=>a.classList.add("active")),document.getElementById("video-close").addEventListener("click",u),a.addEventListener("click",s=>{s.target===a&&u()}),document.addEventListener("keydown",b),document.body.style.overflow="hidden"}function b(e){e.key==="Escape"&&u()}function u(){const e=document.getElementById("video-modal");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",b),document.body.style.overflow=""}const c=[],A=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function I(){const e=c.find(a=>a.featured)||c[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
+  `,requestAnimationFrame(()=>t.classList.add("active")),document.getElementById("video-close").addEventListener("click",m),t.addEventListener("click",s=>{s.target===t&&m()}),document.addEventListener("keydown",f),document.body.style.overflow="hidden"}function f(e){e.key==="Escape"&&m()}function m(){const e=document.getElementById("video-modal");e.classList.remove("active"),setTimeout(()=>{e.classList.add("hidden"),e.innerHTML=""},300),document.removeEventListener("keydown",f),document.body.style.overflow=""}const r=[],I=[{id:"all",label:"All"},{id:"live",label:"Live Performances"},{id:"cover",label:"Covers"}];function A(){const e=r.find(t=>t.featured)||r[0]||{title:"New Performance Coming Soon",youtubeId:""};return`
     <div class="page-enter">
       <!-- HERO -->
       <section class="hero">
@@ -192,11 +192,11 @@
         </div>
       </section>
     </div>
-  `}const M=["All","Events","Behind the Scenes","Band Photos","Rehearsals"],y=[{src:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800",thumb:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400",title:"Revels 2023",category:"Events",date:"March 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",thumb:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",title:"Soundcheck Session",category:"Behind the Scenes",date:"May 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",thumb:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400",title:"Lead Guitar Solo",category:"Events",date:"August 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",thumb:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=400",title:"Crowd at Annual Fest",category:"Events",date:"October 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800",thumb:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400",title:"Studio Recording",category:"Behind the Scenes",date:"November 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",thumb:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400",title:"Band Photo — Outdoors",category:"Band Photos",date:"January 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",thumb:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",title:"Acoustic Rehearsal",category:"Rehearsals",date:"February 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",thumb:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",title:"Fusion Night",category:"Events",date:"March 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=800",thumb:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=400",title:"Backstage Moments",category:"Behind the Scenes",date:"April 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",thumb:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",title:"Full Band Setup",category:"Band Photos",date:"May 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=800",thumb:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=400",title:"Tabla Close-Up",category:"Rehearsals",date:"June 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",thumb:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",title:"Pre-show Huddle",category:"Behind the Scenes",date:"July 2024",aspectRatio:"landscape"}];function T(){const e=M.map((s,i)=>`
+  `}const M=["All","Events","Behind the Scenes","Band Photos","Rehearsals"],b=[{src:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=800",thumb:"https://images.unsplash.com/photo-1501386761578-eac5c94b800a?w=400",title:"Revels 2023",category:"Events",date:"March 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800",thumb:"https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400",title:"Soundcheck Session",category:"Behind the Scenes",date:"May 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800",thumb:"https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400",title:"Lead Guitar Solo",category:"Events",date:"August 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800",thumb:"https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=400",title:"Crowd at Annual Fest",category:"Events",date:"October 2023",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=800",thumb:"https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=400",title:"Studio Recording",category:"Behind the Scenes",date:"November 2023",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=800",thumb:"https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=400",title:"Band Photo — Outdoors",category:"Band Photos",date:"January 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=800",thumb:"https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=400",title:"Acoustic Rehearsal",category:"Rehearsals",date:"February 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800",thumb:"https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=400",title:"Fusion Night",category:"Events",date:"March 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=800",thumb:"https://images.unsplash.com/photo-1485579149621-3123dd979885?w=400",title:"Backstage Moments",category:"Behind the Scenes",date:"April 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=800",thumb:"https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=400",title:"Full Band Setup",category:"Band Photos",date:"May 2024",aspectRatio:"landscape"},{src:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=800",thumb:"https://images.unsplash.com/photo-1598387993281-cecf8b71a8f8?w=400",title:"Tabla Close-Up",category:"Rehearsals",date:"June 2024",aspectRatio:"portrait"},{src:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800",thumb:"https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400",title:"Pre-show Huddle",category:"Behind the Scenes",date:"July 2024",aspectRatio:"landscape"}];function B(){const e=M.map((s,i)=>`
     <button class="filter-tab ${i===0?"active":""}" data-filter="${s==="All"?"all":s}">
       ${s}
     </button>
-  `).join(""),a=y.map((s,i)=>`
+  `).join(""),t=b.map((s,i)=>`
     <div class="gallery-item reveal" data-category="${s.category}" onclick="window.appAPI.openLightbox(${i})">
       <img src="${s.thumb}" alt="${s.title}" loading="lazy" />
       <div class="gallery-item-overlay">
@@ -206,7 +206,7 @@
         </div>
       </div>
     </div>
-  `).join("");return setTimeout(B,100),`
+  `).join("");return setTimeout(T,100),`
     <div class="page-enter">
       <section class="gallery-hero grain-overlay">
         <div class="container reveal">
@@ -222,12 +222,12 @@
           </div>
           
           <div class="gallery-masonry stagger-children" id="gallery-grid">
-            ${a}
+            ${t}
           </div>
         </div>
       </section>
     </div>
-  `}function B(){const e=document.querySelectorAll(".filter-tab"),a=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(t=>t.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");a.forEach(t=>{i==="all"||t.getAttribute("data-category")===i?(t.style.display="block",setTimeout(()=>{t.style.opacity="1",t.style.transform="scale(1)"},50)):(t.style.opacity="0",t.style.transform="scale(0.8)",setTimeout(()=>{t.style.display="none"},300))})})})}const P=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",quote:"Test",instagram:"#"}];function R(){return`
+  `}function T(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".gallery-item");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");t.forEach(a=>{i==="all"||a.getAttribute("data-category")===i?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="scale(1)"},50)):(a.style.opacity="0",a.style.transform="scale(0.8)",setTimeout(()=>{a.style.display="none"},300))})})})}const P=[{name:"Nishant Verma",role:"Keys, Bass, Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Tushar Vikash K",role:"Drums, Percussion",photo:"",quote:"Test",instagram:"#"},{name:"Vansh Srivastava",role:"Guitars, Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Aryan Raj",role:"Guitars, Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Anjishnu Satpathy",role:"Lead Vocals",photo:"",quote:"Test",instagram:"#"},{name:"Milind Konwar",role:"Keys, Bass",photo:"",quote:"Test",instagram:"#"},{name:"Chaitanya Pandey",role:"Guitar, Vocals",photo:"",quote:"Test",instagram:"#"}];function R(){return`
     <div class="page-enter">
       <section class="about-hero grain-overlay">
         <div class="container reveal">
@@ -251,16 +251,16 @@
           </div>
           
           <div class="members-grid stagger-children">
-            ${P.map(a=>`
+            ${P.map(t=>`
     <div class="member-card reveal-scale">
       <div class="member-photo-wrapper">
-        <img src="${a.photo}" alt="${a.name}" class="member-photo" loading="lazy" />
+        <img src="${t.photo}" alt="${t.name}" class="member-photo" loading="lazy" />
       </div>
-      <h3 class="member-name">${a.name}</h3>
-      <div class="member-role">${a.role}</div>
-      <p class="member-quote">"${a.quote}"</p>
+      <h3 class="member-name">${t.name}</h3>
+      <div class="member-role">${t.role}</div>
+      <p class="member-quote">"${t.quote}"</p>
       <div class="member-socials">
-        ${a.instagram?`<a href="${a.instagram}" class="member-social-link" aria-label="Instagram">📷</a>`:""}
+        ${t.instagram?`<a href="${t.instagram}" class="member-social-link" aria-label="Instagram">📷</a>`:""}
       </div>
     </div>
   `).join("")}
@@ -281,12 +281,12 @@
         </div>
       </section>
     </div>
-  `}const q=[{date:"August 2021",title:"The Beginning",description:"Seven.84 was born in the corridors of MIT Manipal, when a group of music enthusiasts decided to fuse Hindustani classical with contemporary sounds.",image:null},{date:"November 2021",title:"First Jam Session",description:"Our first official jam session at the college music room. Six hours of pure experimentation with ragas, grooves, and zero sleep.",image:null},{date:"February 2022",title:"Debut Performance — Revels",description:"Our first stage performance at MIT's annual cultural fest Revels. The crowd's response was beyond anything we had imagined.",image:null},{date:"July 2022",title:"Original Compositions Begin",description:"Started working on our first original compositions, blending Hindustani ragas with progressive rock arrangements.",image:null},{date:"October 2022",title:"Inter-College Circuit",description:"Performed at multiple inter-college competitions across Karnataka, winning hearts and a few trophies along the way.",image:null},{date:"March 2023",title:"Workshop with Agam",description:"A dream come true — attended a masterclass workshop conducted by members of Agam. Learned invaluable lessons about arrangement and stage presence.",image:null},{date:"August 2023",title:"First YouTube Release",description:'Released our first performance video on YouTube. The fusion of "Vande Mataram" with progressive rock elements received overwhelming response.',image:null},{date:"January 2024",title:"Growing Stronger",description:"Expanded the band's lineup, refined our sound, and began performing regularly at venues across Manipal and Udupi.",image:null},{date:"2024 — Present",title:"The Journey Continues",description:"Continuing to push boundaries, create original music, and spread the fusion wave from MIT Manipal to the world.",image:null}],V=[{number:50,suffix:"+",label:"Live Performances"},{number:7,suffix:"",label:"Band Members"},{number:3,suffix:"+",label:"Years of Music"},{number:1e4,suffix:"+",label:"Hearts Touched"}];function C(){const e=V.map(s=>`
+  `}const q=[],V=[];function j(){const e=V.map(s=>`
     <div class="stat-item reveal-scale">
       <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">0</div>
       <div class="stat-label">${s.label}</div>
     </div>
-  `).join(""),a=q.map((s,i)=>`
+  `).join(""),t=q.map((s,i)=>`
       <div class="timeline-item">
         <div class="timeline-dot"></div>
         <div class="timeline-content ${i%2!==0?"reveal-left":"reveal-right"}">
@@ -318,27 +318,27 @@
       <section class="section section-darker" style="padding-top: var(--space-xl)">
         <div class="container-narrow">
           <div class="timeline stagger-children">
-            ${a}
+            ${t}
           </div>
         </div>
       </section>
     </div>
-  `}function j(){const e=c.find(t=>t.featured)||c[0],a=c.filter(t=>t.id!==e.id),s=A.map((t,o)=>`
-    <button class="filter-tab ${o===0?"active":""}" data-filter="${t.id}">
-      ${t.label}
+  `}function C(){const e=r.find(a=>a.featured)||r[0],t=r.filter(a=>a.id!==e.id),s=I.map((a,o)=>`
+    <button class="filter-tab ${o===0?"active":""}" data-filter="${a.id}">
+      ${a.label}
     </button>
-  `).join(""),i=a.map(t=>`
-    <div class="performance-card reveal" data-category="${t.category}" onclick="window.appAPI.openVideo('${t.youtubeId}')">
+  `).join(""),i=t.map(a=>`
+    <div class="performance-card reveal" data-category="${a.category}" onclick="window.appAPI.openVideo('${a.youtubeId}')">
       <div class="performance-thumb-wrapper">
-        <img src="https://img.youtube.com/vi/${t.youtubeId}/maxresdefault.jpg" alt="${t.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
+        <img src="https://img.youtube.com/vi/${a.youtubeId}/maxresdefault.jpg" alt="${a.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
         <div class="performance-play-overlay">
           <div class="performance-play-icon"></div>
         </div>
       </div>
       <div class="performance-info">
-        <div class="performance-category">${t.category.toUpperCase()}</div>
-        <h3 class="performance-title">${t.title}</h3>
-        <span class="performance-meta">${t.event} • ${t.date}</span>
+        <div class="performance-category">${a.category.toUpperCase()}</div>
+        <h3 class="performance-title">${a.title}</h3>
+        <span class="performance-meta">${a.event} • ${a.date}</span>
       </div>
     </div>
   `).join("");return setTimeout(F,100),`
@@ -384,7 +384,7 @@
         </div>
       </section>
     </div>
-  `}function F(){const e=document.querySelectorAll(".filter-tab"),a=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(t=>t.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");a.forEach(t=>{i==="all"||t.getAttribute("data-category")===i?(t.style.display="block",setTimeout(()=>{t.style.opacity="1",t.style.transform="translateY(0)"},50)):(t.style.opacity="0",t.style.transform="translateY(10px)",setTimeout(()=>{t.style.display="none"},300))})})})}const d=[{id:"waves-24-indian-rock",name:"Indian Rock",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"5th",description:"Participated in the Indian Rock competition at Bits Goa Waves.",youtubeId:null,thumbnail:"/gallery/events/waves-24-indian-rock/DSC_0006_1.webp",photos:[{src:"/gallery/events/waves-24-indian-rock/DSC_0006_1.webp",caption:"Live at Waves 24"},{src:"/gallery/events/waves-24-indian-rock/DSC_0023_1.webp",caption:"Performance"},{src:"/gallery/events/waves-24-indian-rock/DSC_0042.webp",caption:"Band in action"},{src:"/gallery/events/waves-24-indian-rock/DSC_0080.webp",caption:"Crowd view"},{src:"/gallery/events/waves-24-indian-rock/DSC_0096.webp",caption:"Stage magic"}],bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:"waves-24-silence-amps",name:"Silence of the Amps",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"2nd Place",description:"Secured 2nd position in Silence of the Amps at Bits Goa Waves.",youtubeId:null,thumbnail:"/gallery/events/waves-24-silence-amps/7M4A7414.webp",photos:[{src:"/gallery/events/waves-24-silence-amps/7M4A7414.webp",caption:"Acoustic Set"},{src:"/gallery/events/waves-24-silence-amps/7M4A7418.webp",caption:"Silence of the Amps"},{src:"/gallery/events/waves-24-silence-amps/IMG-20231029-WA0101.webp",caption:"Unplugged"},{src:"/gallery/events/waves-24-silence-amps/IMG-20231029-WA0102.webp",caption:"Vibes"}],bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:"waves-24-eastern-vocals",name:"Eastern Solo Vocals",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"3rd Place",description:"Secured 3rd position in Eastern Solo Vocals at Bits Goa Waves.",youtubeId:null,thumbnail:"https://images.unsplash.com/photo-1516280440502-61019d146c99?q=80&w=800&auto=format&fit=crop",photos:[],bandMembers:["Vansh Srivastava"]}];function G(e){const a=e?e.get("id"):null;return a?z(a):O()}function O(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
+  `}function F(){const e=document.querySelectorAll(".filter-tab"),t=document.querySelectorAll(".performance-card");e.forEach(s=>{s.addEventListener("click",()=>{e.forEach(a=>a.classList.remove("active")),s.classList.add("active");const i=s.getAttribute("data-filter");t.forEach(a=>{i==="all"||a.getAttribute("data-category")===i?(a.style.display="block",setTimeout(()=>{a.style.opacity="1",a.style.transform="translateY(0)"},50)):(a.style.opacity="0",a.style.transform="translateY(10px)",setTimeout(()=>{a.style.display="none"},300))})})})}const d=[{id:"waves-24-indian-rock",name:"Indian Rock",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"5th",description:"Participated in the Indian Rock competition at Bits Goa Waves.",youtubeId:null,thumbnail:"/gallery/events/waves-24-indian-rock/thumbnail/DSC_0006_1.webp",photos:[{src:"/gallery/events/waves-24-indian-rock/DSC_0023_1.webp"},{src:"/gallery/events/waves-24-indian-rock/DSC_0042.webp"},{src:"/gallery/events/waves-24-indian-rock/DSC_0080.webp"},{src:"/gallery/events/waves-24-indian-rock/DSC_0096.webp"}],bandMembers:["Nishant Verma","Tushar Vikash K","Aryan Raj","Vansh Srivastava","Anjishnu Satpathy","Milind Konwar"]},{id:"waves-24-silence-amps",name:"Silence of the Amps",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"2nd Place",description:"Secured 2nd position in Silence of the Amps at Bits Goa Waves.",youtubeId:null,thumbnail:"/gallery/events/waves-24-silence-amps/thumbnail/7M4A7414.webp",photos:[{src:"/gallery/events/waves-24-silence-amps/7M4A7418.webp"},{src:"/gallery/events/waves-24-silence-amps/IMG-20231029-WA0101.webp"},{src:"/gallery/events/waves-24-silence-amps/IMG-20231029-WA0102.webp"}],bandMembers:["Nishant Verma","Chaitanya Pandey","Aryan Raj","Vansh Srivastava","Tushar Vikash K","Milind Konwar"]},{id:"waves-24-eastern-vocals",name:"Eastern Solo Vocals",type:"competition",date:"2024",time:"November 2024",venue:"Bits Goa Waves 24",rank:"3rd Place",description:"Secured 3rd position in Eastern Solo Vocals at Bits Goa Waves.",youtubeId:null,thumbnail:"",photos:[],bandMembers:["Vansh Srivastava"]}];function G(e){const t=e?e.get("id"):null;return t?O(t):z()}function z(){return d.filter(e=>e.type==="competition"),d.filter(e=>e.type==="exhibition"),`
     <div class="page-container page-events fade-in">
       <header class="section-hero">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Events</span></h1>
@@ -418,12 +418,12 @@
         </div>
       </section>
     </div>
-  `}function z(e){const a=d.find(i=>i.id===e);if(!a)return`
+  `}function O(e){const t=d.find(i=>i.id===e);if(!t)return`
       <div class="page-container page-events fade-in text-center" style="padding: 150px 20px;">
         <h1 class="font-display size-xl">Event Not Found</h1>
         <a href="#events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
       </div>
-    `;const s=a.photos&&a.photos.length>0;return window.appAPI.openEventLightbox=i=>{window.appAPI.openEventSpecificLightbox(a.photos,i)},`
+    `;const s=t.photos&&t.photos.length>0;return window.appAPI.openEventLightbox=i=>{window.appAPI.openEventSpecificLightbox(t.photos,i)},`
     <div class="page-container page-event-detail fade-in">
       <button class="back-button btn btn-outline slide-up" onclick="window.location.hash = '#events'">
         ← Back to Events
@@ -431,18 +431,18 @@
 
       <header class="event-detail-hero slide-up" style="animation-delay: 0.1s">
         <div class="event-meta mb-sm">
-          <span class="font-accent text-saffron size-md">${a.date}</span> • <span class="opacity-80">${a.venue}</span>
+          <span class="font-accent text-saffron size-md">${t.date}</span> • <span class="opacity-80">${t.venue}</span>
         </div>
-        <h1 class="font-display size-xxl mb-xs">${a.name}</h1>
-        ${a.rank?`<div class="event-badge inline-badge mb-md">${a.rank}</div>`:""}
-        <p class="font-body opacity-80 size-md mt-sm max-w-lg">${a.description}</p>
+        <h1 class="font-display size-xxl mb-xs">${t.name}</h1>
+        ${t.rank?`<div class="event-badge inline-badge mb-md">${t.rank}</div>`:""}
+        <p class="font-body opacity-80 size-md mt-sm max-w-lg">${t.description}</p>
       </header>
 
-      ${a.youtubeId?`
+      ${t.youtubeId?`
         <section class="event-main-media slide-up" style="animation-delay: 0.2s">
           <div class="video-embed-container">
             <iframe 
-              src="https://www.youtube.com/embed/${a.youtubeId}" 
+              src="https://www.youtube.com/embed/${t.youtubeId}" 
               title="YouTube video player" 
               frameborder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -456,19 +456,16 @@
         <section class="event-gallery slide-up" style="animation-delay: 0.3s">
           <h2 class="font-display size-xl mb-xl">Event <span class="text-saffron">Gallery</span></h2>
           <div class="gallery-masonry" style="--columns: 3;">
-            ${a.photos.map((i,t)=>`
-              <div class="gallery-item" onclick="appAPI.openEventLightbox(${t})">
-                <img src="${i.src}" alt="${i.caption}" loading="lazy" />
-                <div class="gallery-overlay">
-                  <span class="font-display">${i.caption}</span>
-                </div>
+            ${t.photos.map((i,a)=>`
+              <div class="gallery-item" onclick="appAPI.openEventLightbox(${a})">
+                <img src="${i.src}" alt="Event Photo" loading="lazy" />
               </div>
             `).join("")}
           </div>
         </section>
       `:""}
     </div>
-  `}function H(){const e=d.filter(a=>a.type==="competition");return`
+  `}function H(){const e=d.filter(t=>t.type==="competition");return`
     <div class="page-container page-results fade-in">
       <header class="section-hero text-center">
         <h1 class="font-display size-xxl section-title slide-up">Our <span class="text-saffron">Results</span></h1>
@@ -490,16 +487,16 @@
               </tr>
             </thead>
             <tbody>
-              ${e.length>0?e.map((a,s)=>`
+              ${e.length>0?e.map((t,s)=>`
                 <tr class="result-row" onclick="const details = document.getElementById('details-${s}'); details.style.display = details.style.display === 'table-row' ? 'none' : 'table-row'; this.classList.toggle('active-row');">
                   <td class="font-accent text-saffron text-nowrap">
-                    <span class="dropdown-icon">▶</span> ${a.date}
+                    <span class="dropdown-icon">▶</span> ${t.date}
                   </td>
-                  <td class="font-accent text-saffron text-nowrap">${a.time||""}</td>
-                  <td class="font-display size-md text-cream">${a.name}</td>
-                  <td class="opacity-80">${a.venue}</td>
+                  <td class="font-accent text-saffron text-nowrap">${t.time||""}</td>
+                  <td class="font-display size-md text-cream">${t.name}</td>
+                  <td class="opacity-80">${t.venue}</td>
                   <td>
-                    ${a.rank?`<span class="result-badge ${N(a.rank)}">${a.rank}</span>`:'<span class="opacity-50">—</span>'}
+                    ${t.rank?`<span class="result-badge ${N(t.rank)}">${t.rank}</span>`:'<span class="opacity-50">—</span>'}
                   </td>
                 </tr>
                 <tr id="details-${s}" class="result-details-row" style="display: none;">
@@ -507,9 +504,9 @@
                     <div class="result-details-content">
                       <div class="result-members">
                         <strong class="text-saffron">Lineup:</strong> 
-                        <span class="opacity-80">${a.bandMembers&&a.bandMembers.length>0?a.bandMembers.join(", "):"Lineup not specified"}</span>
+                        <span class="opacity-80">${t.bandMembers&&t.bandMembers.length>0?t.bandMembers.join(", "):"Lineup not specified"}</span>
                       </div>
-                      <a href="#events?id=${a.id}" class="result-event-link">
+                      <a href="#events?id=${t.id}" class="result-event-link">
                         View Event Media <span>&rarr;</span>
                       </a>
                     </div>
@@ -525,4 +522,4 @@
         </div>
       </section>
     </div>
-  `}function N(e){const a=String(e).toLowerCase();return a.includes("1st")||a.includes("winner")||a==="first"?"badge-gold":a.includes("2nd")||a.includes("runner")?"badge-silver":a.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openLightbox:e=>E(y,e),openVideo:e=>S(e)};const m={"":I,gallery:T,about:R,journey:C,performances:j,events:G,results:H};function g(){const e=document.getElementById("page-content"),a=window.location.hash.slice(1),[s,i]=a.split("?");if(s&&!m[s]){window.location.hash="";return}const t=new URLSearchParams(i||"");e.style.opacity="0",setTimeout(()=>{const o=m[s]||m[""];e.innerHTML=o(t),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function D(){w(),L(),window.addEventListener("hashchange",g),g()}document.addEventListener("DOMContentLoaded",D);
+  `}function N(e){const t=String(e).toLowerCase();return t.includes("1st")||t.includes("winner")||t==="first"?"badge-gold":t.includes("2nd")||t.includes("runner")?"badge-silver":t.includes("3rd")?"badge-bronze":"badge-neutral"}window.appAPI={openLightbox:e=>L(b,e),openVideo:e=>S(e)};const h={"":A,gallery:B,about:R,journey:j,performances:C,events:G,results:H};function g(){const e=document.getElementById("page-content"),t=window.location.hash.slice(1),[s,i]=t.split("?");if(s&&!h[s]){window.location.hash="";return}const a=new URLSearchParams(i||"");e.style.opacity="0",setTimeout(()=>{const o=h[s]||h[""];e.innerHTML=o(a),window.scrollTo({top:0,behavior:"instant"}),e.style.opacity="1",x()},150)}function D(){w(),E(),window.addEventListener("hashchange",g),g()}document.addEventListener("DOMContentLoaded",D);
