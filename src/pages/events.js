@@ -107,10 +107,7 @@ function renderEventDetail(eventId) {
           <div class="gallery-masonry" style="--columns: 3;">
             ${event.photos.map((photo, index) => `
               <div class="gallery-item" onclick="appAPI.openEventLightbox(${index})">
-                <img src="${photo.src}" alt="${photo.caption}" loading="lazy" />
-                <div class="gallery-overlay">
-                  <span class="font-display">${photo.caption}</span>
-                </div>
+                <img src="${photo.src}" alt="Event Photo" loading="lazy" />
               </div>
             `).join('')}
           </div>
