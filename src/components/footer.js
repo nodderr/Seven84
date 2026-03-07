@@ -22,7 +22,6 @@ export function renderFooter() {
             <a href="#" data-nav="">Home</a>
             <a href="#events" data-nav="events">Events</a>
             <a href="#results" data-nav="results">Results</a>
-            <a href="#gallery" data-nav="gallery">Gallery</a>
             <a href="#about" data-nav="about">About Us</a>
             <a href="#journey" data-nav="journey">Our Journey</a>
             <a href="#performances" data-nav="performances">Performances</a>

@@ -1,6 +1,5 @@
 const pages = [
   { path: '', label: 'Home' },
-  { path: 'gallery', label: 'Gallery' },
   { path: 'events', label: 'Events' },
   { path: 'performances', label: 'Performances' },
   { path: 'results', label: 'Results' },

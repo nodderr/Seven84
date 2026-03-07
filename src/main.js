@@ -9,7 +9,6 @@ import { initScrollAnimations } from './components/scrollAnimations.js';
 
 // Pages
 import { renderHome } from './pages/home.js';
-import { renderGallery } from './pages/gallery.js';
 import { renderAbout } from './pages/about.js';
 import { renderJourney } from './pages/journey.js';
 import { renderPerformances } from './pages/performances.js';
@@ -28,7 +27,6 @@ window.appAPI = {
 
 const routes = {
   '': renderHome,
-  'gallery': renderGallery,
   'about': renderAbout,
   'journey': renderJourney,
   'performances': renderPerformances,

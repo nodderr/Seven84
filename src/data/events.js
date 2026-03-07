@@ -11,9 +11,7 @@ export const eventsData = [
     youtubeId: '1ZSdr3wMT70',
     thumbnail: './gallery/events/waves-24-indian-rock/thumbnail/DSC_0004.webp',
     photos: [
-      { src: './gallery/events/waves-24-indian-rock/DSC_0002_1.webp' },
       { src: './gallery/events/waves-24-indian-rock/DSC_0003.webp' },
-      { src: './gallery/events/waves-24-indian-rock/DSC_0004.webp' },
       { src: './gallery/events/waves-24-indian-rock/DSC_0005.webp' },
       { src: './gallery/events/waves-24-indian-rock/DSC_0007_1.webp' },
       { src: './gallery/events/waves-24-indian-rock/DSC_0008_1.webp' },
