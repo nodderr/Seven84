@@ -68,5 +68,12 @@ export const members = [
     photo: '',
     quote: 'Test',
     instagram: '#',
+  },
+  {
+    name: 'Brandon Rich Khonglam',
+    role: 'Flute',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
   }
 ];
