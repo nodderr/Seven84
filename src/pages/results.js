@@ -1,4 +1,13 @@
 import { eventsData } from '../data/events.js';
+import { members } from '../data/members.js';
+
+const sortMembers = (names) => {
+  return [...names].sort((a, b) => {
+    const idxA = members.findIndex(m => m.name === a || m.name.startsWith(a));
+    const idxB = members.findIndex(m => m.name === b || m.name.startsWith(b));
+    return idxA - idxB;
+  });
+};
 
 export function renderResults() {
   // Filter only competitions, sort by date (fallback to reversing array if dates are complex strings)
@@ -47,7 +56,7 @@ export function renderResults() {
                     <div class="result-details-content">
                       <div class="result-members">
                         <strong class="text-saffron">Lineup:</strong> 
-                        <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? result.bandMembers.join(', ') : 'Lineup not specified'}</span>
+                        <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
                       </div>
                       <a href="#events?id=${result.id}" class="result-event-link">
                         View Event Media <span>&rarr;</span>
