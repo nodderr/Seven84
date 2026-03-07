@@ -9,8 +9,14 @@ export const eventsData = [
     rank: '5th',
     description: 'Participated in the Indian Rock competition at Bits Goa Waves.',
     youtubeId: null,
-    thumbnail: 'https://images.unsplash.com/photo-1598387181032-a310322db565?q=80&w=1526&auto=format&fit=crop',
-    photos: [],
+    thumbnail: '/gallery/events/waves-24-indian-rock/DSC_0006_1.webp',
+    photos: [
+      { src: '/gallery/events/waves-24-indian-rock/DSC_0006_1.webp', caption: 'Live at Waves 24' },
+      { src: '/gallery/events/waves-24-indian-rock/DSC_0023_1.webp', caption: 'Performance' },
+      { src: '/gallery/events/waves-24-indian-rock/DSC_0042.webp', caption: 'Band in action' },
+      { src: '/gallery/events/waves-24-indian-rock/DSC_0080.webp', caption: 'Crowd view' },
+      { src: '/gallery/events/waves-24-indian-rock/DSC_0096.webp', caption: 'Stage magic' }
+    ],
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava', 'Anjishnu Satpathy', 'Milind Konwar']
   },
   {
@@ -23,8 +29,13 @@ export const eventsData = [
     rank: '2nd Place',
     description: 'Secured 2nd position in Silence of the Amps at Bits Goa Waves.',
     youtubeId: null,
-    thumbnail: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=1470&auto=format&fit=crop',
-    photos: [],
+    thumbnail: '/gallery/events/waves-24-silence-amps/7M4A7414.webp',
+    photos: [
+      { src: '/gallery/events/waves-24-silence-amps/7M4A7414.webp', caption: 'Acoustic Set' },
+      { src: '/gallery/events/waves-24-silence-amps/7M4A7418.webp', caption: 'Silence of the Amps' },
+      { src: '/gallery/events/waves-24-silence-amps/IMG-20231029-WA0101.webp', caption: 'Unplugged' },
+      { src: '/gallery/events/waves-24-silence-amps/IMG-20231029-WA0102.webp', caption: 'Vibes' }
+    ],
     bandMembers: ['Nishant Verma', 'Chaitanya Pandey', 'Aryan Raj', 'Vansh Srivastava', 'Tushar Vikash K', 'Milind Konwar']
   },
   {
