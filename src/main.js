@@ -15,8 +15,6 @@ import { renderPerformances } from './pages/performances.js';
 import { renderEvents } from './pages/events.js';
 import { renderResults } from './pages/results.js';
 
-// Data exports for global API
-import { galleryItems } from './data/gallery.js';
 
 // Global API for inline HTML handlers (onClick)
 window.appAPI = {
