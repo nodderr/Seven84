@@ -129,36 +129,40 @@
   padding-bottom: var(--space-xl);
 }
 
-/* Rank Badges */
+/* Rank Badges - Simple & Bold */
 .result-badge {
   display: inline-block;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);  /* Sharper corners for professional look */
   font-family: var(--font-accent);
   font-size: var(--text-xs);
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-align: center;
+  min-width: 100px;
 }
 
 .badge-gold {
-  background: linear-gradient(135deg, #d4af37, #aa8222); /* Classic gold */
-  color: #111;
-  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.2);
+  background-color: #D4AF37; /* Solid Deep Gold */
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .badge-silver {
-  background: linear-gradient(135deg, #c0c0c0, #999999);
-  color: #111;
+  background-color: #A0A0A0; /* Solid Steel Silver */
+  color: #000;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .badge-bronze {
-  background: linear-gradient(135deg, #cd7f32, #a0522d);
+  background-color: #9C5221; /* Solid Rich Bronze */
   color: #fff;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .badge-neutral {
-  background: var(--charcoal);
+  background-color: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(var(--cream-rgb), 0.2);
   color: var(--cream);
 }
