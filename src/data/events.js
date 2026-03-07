@@ -8,7 +8,7 @@ export const eventsData = [
     venue: 'Bits Goa Waves 24',
     rank: '5th',
     description: 'Participated in the Indian Rock competition at Bits Goa Waves.',
-    youtubeId: null,
+    youtubeId: '1ZSdr3wMT70',
     thumbnail: './gallery/events/waves-24-indian-rock/thumbnail/DSC_0004.webp',
     photos: [
       { src: './gallery/events/waves-24-indian-rock/DSC_0002_1.webp' },
