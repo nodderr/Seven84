@@ -149,8 +149,22 @@ export const eventsData = [
     rank: '1st Place',
     description: "Won 1st place in the flagship Battle of Bands competition organized by Chords & Co.",
     youtubeId: 'GzCzWCLVfaQ',
-    thumbnail: './gallery/events/Chords and Co Flagship 24/thumbnail/',
-    photos: [],
+    thumbnail: './gallery/events/Chords and Co Flagship 24/thumbnail/WhatsApp Image 2024-01-22 at 00.54.47.jpeg',
+    photos: [
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.42.30.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.53.01.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.54.47.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.55.06.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.55.13.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.55.53.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.56.01.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.56.19.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.58.27.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.58.43.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.58.53.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.59.04.jpeg' },
+      { src: './gallery/events/Chords and Co Flagship 24/WhatsApp Image 2024-01-22 at 00.59.09.jpeg' }
+    ],
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
   }
 ];
