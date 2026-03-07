@@ -31,14 +31,27 @@ export const performances = [
     featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
   },
-  {
-    id: 4,
-    title: 'Saiyaan - World Health Day',
-    youtubeId: 'rCRwFbHOalw',
-    category: 'cover',
-    date: 'April 2024',
-    featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
+  },
+  {
+    id: 5,
+    title: "Battle of Bands - TAPMI Atharva'37",
+    youtubeId: 'a_520VVl9Ro',
+    category: 'live',
+    date: 'January 2024',
+    featured: false,
+    eventId: 'jan-24-tapmi-band-battle',
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
+  },
+  {
+    id: 6,
+    title: "Battle of Bands - Chords & Co. Flagship'24",
+    youtubeId: 'GzCzWCLVfaQ',
+    category: 'live',
+    date: 'January 2024',
+    featured: false,
+    eventId: 'jan-24-chords-band-battle',
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
   }
 ];
 

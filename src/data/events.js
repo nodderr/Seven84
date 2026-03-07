@@ -124,6 +124,34 @@ export const eventsData = [
     thumbnail: '',
     photos: [],
     bandMembers: ['Vansh Srivastava']
+  },
+  {
+    id: 'jan-24-tapmi-band-battle',
+    name: "Battle of Bands - TAPMI Atharva'37",
+    type: 'competition',
+    date: '2024',
+    time: 'January 2024',
+    venue: 'TAPMI Atharva',
+    rank: '3rd Place',
+    description: "Participated and secured 3rd place in the Battle of Bands at TAPMI's flagship fest Atharva'37.",
+    youtubeId: 'a_520VVl9Ro',
+    thumbnail: '',
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
+  },
+  {
+    id: 'jan-24-chords-band-battle',
+    name: "Battle of Bands - Chords & Co. Flagship'24",
+    type: 'competition',
+    date: '2024',
+    time: 'January 2024',
+    venue: 'MAHE Manipal',
+    rank: '1st Place',
+    description: "Won 1st place in the flagship Battle of Bands competition organized by Chords & Co.",
+    youtubeId: 'GzCzWCLVfaQ',
+    thumbnail: '',
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Milind Konwar', 'Satvik Agrawal', 'Anjishnu Satpathy', 'Aryan Raj', 'Vansh Srivastava', 'Samarth Madhivanan']
   }
 ];
 

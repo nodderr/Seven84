@@ -47,5 +47,19 @@ export const members = [
     photo: '',
     quote: 'Test',
     instagram: '#',
+  },
+  {
+    name: 'Satvik Agrawal',
+    role: 'Guitars',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Samarth Madhivanan',
+    role: 'Tabla',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
   }
 ];
