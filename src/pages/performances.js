@@ -50,7 +50,7 @@ export function renderPerformances() {
   return `
     <div class="page-enter">
       <section class="performances-hero grain-overlay">
-        <div class="container reveal">
+        <div class="container reveal" style="text-align: center;">
           <h1 class="section-title">Live & Unplugged</h1>
           <p class="section-description">Experience the energy of Seven.84 on stage and in the studio.</p>
         </div>
