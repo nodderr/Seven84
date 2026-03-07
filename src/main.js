@@ -19,7 +19,17 @@ import { renderResults } from './pages/results.js';
 // Global API for inline HTML handlers (onClick)
 window.appAPI = {
   openEventSpecificLightbox: (images, index) => openLightbox(images, index),
-  openVideo: (youtubeId) => openVideoModal(youtubeId)
+  openVideo: (youtubeId) => openVideoModal(youtubeId),
+  scrollHighlights: (direction) => {
+    const container = document.getElementById('performance-highlights-scroll');
+    if (container) {
+      const scrollAmount = container.clientWidth * 0.8;
+      container.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  }
 };
 
 const routes = {

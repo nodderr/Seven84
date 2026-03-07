@@ -32,7 +32,8 @@ export function renderHome() {
         </div>
         
         <div class="highlight-reel">
-          <div class="highlight-scroll">
+          <button class="reel-nav-btn prev" onclick="window.appAPI.scrollHighlights(-1)" aria-label="Previous">❮</button>
+          <div class="highlight-scroll" id="performance-highlights-scroll">
             ${performances.slice(0, 6).map(p => `
               <div class="highlight-card" onclick="window.appAPI.openVideo('${p.youtubeId}')">
                 <img src="https://img.youtube.com/vi/${p.youtubeId}/maxresdefault.jpg" alt="${p.title}" loading="lazy" />
@@ -43,6 +44,7 @@ export function renderHome() {
               </div>
             `).join('')}
           </div>
+          <button class="reel-nav-btn next" onclick="window.appAPI.scrollHighlights(1)" aria-label="Next">❯</button>
         </div>
       </section>
 
