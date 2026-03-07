@@ -324,7 +324,7 @@ export const eventsData = [
     rank: '3rd Place',
     description: "Secured 3rd place in the Bandish - Battle of Bands competition at NITK Surathkal's annual fest Incident'24.",
     youtubeId: 'BM_npwZ8tx0',
-    thumbnail: './gallery/events/Battle of Bands (Bandish) - Incident 24/thumbnail/Screenshot 2026-03-08 021323.png',
+    thumbnail: './gallery/events/Battle of Bands (Bandish) - Incident 24/thumbnail/Screenshot 2026-03-08 021323.webp',
     photos: [],
     bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K', 'Vansh Srivastava']
   }
