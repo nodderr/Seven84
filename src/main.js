@@ -21,7 +21,7 @@ window.appAPI = {
   openEventSpecificLightbox: (images, index) => openLightbox(images, index),
   openVideo: (youtubeId) => openVideoModal(youtubeId),
   scrollHighlights: (direction) => {
-    const container = document.getElementById('performance-highlights-scroll');
+    const container = document.getElementById('infinite-reel-scroll');
     if (container) {
       const scrollAmount = container.clientWidth * 0.8;
       container.scrollBy({
@@ -29,6 +29,34 @@ window.appAPI = {
         behavior: 'smooth'
       });
     }
+  },
+  initInfiniteScroll: () => {
+    const container = document.getElementById('infinite-reel-scroll');
+    if (!container) return;
+
+    const cards = container.querySelectorAll('.highlight-card');
+    if (cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap);
+    const totalItems = cards.length - 6; // Subtract 6 clones (3 before, 3 after)
+
+    // Initial position: Skip the 3 clones at the start
+    container.scrollLeft = cardWidth * 3;
+
+    // Seamless loop check
+    container.addEventListener('scroll', () => {
+      const scrollLeft = container.scrollLeft;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+
+      // If at end of clones at the right, jump back to the start of real items
+      if (scrollLeft >= maxScroll - 5) {
+        container.scrollTo({ left: cardWidth * 3, behavior: 'instant' });
+      }
+      // If at start of clones at the left, jump to the start of cloned items at the right
+      else if (scrollLeft <= 5) {
+        container.scrollTo({ left: cardWidth * totalItems, behavior: 'instant' });
+      }
+    });
   }
 };
 
@@ -67,6 +95,11 @@ function router() {
     
     // Setup animations for new page
     initScrollAnimations();
+    
+    // Initialize infinite scroll if on home page
+    if (!path || path === '') {
+      window.appAPI.initInfiniteScroll();
+    }
     
     // Post-transition state
     window.scrollTo({ top: 0, behavior: 'instant' });

@@ -33,16 +33,25 @@ export function renderHome() {
         
         <div class="highlight-reel">
           <button class="reel-nav-btn prev" onclick="window.appAPI.scrollHighlights(-1)" aria-label="Previous">❮</button>
-          <div class="highlight-scroll" id="performance-highlights-scroll">
-            ${performances.slice(0, 6).map(p => `
-              <div class="highlight-card" onclick="window.appAPI.openVideo('${p.youtubeId}')">
-                <img src="https://img.youtube.com/vi/${p.youtubeId}/maxresdefault.jpg" alt="${p.title}" loading="lazy" />
-                <div class="highlight-card-overlay">
-                  <h4>${p.title}</h4>
-                  <p>${p.date}</p>
+          <div class="highlight-scroll" id="infinite-reel-scroll">
+            ${(() => {
+              const items = performances.slice(0, 10); // Take a good amount
+              const clonesBefore = items.slice(-3);
+              const clonesAfter = items.slice(0, 3);
+              const displayItems = [...clonesBefore, ...items, ...clonesAfter];
+              
+              return displayItems.map((p, idx) => `
+                <div class="highlight-card ${idx < 3 || idx >= displayItems.length - 3 ? 'is-clone' : ''}" 
+                     data-index="${idx}"
+                     onclick="window.appAPI.openVideo('${p.youtubeId}')">
+                  <img src="https://img.youtube.com/vi/${p.youtubeId}/maxresdefault.jpg" alt="${p.title}" loading="lazy" />
+                  <div class="highlight-card-overlay">
+                    <h4>${p.title}</h4>
+                    <p>${p.date}</p>
+                  </div>
                 </div>
-              </div>
-            `).join('')}
+              `).join('');
+            })()}
           </div>
           <button class="reel-nav-btn next" onclick="window.appAPI.scrollHighlights(1)" aria-label="Next">❯</button>
         </div>
