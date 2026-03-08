@@ -338,8 +338,25 @@ export const eventsData = [
     rank: '3rd Place',
     description: 'Secured 3rd place in the Battle of Bands at Revels 24, MIT Manipal.',
     youtubeId: 'YWx04bt-QsU',
-    thumbnail: null,
-    photos: [],
+    thumbnail: './gallery/events/Battle of Bands - Revels 24/thumbnail/Screenshot 2026-03-08 114400.webp',
+    photos: [
+      { src: './gallery/events/Battle of Bands - Revels 24/-000815-.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/-000816-.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC08478.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC08484.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC08487.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC08491.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSCF2495.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC_0144.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC_6611.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/DSC_6682.webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (19 of 33).webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (20 of 33).webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (21 of 33).webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (22 of 33).webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (23 of 33).webp' },
+      { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (24 of 33).webp' }
+    ],
     bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
   }
 ];
