@@ -24,19 +24,19 @@ export const performances = [
   },
   {
     id: 3,
-    title: 'Mitwa - World Health Day',
+    title: 'Mitwa - World Mental Health Day',
     youtubeId: 'HFSOPSBH6_o',
     category: 'cover',
-    date: 'April 2024',
+    date: 'October 2024',
     featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
   },
   {
     id: 4,
-    title: 'Saiyaan - World Health Day',
+    title: 'Saiyaan - World Mental Health Day',
     youtubeId: 'rCRwFbHOalw',
     category: 'cover',
-    date: 'April 2024',
+    date: 'October 2024',
     featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Anjishnu Satpathy']
   },
