@@ -98,6 +98,15 @@ export const performances = [
     date: 'March 2024',
     featured: false,
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Vansh Srivastava', 'Aryan Raj', 'Tushar Vikash K']
+  },
+  {
+    id: 11,
+    title: "Farewell - Batch of '25",
+    youtubeId: 'aRQ0wWoybco',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
   }
 ];
 
