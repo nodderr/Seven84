@@ -107,6 +107,24 @@ export const performances = [
     date: 'October 2024',
     featured: false,
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
+  },
+  {
+    id: 12,
+    title: 'Perfect - KMC Open Mic',
+    youtubeId: '2McegiJHGvI',
+    category: 'live',
+    date: 'October 2023',
+    featured: false,
+    bandMembers: ['Nishant Verma', 'Aryan Raj', 'Chaitanya Pandey', 'Tushar Vikash K', 'Anjishnu Satpathy']
+  },
+  {
+    id: 13,
+    title: 'Saiyaan - KMC Open Mic',
+    youtubeId: 'SY3Xr04rahA',
+    category: 'live',
+    date: 'October 2023',
+    featured: false,
+    bandMembers: ['Nishant Verma', 'Aryan Raj', 'Tushar Vikash K', 'Anjishnu Satpathy']
   }
 ];
 
