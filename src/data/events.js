@@ -369,8 +369,23 @@ export const eventsData = [
     rank: null,
     description: "Performed a series of Bollywood and fusion hits at the Freshers Night '24 at MIT Manipal.",
     youtubeId: 'R4IQh6x1M7U',
-    thumbnail: null,
-    photos: [],
+    thumbnail: './gallery/events/Freshers Night 24/thumbnail/IMG_0354-2.webp',
+    photos: [
+      { src: './gallery/events/Freshers Night 24/IMG_0220-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0221-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0224-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0232-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0234-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0245-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0249-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0253-2-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0270-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0280-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0281-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0293-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0308-2.webp' },
+      { src: './gallery/events/Freshers Night 24/IMG_0354-2.webp' }
+    ],
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
   }
 ];
