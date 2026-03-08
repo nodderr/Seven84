@@ -28,10 +28,22 @@ export function renderNavbar() {
         <span></span><span></span><span></span>
       </button>
     </div>
-    <div class="navbar-mobile-overlay" id="mobile-overlay">
-      <div class="mobile-logo-wrap">
-        <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: 3rem; color: var(--saffron);">Seven.84</span>
-      </div>
+  `;
+
+  // Create or update overlay outside the fixed height navbar
+  let overlay = document.getElementById('mobile-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'mobile-overlay';
+    overlay.className = 'navbar-mobile-overlay';
+    document.body.appendChild(overlay);
+  }
+
+  overlay.innerHTML = `
+    <div class="mobile-logo-wrap">
+      <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: 3rem; color: var(--saffron);">Seven.84</span>
+    </div>
+    <div class="mobile-links-container">
       ${pages.map(p => `
         <a class="navbar-link ${currentHash === p.path ? 'active' : ''}" data-nav="${p.path}">
           ${p.label}
@@ -40,8 +52,8 @@ export function renderNavbar() {
     </div>
   `;
 
-  // Navigation click handlers
-  nav.querySelectorAll('[data-nav]').forEach(link => {
+  // Navigation click handlers for both desktop and mobile
+  document.querySelectorAll('[data-nav]').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const path = link.getAttribute('data-nav');
@@ -52,7 +64,6 @@ export function renderNavbar() {
 
   // Mobile toggle
   const toggle = document.getElementById('nav-toggle');
-  const overlay = document.getElementById('mobile-overlay');
   
   toggle.addEventListener('click', () => {
     toggle.classList.toggle('open');
