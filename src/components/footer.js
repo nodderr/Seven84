@@ -8,7 +8,6 @@ export function renderFooter() {
           <div class="footer-logo" style="font-family: 'Samarkan', cursive; color: var(--cream);">Seven.84</div>
           <p class="footer-tagline">
             A Hindustani-Bollywood-Fusion band from MIT Manipal. 
-            Where raga meets rhythm, where tradition meets today.
           </p>
           <div class="footer-socials" style="margin-top: var(--space-lg);">
             <a href="https://www.instagram.com/seven.84_" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">📷</a>

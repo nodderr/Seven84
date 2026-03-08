@@ -134,7 +134,7 @@ export const performances = [
     date: 'March 2024',
     featured: false,
     eventId: 'march-24-revels-band-battle',
-    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
+    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma', 'Tushar Vikash K']
   },
   {
     id: 15,

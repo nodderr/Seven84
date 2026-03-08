@@ -357,7 +357,7 @@ export const eventsData = [
       { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (23 of 33).webp' },
       { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (24 of 33).webp' }
     ],
-    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
+    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma', 'Tushar Vikash K']
   },
   {
     id: 'freshers-night-24',
