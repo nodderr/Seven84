@@ -38,23 +38,25 @@ window.appAPI = {
     if (cards.length === 0) return;
 
     const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(container).gap);
-    const totalItems = cards.length - 6; // Subtract 6 clones (3 before, 3 after)
+    const totalRealItems = cards.length - 8; // Subtract 8 clones (4 before, 4 after)
 
-    // Initial position: Skip the 3 clones at the start
-    container.scrollLeft = cardWidth * 3;
+    // Initial position: Skip the 4 clones at the start
+    container.scrollLeft = cardWidth * 4;
 
     // Seamless loop check
     container.addEventListener('scroll', () => {
       const scrollLeft = container.scrollLeft;
-      const maxScroll = container.scrollWidth - container.clientWidth;
-
-      // If at end of clones at the right, jump back to the start of real items
-      if (scrollLeft >= maxScroll - 5) {
-        container.scrollTo({ left: cardWidth * 3, behavior: 'instant' });
+      
+      // Proactive jump: If entering the clone zones (the first 2 or last 2 clones)
+      // Jump back to the equivalent real item position
+      
+      // Right boundary: If we've scrolled into the last 2 clones
+      if (scrollLeft >= cardWidth * (totalRealItems + 6)) {
+        container.scrollTo({ left: cardWidth * 6, behavior: 'instant' });
       }
-      // If at start of clones at the left, jump to the start of cloned items at the right
-      else if (scrollLeft <= 5) {
-        container.scrollTo({ left: cardWidth * totalItems, behavior: 'instant' });
+      // Left boundary: If we've scrolled into the first 2 clones
+      else if (scrollLeft <= cardWidth * 2) {
+        container.scrollTo({ left: cardWidth * (totalRealItems + 2), behavior: 'instant' });
       }
     });
   }

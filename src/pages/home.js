@@ -46,12 +46,12 @@ export function renderHome() {
           <div class="highlight-scroll" id="infinite-reel-scroll">
             ${(() => {
               const items = performances.slice(0, 10); // Take a good amount
-              const clonesBefore = items.slice(-3);
-              const clonesAfter = items.slice(0, 3);
+              const clonesBefore = items.slice(-4);
+              const clonesAfter = items.slice(0, 4);
               const displayItems = [...clonesBefore, ...items, ...clonesAfter];
               
               return displayItems.map((p, idx) => `
-                <div class="highlight-card ${idx < 3 || idx >= displayItems.length - 3 ? 'is-clone' : ''}" 
+                <div class="highlight-card ${idx < 4 || idx >= displayItems.length - 4 ? 'is-clone' : ''}" 
                      data-index="${idx}"
                      onclick="window.appAPI.openVideo('${p.youtubeId}')">
                    <img src="${getThumbnail(p)}" alt="${p.title}" loading="lazy" />
