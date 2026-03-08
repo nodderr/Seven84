@@ -166,6 +166,29 @@
   .reel-nav-btn {
     display: none; /* Hide on mobile as touch scroll is better */
   }
+
+  .performances-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .featured-video-info h3 {
+    font-size: var(--text-xl);
+  }
+  
+  .performance-info {
+    padding: var(--space-md);
+  }
+  
+  .highlight-reel {
+    margin: 0 calc(var(--space-md) * -1); /* Full width on mobile */
+  }
+  
+  .highlight-scroll {
+    padding-left: var(--space-xl);
+    padding-right: var(--space-xl);
+    gap: var(--space-lg);
+  }
 }
 
 .highlight-scroll {

@@ -29,6 +29,9 @@ export function renderNavbar() {
       </button>
     </div>
     <div class="navbar-mobile-overlay" id="mobile-overlay">
+      <div class="mobile-logo-wrap">
+        <span class="navbar-logo-text" style="font-family: 'Samarkan', cursive; font-size: 3rem; color: var(--saffron);">Seven.84</span>
+      </div>
       ${pages.map(p => `
         <a class="navbar-link ${currentHash === p.path ? 'active' : ''}" data-nav="${p.path}">
           ${p.label}
@@ -55,6 +58,13 @@ export function renderNavbar() {
     toggle.classList.toggle('open');
     overlay.classList.toggle('open');
     document.body.style.overflow = overlay.classList.contains('open') ? 'hidden' : '';
+  });
+
+  // Close on resize if switching to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && overlay.classList.contains('open')) {
+      closeMobileMenu();
+    }
   });
 
   // Scroll behavior — solid nav on scroll

@@ -142,6 +142,10 @@
 
 /* ── Responsive Timeline ── */
 @media (max-width: 768px) {
+  .journey-hero, .about-hero, .performances-hero {
+    padding: calc(var(--nav-height) + var(--space-2xl)) 0 var(--space-2xl);
+  }
+
   .timeline::before {
     left: 24px;
   }
@@ -155,6 +159,7 @@
 
   .timeline-content {
     width: 100%;
+    padding: var(--space-lg);
   }
 
   .timeline-dot {

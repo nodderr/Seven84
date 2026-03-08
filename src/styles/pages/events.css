@@ -137,3 +137,28 @@
 .event-gallery {
   margin-top: var(--space-4xl);
 }
+@media (max-width: 768px) {
+  .page-events {
+    padding-top: var(--space-2xl);
+    padding-bottom: var(--space-2xl);
+    padding-left: var(--space-lg);
+    padding-right: var(--space-lg);
+  }
+
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .page-event-detail {
+    padding-top: var(--space-xl);
+  }
+
+  .event-thumbnail {
+    height: 180px;
+  }
+
+  .event-gallery {
+    margin-top: var(--space-2xl);
+  }
+}

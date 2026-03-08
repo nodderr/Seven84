@@ -140,6 +140,13 @@
   display: flex;
 }
 
+.mobile-logo-wrap {
+  margin-bottom: var(--space-xl);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp var(--duration-normal) var(--ease-out) forwards;
+}
+
 .navbar-mobile-overlay .navbar-link {
   font-size: var(--text-2xl);
   opacity: 0;
@@ -160,6 +167,10 @@
 
   .navbar-toggle {
     display: flex;
+    background: rgba(var(--charcoal-rgb), 0.5);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(var(--cream-rgb), 0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   }
 }
 

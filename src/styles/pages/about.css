@@ -120,3 +120,17 @@
   border-radius: var(--radius-xl);
   border: 1px solid rgba(var(--cream-rgb), 0.06);
 }
+@media (max-width: 768px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .member-card {
+    padding: var(--space-xl) var(--space-md);
+  }
+
+  .group-photo {
+    max-height: 300px;
+  }
+}
