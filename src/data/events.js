@@ -327,6 +327,20 @@ export const eventsData = [
     thumbnail: './gallery/events/Battle of Bands (Bandish) - Incident 24/thumbnail/Screenshot 2026-03-08 021323.webp',
     photos: [],
     bandMembers: ['Nishant Verma', 'Samarth Madhivanan', 'Adithi Angeerasa', 'Milind Konwar', 'Anjishnu Satpathy', 'Satvik Agrawal', 'Aryan Raj', 'Tushar Vikash K', 'Vansh Srivastava']
+  },
+  {
+    id: 'march-24-revels-band-battle',
+    name: 'Battle of Bands - Revels 24',
+    type: 'competition',
+    date: '2024',
+    time: 'March 2024',
+    venue: 'MIT Manipal',
+    rank: '3rd Place',
+    description: 'Secured 3rd place in the Battle of Bands at Revels 24, MIT Manipal.',
+    youtubeId: 'YWx04bt-QsU',
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
   }
 ];
 

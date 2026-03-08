@@ -125,6 +125,16 @@ export const performances = [
     date: 'October 2023',
     featured: false,
     bandMembers: ['Nishant Verma', 'Aryan Raj', 'Tushar Vikash K', 'Anjishnu Satpathy']
+  },
+  {
+    id: 14,
+    title: 'Battle of Bands - Revels 24',
+    youtubeId: 'YWx04bt-QsU',
+    category: 'live',
+    date: 'March 2024',
+    featured: false,
+    eventId: 'march-24-revels-band-battle',
+    bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
   }
 ];
 
