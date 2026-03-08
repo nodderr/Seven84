@@ -358,6 +358,20 @@ export const eventsData = [
       { src: './gallery/events/Battle of Bands - Revels 24/bigBandTheory (24 of 33).webp' }
     ],
     bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
+  },
+  {
+    id: 'freshers-night-24',
+    name: "Freshers Night '24",
+    type: 'performance',
+    date: '2024',
+    time: 'October 2024',
+    venue: 'MIT Manipal',
+    rank: null,
+    description: "Performed a series of Bollywood and fusion hits at the Freshers Night '24 at MIT Manipal.",
+    youtubeId: 'R4IQh6x1M7U',
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
   }
 ];
 

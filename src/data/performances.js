@@ -135,6 +135,16 @@ export const performances = [
     featured: false,
     eventId: 'march-24-revels-band-battle',
     bandMembers: ['Milind Konwar', 'Anjishnu Satpathy', 'Adithi Angeerasa', 'Vansh Srivastava', 'Aryan Raj', 'Satvik Agrawal', 'Nishant Verma']
+  },
+  {
+    id: 15,
+    title: "Zara Zara - Freshers Night '24",
+    youtubeId: 'R4IQh6x1M7U',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    eventId: 'freshers-night-24',
+    bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
   }
 ];
 
