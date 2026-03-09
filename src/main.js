@@ -103,6 +103,17 @@ function router() {
       window.appAPI.initInfiniteScroll();
     }
     
+    // Update Document Title for SEO
+    const routeTitles = {
+      '': 'Seven.84 — Hindustani Bollywood Fusion',
+      'about': 'Seven.84 — About Us',
+      'journey': 'Seven.84 — Our Journey',
+      'performances': 'Seven.84 — Performances',
+      'events': 'Seven.84 — Events & Diary',
+      'results': 'Seven.84 — Competitions & Results'
+    };
+    document.title = routeTitles[path] || routeTitles[''];
+
     // Post-transition state
     window.scrollTo({ top: 0, behavior: 'instant' });
     contentDiv.style.opacity = '1';
