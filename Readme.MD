@@ -1,6 +1,6 @@
 # Seven.84 Band Website
 
-## Website Live at: https://nodderr.github.io/Seven84/
+## Live at: https://nodderr.github.io/Seven84/
 
 ## Tech Stack
 - Vite
