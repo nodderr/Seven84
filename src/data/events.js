@@ -451,6 +451,19 @@ export const eventsData = [
       { src: './gallery/events/Freshers Night 24/IMG_0354-2.webp' }
     ],
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
+  },
+  {
+    id: 'revels-24-unplugged',
+    name: 'Unplugged - Revels 24',
+    type: 'competition',
+    date: '2024',
+    time: 'March 2024',
+    venue: 'MIT Manipal',
+    rank: '3rd Place',
+    description: 'Secured 3rd place in the Unplugged competition at Revels 24, MIT Manipal.',
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Vansh Srivastava']
   }
 ];
 
