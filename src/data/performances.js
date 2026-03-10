@@ -101,11 +101,32 @@ export const performances = [
   },
   {
     id: 11,
-    title: "Farewell - Batch of '25",
-    youtubeId: 'aRQ0wWoybco',
+    title: "Aaoge Tum Kabhi - Farewell Batch of '25",
+    youtubeId: '-pvnT-zPLTM',
     category: 'live',
     date: 'October 2024',
     featured: false,
+    eventId: 'farewell-25',
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
+  },
+  {
+    id: 112,
+    title: "Kurbaan Hua - Farewell Batch of '25",
+    youtubeId: 'EJOTpvzWi3k',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    eventId: 'farewell-25',
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
+  },
+  {
+    id: 113,
+    title: "Zara Zara - Farewell Batch of '25",
+    youtubeId: 'JTDrgrY6TjA',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    eventId: 'farewell-25',
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
   },
   {
@@ -145,6 +166,36 @@ export const performances = [
     featured: false,
     eventId: 'freshers-night-24',
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
+  },
+  {
+    id: 16,
+    title: "Eastern Group Vocals - MAHE Utsav'24",
+    youtubeId: 'le_od3o-SGI',
+    category: 'live',
+    date: 'April 2024',
+    featured: false,
+    eventId: 'mahe-utsav-24-eastern-group-vocals',
+    bandMembers: ['Chaitanya Pandey', 'Nishant Verma', 'Anjishnu Satpathy', 'Aryan Raj']
+  },
+  {
+    id: 17,
+    title: "Navarasam - Uplift - Bits Goa Waves'24",
+    youtubeId: 'SreWVQtRnBQ',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    eventId: 'waves-24-indian-rock',
+    bandMembers: ['Kushant Pakam', 'Brandon Rich Khonglam', 'Vansh Srivastava', 'Sanjay K', 'Tushar Vikash K', 'Harshal Raje', 'Nishant Verma', 'Uday Rajan']
+  },
+  {
+    id: 18,
+    title: "Apsara Aaali - Bits Goa Waves'24",
+    youtubeId: 'o9GaNAFnLzk',
+    category: 'live',
+    date: 'October 2024',
+    featured: false,
+    eventId: 'waves-24-indian-rock',
+    bandMembers: ['Kushant Pakam', 'Brandon Rich Khonglam', 'Vansh Srivastava', 'Sanjay K', 'Tushar Vikash K', 'Harshal Raje', 'Nishant Verma', 'Uday Rajan']
   }
 ];
 

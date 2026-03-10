@@ -24,7 +24,7 @@ export function renderEvents(params) {
 }
 
 function renderEventCatalog() {
-  const displayEvents = eventsData.filter(e => e.youtubeId || e.thumbnail || (e.photos && e.photos.length > 0));
+  const displayEvents = eventsData.filter(e => e.youtubeId || (e.youtubeIds && e.youtubeIds.length > 0) || e.thumbnail || (e.photos && e.photos.length > 0));
   
   return `
     <div class="page-container page-events fade-in">
@@ -51,7 +51,7 @@ function renderEventCatalog() {
                 <span class="event-venue opacity-70 size-sm">📍 ${event.venue}</span>
                 <p class="event-desc font-body opacity-80 mt-sm line-clamp-2">${event.description}</p>
                 <div class="event-media-icons mt-md">
-                  ${event.youtubeId ? `<span class="media-icon" title="Video available">🎥 Video</span>` : ''}
+                  ${(event.youtubeId || (event.youtubeIds && event.youtubeIds.length > 0)) ? `<span class="media-icon" title="Video available">🎥 Video</span>` : ''}
                   ${event.photos && event.photos.length > 0 ? `<span class="media-icon" title="Photos available">📸 ${event.photos.length} Photos</span>` : ''}
                 </div>
               </div>
@@ -99,7 +99,7 @@ function renderEventDetail(eventId) {
 
       ${event.youtubeId ? `
         <section class="event-main-media slide-up" style="animation-delay: 0.2s">
-          <div class="video-embed-container">
+          <div class="video-embed-container mb-md">
             <iframe 
               src="https://www.youtube.com/embed/${event.youtubeId}?rel=0&vq=hd1080&modestbranding=1" 
               title="YouTube video player" 
@@ -108,6 +108,23 @@ function renderEventDetail(eventId) {
               allowfullscreen>
             </iframe>
           </div>
+          <div class="performer-tags">
+            ${sortMembers(event.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
+          </div>
+        </section>
+      ` : event.youtubeIds && event.youtubeIds.length > 0 ? `
+        <section class="event-main-media slide-up" style="animation-delay: 0.2s">
+          ${event.youtubeIds.map(vid => `
+            <div class="video-embed-container mb-xl">
+              <iframe 
+                src="https://www.youtube.com/embed/${vid}?rel=0&vq=hd1080&modestbranding=1" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          `).join('')}
           <div class="performer-tags">
             ${sortMembers(event.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
           </div>

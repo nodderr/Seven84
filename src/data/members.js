@@ -75,5 +75,47 @@ export const members = [
     photo: '',
     quote: 'Test',
     instagram: '#',
+  },
+  {
+    name: 'Kushant Pakam',
+    role: 'Guitars, Vocals',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Sanjay K',
+    role: 'Lead Vocals',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Harshal Raje',
+    role: 'Guitars',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Uday Rajan',
+    role: 'Tabla, Drums',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Sitaraman Subramanian',
+    role: 'Violin',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
+  },
+  {
+    name: 'Vaibhav Anand',
+    role: 'Flute',
+    photo: '',
+    quote: 'Test',
+    instagram: '#',
   }
 ];

@@ -1,7 +1,7 @@
 export const eventsData = [
   {
     id: 'waves-23-indian-rock',
-    name: 'Indian Rock',
+    name: 'Indian Rock - Bits Goa Waves 23',
     type: 'competition',
     date: '2023',
     time: 'November 2023',
@@ -89,7 +89,7 @@ export const eventsData = [
   },
   {
     id: 'waves-23-silence-amps',
-    name: 'Silence of the Amps',
+    name: 'Silence of the Amps - Bits Goa Waves 23',
     type: 'competition',
     date: '2023',
     time: 'November 2023',
@@ -113,7 +113,7 @@ export const eventsData = [
   },
   {
     id: 'waves-23-eastern-vocals',
-    name: 'Eastern Solo Vocals',
+    name: 'Eastern Solo Vocals - Bits Goa Waves 23',
     type: 'competition',
     date: '2023',
     time: 'November 2023',
@@ -453,6 +453,20 @@ export const eventsData = [
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
   },
   {
+    id: 'farewell-25',
+    name: "Farewell - Batch of '25",
+    type: 'performance',
+    date: '2024',
+    time: 'October 2024',
+    venue: 'MIT Manipal',
+    rank: null,
+    description: "Performed a special farewell set for the graduating batch of '25.",
+    youtubeIds: ['-pvnT-zPLTM', 'EJOTpvzWi3k', 'JTDrgrY6TjA'],
+    thumbnail: 'https://img.youtube.com/vi/-pvnT-zPLTM/hqdefault.jpg',
+    photos: [],
+    bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava']
+  },
+  {
     id: 'revels-24-unplugged',
     name: 'Unplugged - Revels 24',
     type: 'competition',
@@ -464,6 +478,48 @@ export const eventsData = [
     thumbnail: null,
     photos: [],
     bandMembers: ['Nishant Verma', 'Vansh Srivastava']
+  },
+  {
+    id: 'mahe-utsav-24-eastern-group-vocals',
+    name: "Eastern Group Vocals - MAHE Utsav'24",
+    type: 'competition',
+    date: '2024',
+    time: 'April 2024',
+    venue: 'MAHE Utsav',
+    rank: 'NA',
+    description: "Participated in the Eastern Group Vocals competition at MAHE Utsav'24.",
+    youtubeId: 'le_od3o-SGI',
+    thumbnail: 'https://img.youtube.com/vi/le_od3o-SGI/hqdefault.jpg',
+    photos: [],
+    bandMembers: ['Chaitanya Pandey', 'Nishant Verma', 'Anjishnu Satpathy', 'Aryan Raj']
+  },
+  {
+    id: 'waves-24-indian-rock',
+    name: "Indian Rock - Bits Goa Waves'24",
+    type: 'competition',
+    date: '2024',
+    time: 'October 2024',
+    venue: 'Bits Goa Waves 24',
+    rank: '3rd Place',
+    description: "Secured 3rd place in the Indian Rock competition at Bits Goa Waves'24.",
+    youtubeIds: ['SreWVQtRnBQ', 'o9GaNAFnLzk'],
+    thumbnail: 'https://img.youtube.com/vi/SreWVQtRnBQ/hqdefault.jpg',
+    photos: [],
+    bandMembers: ['Kushant Pakam', 'Brandon Rich Khonglam', 'Vansh Srivastava', 'Sanjay K', 'Tushar Vikash K', 'Harshal Raje', 'Nishant Verma', 'Uday Rajan']
+  },
+  {
+    id: 'waves-24-instrumental-solo',
+    name: "Instrumental Solo - Bits Goa Waves'24",
+    type: 'competition',
+    date: '2024',
+    time: 'October 2024',
+    venue: 'Bits Goa Waves 24',
+    rank: '3rd Place',
+    description: "Secured 3rd place in the Instrumental Solo competition at Bits Goa Waves'24.",
+    youtubeId: null,
+    thumbnail: null,
+    photos: [],
+    bandMembers: ['Nishant Verma']
   }
 ];
 
