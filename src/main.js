@@ -32,7 +32,8 @@ window.appAPI = {
   },
   navigate: (path) => {
     const targetUrl = path.startsWith('/') ? path : '/' + path;
-    if (window.location.pathname !== targetUrl) {
+    const currentUrl = window.location.pathname + window.location.search;
+    if (currentUrl !== targetUrl) {
       history.pushState(null, '', targetUrl);
       window.dispatchEvent(new Event('popstate'));
     }
