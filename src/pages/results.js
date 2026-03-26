@@ -59,7 +59,7 @@ export function renderResults() {
                         <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
                       </div>
                       ${(result.youtubeId || result.thumbnail || (result.photos && result.photos.length > 0)) ? `
-                        <a href="#events?id=${result.id}" class="result-event-link">
+                        <a href="/events?id=${result.id}" class="result-event-link">
                           View Event Media <span>&rarr;</span>
                         </a>
                       ` : ''}

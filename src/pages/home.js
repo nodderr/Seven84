@@ -25,7 +25,7 @@ export function renderHome() {
         <div class="hero-content container">
           <div class="hero-logo-css" style="font-family: 'Samarkan', cursive; font-size: clamp(4rem, 15vw, 10rem); color: white; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: var(--space-xl); display: inline-block;">Seven.84</div>
           <div class="hero-cta" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
-            <a href="#journey" class="btn btn-primary" style="width: 250px; justify-content: center;">Our Journey</a>
+            <a href="/journey" class="btn btn-primary" style="width: 250px; justify-content: center;">Our Journey</a>
           </div>
         </div>
         
@@ -82,7 +82,7 @@ export function renderHome() {
             </div>
             <div style="display: flex; gap: 1rem; justify-content: center;">
               <button class="btn btn-primary" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">Watch Now</button>
-              <a href="#performances" class="btn btn-ghost">View All</a>
+              <a href="/performances" class="btn btn-ghost">View All</a>
             </div>
           </div>
         </div>
@@ -101,17 +101,17 @@ export function renderHome() {
       <section class="section section-dark">
         <div class="container">
           <div class="quick-links">
-            <a href="#about" class="quick-link-card">
+            <a href="/about" class="quick-link-card">
               <div class="quick-link-icon">👥</div>
               <h4>Meet the Band</h4>
               <p>The musicians behind the sound</p>
             </a>
-            <a href="#journey" class="quick-link-card">
+            <a href="/journey" class="quick-link-card">
               <div class="quick-link-icon">🎸</div>
               <h4>Our Story</h4>
               <p>From a dorm room jam to main stage</p>
             </a>
-            <a href="#gallery" class="quick-link-card">
+            <a href="/gallery" class="quick-link-card">
               <div class="quick-link-icon">📸</div>
               <h4>Photo Gallery</h4>
               <p>Visuals from our best shows</p>

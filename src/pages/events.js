@@ -40,7 +40,7 @@ function renderEventCatalog() {
         
         <div class="events-grid">
           ${displayEvents.map(event => `
-            <div class="event-card" onclick="window.location.hash = '#events?id=${event.id}'">
+            <div class="event-card" onclick="window.appAPI.navigate('/events?id=${event.id}')">
               <div class="event-thumbnail">
                 <img src="${event.thumbnail}" alt="${event.name}" loading="lazy" />
                 ${event.rank ? `<div class="event-badge">${event.rank}</div>` : ''}
@@ -70,7 +70,7 @@ function renderEventDetail(eventId) {
     return `
       <div class="page-container page-events fade-in text-center" style="padding: 150px 20px;">
         <h1 class="font-display size-xl">Event Not Found</h1>
-        <a href="#events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
+        <a href="/events" class="btn btn-primary mt-lg text-charcoal">Back to Events</a>
       </div>
     `;
   }
@@ -84,7 +84,7 @@ function renderEventDetail(eventId) {
 
   return `
     <div class="page-container page-event-detail fade-in">
-      <button class="back-button btn btn-outline slide-up" onclick="window.location.hash = '#events'">
+      <button class="back-button btn btn-outline slide-up" onclick="window.appAPI.navigate('/events')">
         ← Back to Events
       </button>
 
@@ -144,7 +144,7 @@ function renderEventDetail(eventId) {
           
           <div class="event-footer-cta mt-4xl text-center">
             <p class="opacity-60 mb-md">Want to see more of our music?</p>
-            <a href="#performances" class="btn btn-primary">Explore All Performances</a>
+            <a href="/performances" class="btn btn-primary">Explore All Performances</a>
           </div>
         </section>
       ` : ''}

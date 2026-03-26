@@ -9,7 +9,9 @@ const pages = [
 
 export function renderNavbar() {
   const nav = document.getElementById('navbar');
-  const currentHash = window.location.hash.slice(1) || '';
+  let currentPath = window.location.pathname;
+  if (currentPath.startsWith('/')) currentPath = currentPath.slice(1);
+  if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
 
   nav.className = 'navbar';
   nav.innerHTML = `
@@ -19,7 +21,7 @@ export function renderNavbar() {
       </a>
       <div class="navbar-links">
         ${pages.map(p => `
-          <a class="navbar-link ${currentHash === p.path ? 'active' : ''}" data-nav="${p.path}">
+          <a class="navbar-link ${currentPath === p.path ? 'active' : ''}" data-nav="${p.path}">
             ${p.label}
           </a>
         `).join('')}
@@ -45,7 +47,7 @@ export function renderNavbar() {
     </div>
     <div class="mobile-links-container">
       ${pages.map(p => `
-        <a class="navbar-link ${currentHash === p.path ? 'active' : ''}" data-nav="${p.path}">
+        <a class="navbar-link ${currentPath === p.path ? 'active' : ''}" data-nav="${p.path}">
           ${p.label}
         </a>
       `).join('')}
@@ -57,7 +59,7 @@ export function renderNavbar() {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const path = link.getAttribute('data-nav');
-      window.location.hash = path;
+      window.appAPI.navigate(path);
       closeMobileMenu();
     });
   });
@@ -111,10 +113,13 @@ function setupScrollBehavior(nav) {
 }
 
 export function updateActiveLink() {
-  const currentHash = window.location.hash.slice(1) || '';
+  let currentPath = window.location.pathname;
+  if (currentPath.startsWith('/')) currentPath = currentPath.slice(1);
+  if (currentPath.endsWith('/')) currentPath = currentPath.slice(0, -1);
+  
   document.querySelectorAll('.navbar-link').forEach(link => {
     const path = link.getAttribute('data-nav');
-    if (path === currentHash) {
+    if (path === currentPath) {
       link.classList.add('active');
     } else {
       link.classList.remove('active');

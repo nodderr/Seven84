@@ -30,6 +30,13 @@ window.appAPI = {
       });
     }
   },
+  navigate: (path) => {
+    const targetUrl = path.startsWith('/') ? path : '/' + path;
+    if (window.location.pathname !== targetUrl) {
+      history.pushState(null, '', targetUrl);
+      window.dispatchEvent(new Event('popstate'));
+    }
+  },
   initInfiniteScroll: () => {
     const container = document.getElementById('infinite-reel-scroll');
     if (!container) return;
@@ -74,17 +81,19 @@ const routes = {
 function router() {
   const contentDiv = document.getElementById('page-content');
   
-  // Get current path from hash, split off query params
-  const fullHash = window.location.hash.slice(1);
-  const [path, queryString] = fullHash.split('?');
+  // Get current path from pathname instead of hash
+  let path = window.location.pathname;
+  if (path.startsWith('/')) path = path.slice(1);
+  if (path.endsWith('/')) path = path.slice(0, -1);
   
   // Handle invalid routes
   if (path && !routes[path]) {
-    window.location.hash = '';
-    return;
+    history.replaceState(null, '', '/');
+    path = '';
   }
   
   // Parse query parameters
+  const queryString = window.location.search;
   const params = new URLSearchParams(queryString || '');
 
   // Pre-transition state
@@ -129,8 +138,22 @@ function initApp() {
   renderNavbar();
   renderFooter();
   
-  // Setup router listeners
-  window.addEventListener('hashchange', router);
+  // Setup router listeners for History API
+  window.addEventListener('popstate', router);
+  
+  // Global link interception for internal navigation
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (link && !link.target && link.host === window.location.host) {
+      const path = link.getAttribute('href');
+      // Only intercept if it's an internal path starting with / or #
+      if (path && (path.startsWith('/') || path.startsWith('#'))) {
+        e.preventDefault();
+        const cleanPath = path.startsWith('#') ? path.slice(1) : path;
+        window.appAPI.navigate(cleanPath);
+      }
+    }
+  });
   
   // Initial route
   router();

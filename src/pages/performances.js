@@ -46,7 +46,7 @@ export function renderPerformances() {
           ${sortMembers(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
         </div>
         ${video.eventId ? `
-          <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.location.hash = '#events?id=${video.eventId}'">
+          <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.appAPI.navigate('/events?id=${video.eventId}')">
             View Event Details
           </button>
         ` : ''}
@@ -86,7 +86,7 @@ export function renderPerformances() {
                 ${sortMembers(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
               </div>
               ${featured.eventId ? `
-                <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.location.hash = '#events?id=${featured.eventId}'">
+                <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.appAPI.navigate('/events?id=${featured.eventId}')">
                   View Event Details & Photos
                 </button>
               ` : ''}

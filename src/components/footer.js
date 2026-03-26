@@ -16,12 +16,12 @@ export function renderFooter() {
         <div class="footer-nav">
           <div class="footer-nav-group">
             <h4>Navigate</h4>
-            <a href="#" data-nav="">Home</a>
-            <a href="#events" data-nav="events">Events</a>
-            <a href="#results" data-nav="results">Results</a>
-            <a href="#about" data-nav="about">About Us</a>
-            <a href="#journey" data-nav="journey">Our Journey</a>
-            <a href="#performances" data-nav="performances">Performances</a>
+            <a href="/" data-nav="">Home</a>
+            <a href="/events" data-nav="events">Events</a>
+            <a href="/results" data-nav="results">Results</a>
+            <a href="/about" data-nav="about">About Us</a>
+            <a href="/journey" data-nav="journey">Our Journey</a>
+            <a href="/performances" data-nav="performances">Performances</a>
           </div>
           <div class="footer-nav-group">
             <h4>Connect</h4>
@@ -42,7 +42,7 @@ export function renderFooter() {
     link.addEventListener('click', (e) => {
       e.preventDefault();
       const path = link.getAttribute('data-nav');
-      window.location.hash = path;
+      window.appAPI.navigate(path);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   });
