@@ -37,6 +37,27 @@
   padding: var(--space-xl);
 }
 
+/* ── Hero Staggered Entrance ── */
+.hero-anim-1 {
+  opacity: 0;
+  animation: heroFadeIn 1s 0.2s var(--ease-out) forwards;
+}
+
+.hero-anim-2 {
+  opacity: 0;
+  animation: heroSlideUp 0.8s 0.8s var(--ease-out) forwards;
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes heroSlideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .hero-logo {
   width: clamp(200px, 30vw, 360px);
   margin: 0 auto var(--space-2xl);
