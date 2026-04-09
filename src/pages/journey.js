@@ -3,7 +3,10 @@ import { timeline, stats } from '../data/timeline.js';
 export function renderJourney() {
   const statItems = stats.map(s => `
     <div class="stat-item reveal-scale">
-      <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">0</div>
+      <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">
+        <span class="stat-number-sizer" aria-hidden="true">${Number(s.number).toLocaleString('en-IN')}${s.suffix}</span>
+        <span class="stat-number-value">${Number(s.number).toLocaleString('en-IN')}${s.suffix}</span>
+      </div>
       <div class="stat-label">${s.label}</div>
     </div>
   `).join('');
@@ -81,7 +84,7 @@ function initCountUp() {
         // Ease-out cubic
         const eased = 1 - Math.pow(1 - progress, 3);
         const current = Math.round(eased * target);
-        counter.textContent = current + suffix;
+        counter.querySelector('.stat-number-value').textContent = current.toLocaleString('en-IN') + suffix;
 
         if (progress < 1) {
           requestAnimationFrame(step);
