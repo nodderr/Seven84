@@ -107,8 +107,8 @@ function router() {
   const params = new URLSearchParams(queryString || '');
 
   // Pre-transition state
-  contentDiv.style.opacity = '0';
-  
+  contentDiv.classList.add('page-exit');
+
   setTimeout(() => {
     // Render new page
     if (is404) {
@@ -117,6 +117,10 @@ function router() {
       const renderFn = routes[path] || routes[''];
       contentDiv.innerHTML = renderFn(params);
     }
+
+    // Trigger enter animation
+    contentDiv.classList.remove('page-exit');
+    contentDiv.classList.add('page-enter-active');
     
     // Setup animations for new page
     initScrollAnimations();
@@ -163,7 +167,9 @@ function router() {
 
     // Post-transition state
     window.scrollTo({ top: 0, behavior: 'instant' });
-    contentDiv.style.opacity = '1';
+
+    // Clean up transition class after animation
+    setTimeout(() => contentDiv.classList.remove('page-enter-active'), 500);
 
     // Accessibility: move focus to main content on route change
     contentDiv.setAttribute('tabindex', '-1');

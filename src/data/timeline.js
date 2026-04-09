@@ -11,5 +11,6 @@ export const stats = [
   { number: '50', suffix: '+', label: 'Live Shows' },
   { number: '10', suffix: '+', label: 'Awards Won' },
   { number: '17', suffix: '', label: 'Band Members' },
-  { number: '40', suffix: 'k+', label: 'Digital Reach' }
+  { number: '40', suffix: 'k+', label: 'Digital Reach' },
+  { number: '80', suffix: 'k+', label: 'Prize Money (₹)' }
 ];
