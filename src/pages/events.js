@@ -24,7 +24,7 @@ export function renderEvents(params) {
 }
 
 function renderEventCatalog() {
-  const displayEvents = eventsData.filter(e => e.youtubeId || (e.youtubeIds && e.youtubeIds.length > 0) || e.thumbnail || (e.photos && e.photos.length > 0));
+  const displayEvents = eventsData.filter(e => e.youtubeId || (e.youtubeIds && e.youtubeIds.length > 0) || e.thumbnail || (e.photos && e.photos.length > 0)).reverse();
   
   return `
     <div class="page-container page-events fade-in">
@@ -40,9 +40,9 @@ function renderEventCatalog() {
         
         <div class="events-grid">
           ${displayEvents.map(event => `
-            <div class="event-card" onclick="window.appAPI.navigate('/events?id=${event.id}')">
-              <div class="event-thumbnail">
-                <img src="${event.thumbnail}" alt="${event.name}" loading="lazy" />
+            <div class="event-card" data-action="navigate" data-value="/events?id=${event.id}">
+              <div class="event-thumbnail img-skeleton">
+                <img src="${event.thumbnail}" alt="${event.name}" loading="lazy" onload="this.parentElement.classList.remove('img-skeleton')" />
                 ${event.rank ? `<div class="event-badge">${event.rank}</div>` : ''}
               </div>
               <div class="event-info">
@@ -84,7 +84,7 @@ function renderEventDetail(eventId) {
 
   return `
     <div class="page-container page-event-detail fade-in">
-      <button class="back-button btn btn-outline slide-up" onclick="window.appAPI.navigate('/events')">
+      <button class="back-button btn btn-outline slide-up" data-action="navigate" data-value="/events">
         ← Back to Events
       </button>
 

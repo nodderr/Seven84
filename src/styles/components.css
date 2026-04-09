@@ -123,7 +123,6 @@
 
 /* ── Mobile Overlay ── */
 .navbar-mobile-overlay {
-  display: none;
   position: fixed;
   inset: 0;
   background: rgba(var(--charcoal-rgb), 0.98);
@@ -134,10 +133,16 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2xl);
+  display: flex;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--duration-normal) var(--ease-out),
+              visibility var(--duration-normal);
 }
 
 .navbar-mobile-overlay.open {
-  display: flex;
+  opacity: 1;
+  visibility: visible;
 }
 
 .mobile-logo-wrap {
@@ -548,6 +553,34 @@
 
 .video-modal-close:hover {
   transform: rotate(90deg);
+}
+
+/* ── Image Loading Skeleton ── */
+.img-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--smoke-light) 25%,
+    rgba(var(--cream-rgb), 0.06) 50%,
+    var(--smoke-light) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Branded Fallback Thumbnail ── */
+.thumb-fallback {
+  background: linear-gradient(135deg, var(--smoke) 0%, var(--smoke-light) 50%, var(--smoke) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(var(--saffron-rgb), 0.4);
+  font-family: var(--font-logo);
+  font-size: var(--text-2xl);
 }
 
 /* ── Performer Tags ── */

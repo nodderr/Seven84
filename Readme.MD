@@ -4,7 +4,8 @@
 
 ## Tech Stack
 - Vite
-- TailwindCSS
+- Vanilla JS (SPA with custom router)
+- Plain CSS (design tokens, modular per-page styles)
 
 ## Local Development
 1. Clone the repository

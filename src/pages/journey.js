@@ -25,6 +25,9 @@ export function renderJourney() {
     `;
   }).join('');
 
+  // Run count-up after DOM renders
+  setTimeout(() => initCountUp(), 200);
+
   return `
     <div class="page-enter">
       <section class="journey-hero grain-overlay">
@@ -36,9 +39,9 @@ export function renderJourney() {
         </div>
       </section>
 
-      <section class="section section-dark">
+      <section class="section section-dark" style="padding-top: 0;">
         <div class="container">
-          <div class="stats-bar stagger-children">
+          <div class="stats-bar stagger-children" id="stats-bar">
             ${statItems}
           </div>
         </div>
@@ -53,4 +56,48 @@ export function renderJourney() {
       </section>
     </div>
   `;
+}
+
+function initCountUp() {
+  const statsBar = document.getElementById('stats-bar');
+  if (!statsBar) return;
+
+  const counters = statsBar.querySelectorAll('.stat-number');
+  let hasAnimated = false;
+
+  const animate = () => {
+    if (hasAnimated) return;
+    hasAnimated = true;
+
+    counters.forEach(counter => {
+      const target = parseInt(counter.dataset.count, 10);
+      const suffix = counter.dataset.suffix || '';
+      const duration = 1500;
+      const start = performance.now();
+
+      const step = (now) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        // Ease-out cubic
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = Math.round(eased * target);
+        counter.textContent = current + suffix;
+
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        }
+      };
+
+      requestAnimationFrame(step);
+    });
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      animate();
+      observer.disconnect();
+    }
+  }, { threshold: 0.3 });
+
+  observer.observe(statsBar);
 }

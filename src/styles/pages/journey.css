@@ -117,7 +117,7 @@
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: var(--space-xl);
   text-align: center;
-  padding: var(--space-4xl) 0;
+  padding: var(--space-xl) 0;
 }
 
 .stat-item {

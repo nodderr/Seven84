@@ -13,7 +13,94 @@ export function renderResults() {
   // Filter only competitions, sort by date (fallback to reversing array if dates are complex strings)
   // For simplicity since dates are string formats like "April 2024", we'll just keep the defined array order
   // which is typically reverse-chronological as authored in eventsData.
-  const results = eventsData.filter(event => event.type === 'competition');
+  const results = eventsData.filter(event => event.type === 'competition').reverse();
+
+  const tableHTML = `
+    <section class="results-table-container slide-up results-desktop" style="animation-delay: 0.2s">
+      <div class="results-table-wrapper">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Competition</th>
+              <th>Venue</th>
+              <th>Result / Rank</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${results.length > 0 ? results.map((result, index) => `
+              <tr class="result-row" data-action="toggle-details" data-value="details-${index}">
+                <td class="font-accent text-saffron text-nowrap">
+                  <span class="dropdown-icon">▶</span> ${result.date}
+                </td>
+                <td class="font-accent text-saffron text-nowrap">${result.time || ''}</td>
+                <td class="font-display size-md text-cream">${result.name}</td>
+                <td class="opacity-80">${result.venue}</td>
+                <td>
+                  ${result.rank
+                    ? `<span class="result-badge ${getRankClass(result.rank)}">${result.rank}</span>`
+                    : '<span class="opacity-50">—</span>'}
+                </td>
+              </tr>
+              <tr id="details-${index}" class="result-details-row" style="display: none;">
+                <td colspan="5" class="result-details-cell">
+                  <div class="result-details-content">
+                    <div class="result-members">
+                      <strong class="text-saffron">Lineup:</strong>
+                      <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
+                    </div>
+                    ${(result.youtubeId || result.thumbnail || (result.photos && result.photos.length > 0)) ? `
+                      <a href="/events?id=${result.id}" class="result-event-link">
+                        View Event Media <span>&rarr;</span>
+                      </a>
+                    ` : ''}
+                  </div>
+                </td>
+              </tr>
+            `).join('') : `
+              <tr>
+                <td colspan="5" class="text-center opacity-50 py-xl">No competition results available yet.</td>
+              </tr>
+            `}
+          </tbody>
+        </table>
+      </div>
+    </section>`;
+
+  const cardsHTML = `
+    <section class="results-cards results-mobile" style="animation-delay: 0.2s">
+      ${results.length > 0 ? results.map((result, index) => `
+        <div class="result-card" data-action="toggle-details" data-value="card-details-${index}">
+          <div class="result-card-header">
+            <div class="result-card-info">
+              <h3 class="result-card-title">${result.name}</h3>
+              <div class="result-card-meta">
+                <span class="text-saffron">${result.date}</span>
+                ${result.time ? `<span class="result-card-sep">·</span><span>${result.time}</span>` : ''}
+                <span class="result-card-sep">·</span><span>${result.venue}</span>
+              </div>
+            </div>
+            ${result.rank
+              ? `<span class="result-badge ${getRankClass(result.rank)}">${result.rank}</span>`
+              : ''}
+          </div>
+          <div id="card-details-${index}" class="result-card-details">
+            <div class="result-members">
+              <strong class="text-saffron">Lineup:</strong>
+              <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
+            </div>
+            ${(result.youtubeId || result.thumbnail || (result.photos && result.photos.length > 0)) ? `
+              <a href="/events?id=${result.id}" class="result-event-link">
+                View Event Media <span>&rarr;</span>
+              </a>
+            ` : ''}
+          </div>
+        </div>
+      `).join('') : `
+        <p class="text-center opacity-50" style="padding: var(--space-xl);">No competition results available yet.</p>
+      `}
+    </section>`;
 
   return `
     <div class="page-container page-results fade-in">
@@ -23,58 +110,8 @@ export function renderResults() {
           An ongoing tally of our competitive journey across various college fests and battle of the bands.
         </p>
       </header>
-      
-      <section class="results-table-container slide-up" style="animation-delay: 0.2s">
-        <div class="results-table-wrapper">
-          <table class="results-table">
-            <thead>
-              <tr>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Competition</th>
-                <th>Venue</th>
-                <th>Result / Rank</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${results.length > 0 ? results.map((result, index) => `
-                <tr class="result-row" onclick="const details = document.getElementById('details-${index}'); details.style.display = details.style.display === 'table-row' ? 'none' : 'table-row'; this.classList.toggle('active-row');">
-                  <td class="font-accent text-saffron text-nowrap">
-                    <span class="dropdown-icon">▶</span> ${result.date}
-                  </td>
-                  <td class="font-accent text-saffron text-nowrap">${result.time || ''}</td>
-                  <td class="font-display size-md text-cream">${result.name}</td>
-                  <td class="opacity-80">${result.venue}</td>
-                  <td>
-                    ${result.rank 
-                      ? `<span class="result-badge ${getRankClass(result.rank)}">${result.rank}</span>` 
-                      : '<span class="opacity-50">—</span>'}
-                  </td>
-                </tr>
-                <tr id="details-${index}" class="result-details-row" style="display: none;">
-                  <td colspan="5" class="result-details-cell">
-                    <div class="result-details-content">
-                      <div class="result-members">
-                        <strong class="text-saffron">Lineup:</strong> 
-                        <span class="opacity-80">${result.bandMembers && result.bandMembers.length > 0 ? sortMembers(result.bandMembers).join(', ') : 'Lineup not specified'}</span>
-                      </div>
-                      ${(result.youtubeId || result.thumbnail || (result.photos && result.photos.length > 0)) ? `
-                        <a href="/events?id=${result.id}" class="result-event-link">
-                          View Event Media <span>&rarr;</span>
-                        </a>
-                      ` : ''}
-                    </div>
-                  </td>
-                </tr>
-              `).join('') : `
-                <tr>
-                  <td colspan="5" class="text-center opacity-50 py-xl">No competition results available yet.</td>
-                </tr>
-              `}
-            </tbody>
-          </table>
-        </div>
-      </section>
+      ${tableHTML}
+      ${cardsHTML}
     </div>
   `;
 }

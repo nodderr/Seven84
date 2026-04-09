@@ -27,6 +27,11 @@ export function renderFooter() {
             <h4>Connect</h4>
             <a href="https://www.instagram.com/seven.84_" target="_blank" rel="noopener">Instagram</a>
             <a href="mailto:nishant.verma04@yahoo.com">Email Us</a>
+            <a href="tel:+918860671430">+91 88606 71430</a>
+          </div>
+          <div class="footer-nav-group">
+            <h4>Book Us</h4>
+            <a href="mailto:nishant.verma04@yahoo.com" style="color: var(--saffron);">Bookings & Collabs →</a>
           </div>
         </div>
       </div>

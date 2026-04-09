@@ -53,3 +53,24 @@ button {
 ul, ol {
   list-style: none;
 }
+
+/* ── Skip to Content ── */
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--saffron);
+  color: var(--cream);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-family: var(--font-accent);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  z-index: 9999;
+  transition: top var(--duration-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+}

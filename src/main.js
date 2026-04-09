@@ -79,6 +79,18 @@ const routes = {
   'results': renderResults,
 };
 
+function render404() {
+  return `
+    <div class="page-enter" style="min-height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: var(--space-xl);">
+      <div>
+        <div style="font-family: 'Samarkan', cursive; font-size: clamp(5rem, 15vw, 10rem); color: var(--saffron); line-height: 1; margin-bottom: var(--space-md);">404</div>
+        <p style="font-size: var(--text-lg); color: var(--grey-400); margin-bottom: var(--space-2xl); max-width: 400px;">This page doesn't exist, but our music does.</p>
+        <a href="/" class="btn btn-primary">Back to Home</a>
+      </div>
+    </div>
+  `;
+}
+
 function router() {
   const contentDiv = document.getElementById('page-content');
   
@@ -87,11 +99,8 @@ function router() {
   if (path.startsWith('/')) path = path.slice(1);
   if (path.endsWith('/')) path = path.slice(0, -1);
   
-  // Handle invalid routes
-  if (path && !routes[path]) {
-    history.replaceState(null, '', '/');
-    path = '';
-  }
+  // Handle invalid routes — show 404
+  const is404 = path && !routes[path];
   
   // Parse query parameters
   const queryString = window.location.search;
@@ -102,8 +111,12 @@ function router() {
   
   setTimeout(() => {
     // Render new page
-    const renderFn = routes[path] || routes[''];
-    contentDiv.innerHTML = renderFn(params);
+    if (is404) {
+      contentDiv.innerHTML = render404();
+    } else {
+      const renderFn = routes[path] || routes[''];
+      contentDiv.innerHTML = renderFn(params);
+    }
     
     // Setup animations for new page
     initScrollAnimations();
@@ -113,20 +126,48 @@ function router() {
       window.appAPI.initInfiniteScroll();
     }
     
-    // Update Document Title for SEO
-    const routeTitles = {
-      '': 'Seven.84 — Hindustani Bollywood Fusion',
-      'about': 'Seven.84 — About Us',
-      'journey': 'Seven.84 — Our Journey',
-      'performances': 'Seven.84 — Performances',
-      'events': 'Seven.84 — Events & Diary',
-      'results': 'Seven.84 — Competitions & Results'
+    // Update Document Title & Meta for SEO
+    const routeMeta = {
+      '': {
+        title: 'Seven.84 — Hindustani Bollywood Fusion',
+        description: 'Seven.84 is a Hindustani-Bollywood-Fusion band from MIT Manipal. Explore our music, performances, gallery, and journey.',
+      },
+      'about': {
+        title: 'Seven.84 — About Us',
+        description: 'Meet the 17 musicians of Seven.84 — a Hindustani-Bollywood-Fusion band blending classical ragas with modern energy.',
+      },
+      'journey': {
+        title: 'Seven.84 — Our Journey',
+        description: 'From dorm room jams to festival headliners. The timeline of Seven.84\'s musical evolution at MIT Manipal.',
+      },
+      'performances': {
+        title: 'Seven.84 — Performances',
+        description: 'Watch Seven.84 live and unplugged — performances spanning Hindustani classical fusion, Bollywood covers, and original compositions.',
+      },
+      'events': {
+        title: 'Seven.84 — Events & Diary',
+        description: 'A complete timeline of Seven.84\'s on-stage battles, exhibitions, and college fest appearances.',
+      },
+      'results': {
+        title: 'Seven.84 — Competitions & Results',
+        description: 'An ongoing tally of Seven.84\'s competitive journey across college fests and battle of the bands.',
+      },
     };
-    document.title = routeTitles[path] || routeTitles[''];
+    const meta = routeMeta[path] || routeMeta[''];
+    document.title = meta.title;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', meta.description);
+    document.querySelector('meta[property="og:title"]')?.setAttribute('content', meta.title);
+    document.querySelector('meta[property="og:description"]')?.setAttribute('content', meta.description);
+    document.querySelector('meta[property="twitter:title"]')?.setAttribute('content', meta.title);
+    document.querySelector('meta[property="twitter:description"]')?.setAttribute('content', meta.description);
 
     // Post-transition state
     window.scrollTo({ top: 0, behavior: 'instant' });
     contentDiv.style.opacity = '1';
+
+    // Accessibility: move focus to main content on route change
+    contentDiv.setAttribute('tabindex', '-1');
+    contentDiv.focus({ preventScroll: true });
     
     // Update navbar active state
     updateActiveLink();
@@ -152,6 +193,32 @@ function initApp() {
         e.preventDefault();
         const cleanPath = path.startsWith('#') ? path.slice(1) : path;
         window.appAPI.navigate(cleanPath);
+      }
+    }
+
+    // Delegated data-action handlers
+    const actionEl = e.target.closest('[data-action]');
+    if (!actionEl) return;
+
+    const action = actionEl.dataset.action;
+    const value = actionEl.dataset.value;
+
+    if (action === 'open-video') {
+      e.preventDefault();
+      openVideoModal(value);
+    } else if (action === 'navigate') {
+      e.preventDefault();
+      window.appAPI.navigate(value);
+    } else if (action === 'toggle-details') {
+      const details = document.getElementById(value);
+      if (details) {
+        if (details.tagName === 'TR') {
+          details.style.display = details.style.display === 'table-row' ? 'none' : 'table-row';
+          actionEl.classList.toggle('active-row');
+        } else {
+          details.classList.toggle('open');
+          actionEl.classList.toggle('active');
+        }
       }
     }
   });

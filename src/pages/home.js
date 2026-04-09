@@ -11,7 +11,7 @@ const getThumbnail = (p) => {
 };
 
 export function renderHome() {
-  const latestPerformance = performances.find(p => p.featured) || performances[0] || {
+  const latestPerformance = performances[performances.length - 1] || {
     title: 'New Performance Coming Soon',
     youtubeId: ''
   };
@@ -41,20 +41,20 @@ export function renderHome() {
           <h2 class="section-title">Performance Highlights</h2>
         </div>
         
-        <div class="highlight-reel">
+        <div class="highlight-reel" tabindex="0" role="region" aria-label="Performance highlights carousel" onkeydown="if(event.key==='ArrowLeft')window.appAPI.scrollHighlights(-1);if(event.key==='ArrowRight')window.appAPI.scrollHighlights(1);">
           <button class="reel-nav-btn prev" onclick="window.appAPI.scrollHighlights(-1)" aria-label="Previous">❮</button>
           <div class="highlight-scroll" id="infinite-reel-scroll">
             ${(() => {
-              const items = performances.slice(0, 10); // Take a good amount
+              const items = [...performances].reverse().slice(0, 10); // Latest first
               const clonesBefore = items.slice(-4);
               const clonesAfter = items.slice(0, 4);
               const displayItems = [...clonesBefore, ...items, ...clonesAfter];
               
               return displayItems.map((p, idx) => `
-                <div class="highlight-card ${idx < 4 || idx >= displayItems.length - 4 ? 'is-clone' : ''}" 
+                <div class="highlight-card img-skeleton ${idx < 4 || idx >= displayItems.length - 4 ? 'is-clone' : ''}"
                      data-index="${idx}"
-                     onclick="window.appAPI.openVideo('${p.youtubeId}')">
-                   <img src="${getThumbnail(p)}" alt="${p.title}" loading="lazy" />
+                     data-action="open-video" data-value="${p.youtubeId}">
+                   <img src="${getThumbnail(p)}" alt="${p.title}" loading="lazy" onload="this.parentElement.classList.remove('img-skeleton')" />
                   <div class="highlight-card-overlay">
                     <h4>${p.title}</h4>
                     <p>${p.date}</p>
@@ -76,12 +76,12 @@ export function renderHome() {
             <p class="section-description" style="margin-bottom: var(--space-xl);">
               Experience our latest performance where the soulful melodies of Hindustani classical meet the high-octane energy of modern fusion. 
             </p>
-            <div class="featured-video-wrapper" style="margin: 0 auto var(--space-xl);" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">
+            <div class="featured-video-wrapper" style="margin: 0 auto var(--space-xl);" data-action="open-video" data-value="${latestPerformance.youtubeId}">
                <img src="${getThumbnail(latestPerformance)}" alt="${latestPerformance.title}" class="featured-video-thumb" />
               <div class="featured-play-btn"></div>
             </div>
             <div style="display: flex; gap: 1rem; justify-content: center;">
-              <button class="btn btn-primary" onclick="window.appAPI.openVideo('${latestPerformance.youtubeId}')">Watch Now</button>
+              <button class="btn btn-primary" data-action="open-video" data-value="${latestPerformance.youtubeId}">Watch Now</button>
               <a href="/performances" class="btn btn-ghost">View All</a>
             </div>
           </div>
@@ -89,41 +89,32 @@ export function renderHome() {
       </section>
 
       <!-- CONTACT STRIP -->
-      <section class="section section-gradient">
-        <div class="container" style="text-align: center;">
-          <h2 class="section-title" style="margin-bottom: var(--space-md);">Contact us for Bookings/ Collabs</h2>
-          <p class="section-description" style="margin-bottom: var(--space-xl);">For bookings, collaborations, or just to say hi.</p>
-          <a href="mailto:nishant.verma04@yahoo.com" class="btn btn-primary" style="background: white; color: var(--saffron);">Book Us via Email</a>
-        </div>
-      </section>
-
-      <!-- QUICK LINKS -->
-      <section class="section section-dark">
-        <div class="container">
-          <div class="quick-links">
-            <a href="/about" class="quick-link-card">
-              <div class="quick-link-icon">👥</div>
-              <h4>Meet the Band</h4>
-              <p>The musicians behind the sound</p>
+      <section class="contact-strip">
+        <div class="contact-strip-bg"></div>
+        <div class="container contact-strip-content">
+          <div class="contact-strip-text">
+            <span class="contact-strip-label">Ready to collaborate?</span>
+            <h2 class="contact-strip-title">Let's Make <span class="text-saffron">Music</span> Together</h2>
+            <p class="contact-strip-desc">Whether it's a college fest, a private gig, or a creative collaboration, we'd love to hear from you.</p>
+          </div>
+          <div class="contact-strip-actions">
+            <a href="mailto:nishant.verma04@yahoo.com" class="btn btn-primary contact-btn">
+              Book Us via Email
             </a>
-            <a href="/journey" class="quick-link-card">
-              <div class="quick-link-icon">🎸</div>
-              <h4>Our Story</h4>
-              <p>From a dorm room jam to main stage</p>
+            <a href="https://www.instagram.com/seven.84_" target="_blank" rel="noopener" class="btn btn-outline contact-btn">
+              DM on Instagram
             </a>
-            <a href="/gallery" class="quick-link-card">
-              <div class="quick-link-icon">📸</div>
-              <h4>Photo Gallery</h4>
-              <p>Visuals from our best shows</p>
-            </a>
-            <a href="https://www.instagram.com/seven.84_" class="quick-link-card" target="_blank" rel="noopener">
-              <div class="quick-link-icon">📱</div>
-              <h4>Instagram</h4>
-              <p>Follow our daily journey</p>
+            <a href="tel:+918860671430" class="contact-phone">
+              <span class="contact-phone-icon">☎</span>
+              <span class="contact-phone-details">
+                <span class="contact-phone-name">Nishant Verma</span>
+                <span class="contact-phone-number">+91 88606 71430</span>
+              </span>
             </a>
           </div>
         </div>
       </section>
+
     </div>
   `;
 }

@@ -21,8 +21,9 @@ const sortMembers = (names) => {
 };
 
 export function renderPerformances() {
-  const featured = performances.find(p => p.featured) || performances[0];
-  const gridVideos = performances.filter(p => p.id !== featured.id);
+  const reversed = [...performances].reverse();
+  const featured = reversed.find(p => p.featured) || reversed[0];
+  const gridVideos = reversed.filter(p => p.id !== featured.id);
 
   const categoryFilters = performanceCategories.map((cat, index) => `
     <button class="filter-tab ${index === 0 ? 'active' : ''}" data-filter="${cat.id}">
@@ -31,9 +32,9 @@ export function renderPerformances() {
   `).join('');
 
   const videoItems = gridVideos.map(video => `
-    <div class="performance-card reveal" data-category="${video.category}" onclick="window.appAPI.openVideo('${video.youtubeId}')">
-      <div class="performance-thumb-wrapper">
-        <img src="${getThumbnail(video)}" alt="${video.title}" class="performance-thumb" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=600&q=80'" />
+    <div class="performance-card reveal" data-category="${video.category}" data-action="open-video" data-value="${video.youtubeId}">
+      <div class="performance-thumb-wrapper img-skeleton">
+        <img src="${getThumbnail(video)}" alt="${video.title}" class="performance-thumb" loading="lazy" onload="this.parentElement.classList.remove('img-skeleton')" onerror="this.style.display='none'; this.parentElement.classList.remove('img-skeleton'); this.parentElement.classList.add('thumb-fallback'); this.parentElement.innerHTML='<span>Seven.84</span>'" />
         <div class="performance-play-overlay">
           <div class="performance-play-icon"></div>
         </div>
@@ -46,7 +47,7 @@ export function renderPerformances() {
           ${sortMembers(video.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
         </div>
         ${video.eventId ? `
-          <button class="btn btn-ghost btn-sm mt-sm" onclick="event.stopPropagation(); window.appAPI.navigate('/events?id=${video.eventId}')">
+          <button class="btn btn-ghost btn-sm mt-sm" data-action="navigate" data-value="/events?id=${video.eventId}">
             View Event Details
           </button>
         ` : ''}
@@ -73,9 +74,9 @@ export function renderPerformances() {
               <span class="section-subtitle">Featured Performance</span>
             </div>
             
-            <div class="featured-video-wrapper" onclick="window.appAPI.openVideo('${featured.youtubeId}')">
+            <div class="featured-video-wrapper" data-action="open-video" data-value="${featured.youtubeId}">
               <!-- Fallback to unspash if youtube ID is invalid placeholder -->
-              <img src="${getThumbnail(featured)}" alt="${featured.title}" class="featured-video-thumb" onerror="this.src='https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=1600&q=80'" />
+              <img src="${getThumbnail(featured)}" alt="${featured.title}" class="featured-video-thumb" onerror="this.style.display='none'; this.parentElement.classList.add('thumb-fallback'); this.parentElement.innerHTML='<span style=\'font-size:3rem\'>Seven.84</span>'" />
               <div class="featured-play-btn"></div>
             </div>
             
@@ -86,7 +87,7 @@ export function renderPerformances() {
                 ${sortMembers(featured.bandMembers || []).map(member => `<span class="performer-tag">${getFirstName(member)}</span>`).join('')}
               </div>
               ${featured.eventId ? `
-                <button class="btn btn-outline btn-sm mt-md" onclick="event.stopPropagation(); window.appAPI.navigate('/events?id=${featured.eventId}')">
+                <button class="btn btn-outline btn-sm mt-md" data-action="navigate" data-value="/events?id=${featured.eventId}">
                   View Event Details & Photos
                 </button>
               ` : ''}

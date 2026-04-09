@@ -8,7 +8,7 @@ export const performances = [
     youtubeId: '1ZSdr3wMT70',
     category: 'live',
     date: 'November 2023',
-    featured: true,
+    featured: false,
     eventId: 'waves-23-indian-rock',
     bandMembers: ['Nishant Verma', 'Tushar Vikash K', 'Aryan Raj', 'Vansh Srivastava', 'Anjishnu Satpathy', 'Milind Konwar']
   },
@@ -163,7 +163,7 @@ export const performances = [
     youtubeId: 'R4IQh6x1M7U',
     category: 'live',
     date: 'October 2024',
-    featured: false,
+    featured: true,
     eventId: 'freshers-night-24',
     bandMembers: ['Brandon Rich Khonglam', 'Nishant Verma', 'Samarth Madhivanan', 'Anjishnu Satpathy', 'Vansh Srivastava', 'Adithi Angeerasa', 'Milind Konwar', 'Aryan Raj', 'Tushar Vikash K']
   },
@@ -189,7 +189,7 @@ export const performances = [
   },
   {
     id: 18,
-    title: "Apsara Aaali - Bits Goa Waves'24",
+    title: "Apsara Aali - Bits Goa Waves'24",
     youtubeId: 'o9GaNAFnLzk',
     category: 'live',
     date: 'October 2024',
