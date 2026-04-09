@@ -86,8 +86,8 @@
         <div class="hero-bg"></div>
         
         <div class="hero-content container">
-          <div class="hero-logo-css" style="font-family: 'Samarkan', cursive; font-size: clamp(4rem, 15vw, 10rem); color: white; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: var(--space-xl); display: inline-block;">Seven.84</div>
-          <div class="hero-cta" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+          <div class="hero-logo-css hero-anim-1" style="font-family: 'Samarkan', cursive; font-size: clamp(4rem, 15vw, 10rem); color: white; text-align: center; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: var(--space-xl); display: inline-block;">Seven.84</div>
+          <div class="hero-cta hero-anim-2" style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
             <a href="/journey" class="btn btn-primary" style="width: 250px; justify-content: center;">Our Journey</a>
           </div>
         </div>
