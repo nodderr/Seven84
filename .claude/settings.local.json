@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npx vite:*)",
       "Bash(xargs wc:*)",
-      "Bash(wc:*)"
+      "Bash(wc:*)",
+      "Bash(git:*)"
     ]
   }
 }

@@ -4,8 +4,8 @@ export function renderJourney() {
   const statItems = stats.map(s => `
     <div class="stat-item reveal-scale">
       <div class="stat-number" data-count="${s.number}" data-suffix="${s.suffix}">
-        <span class="stat-number-sizer" aria-hidden="true">${Number(s.number).toLocaleString('en-IN')}${s.suffix}</span>
-        <span class="stat-number-value">${Number(s.number).toLocaleString('en-IN')}${s.suffix}</span>
+        <span class="stat-number-sizer" aria-hidden="true" style="visibility:hidden">${Number(s.number).toLocaleString('en-IN')}${s.suffix}</span>
+        <span class="stat-number-value">0${s.suffix}</span>
       </div>
       <div class="stat-label">${s.label}</div>
     </div>
